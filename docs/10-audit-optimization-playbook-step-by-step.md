@@ -19,9 +19,57 @@ All monetary examples throughout this playbook are evaluated under both **USD ($
 
 ## 2. Stage 1: Automated Discovery & Inventory Audit
 
-The discovery phase establishes a comprehensive baseline of compute, network, storage, and identity assets without deploying invasive agents.
+The discovery phase establishes a comprehensive baseline of compute, network, storage, and identity assets without deploying invasive agents, utilizing modern CLI utilities and native discovery engines.
 
-### Step 1.1: Run Azure Resource Inventory (ARI) with Billing Overlays
+### Step 1.1: Rapid Terminal Cost Baseline with `azure-cost-cli`
+
+Obtain an immediate breakdown of accumulated spend, budget status, and resource group cost attribution without leaving the terminal:
+
+```bash
+# Prerequisites: dotnet tool install -g azure-cost-cli
+# Or via container: docker run --rm -it -v ~/.azure:/root/.azure ghcr.io/mivano/azure-cost-cli:latest
+
+# Display accumulated month-to-date spend in Euros (€)
+azure-cost accumulated --currency EUR --output text
+
+# Export cost breakdown by Resource Group as Markdown table for executive review
+azure-cost by-resourcegroup --currency EUR --output markdown > ./reports/cost-by-resourcegroup.md
+
+# Inspect daily spend trends over the past 14 days to spot sudden anomalous jumps
+azure-cost daily --days 14 --currency EUR
+```
+
+### Step 1.2: Visual Topology & Orphan Resource Hierarchy with `aztree`
+
+Visualize Azure resource distribution and isolate structural waste (e.g., resource groups containing only orphaned disks or abandoned IPs):
+
+```bash
+# Prerequisites: go install github.com/milanm/aztree@latest
+
+# Visualize the resource tree with tags to detect untagged or orphaned items
+aztree --subscription "<SUBSCRIPTION_GUID>" --show-tags
+
+# Filter tree specifically to inspect all managed disks across resource groups
+aztree --subscription "<SUBSCRIPTION_GUID>" --type "Microsoft.Compute/disks"
+
+# Filter tree for Public IP addresses to identify unassociated entries
+aztree --subscription "<SUBSCRIPTION_GUID>" --type "Microsoft.Network/publicIPAddresses"
+```
+
+### Step 1.3: Automated Well-Architected & Cost Review with `azqr`
+
+Execute Azure Quick Review (AZQR) to perform an automated scan of all subscription resources against the Azure Well-Architected Framework (WAF) cost and reliability rules:
+
+```bash
+# Prerequisites: go install github.com/Azure/azqr/cmd/azqr@latest
+
+# Scan subscription and export both Excel scorecard and Markdown action tables
+azqr scan --subscription-id "<SUBSCRIPTION_GUID>" \
+          --output-format excel,markdown \
+          --output-dir "./reports/azqr-waf-audit"
+```
+
+### Step 1.4: Deep Inventory with Azure Resource Inventory (ARI)
 
 ```powershell
 # Prerequisites: Azure CLI and AzureResourceInventory module
@@ -45,7 +93,7 @@ Invoke-AzureResourceInventory `
 - `Advisor_Recommendations.csv`: Microsoft Advisor cost anomalies and idle resource recommendations.
 - `Diagram.vsdx` (optional): Topological map of Virtual Networks, Hub-Spoke peerings, and ExpressRoute gateways.
 
-### Step 1.2: Execute Azure Resource Graph (ARG) KQL Audit Pack
+### Step 1.5: Execute Azure Resource Graph (ARG) KQL Audit Pack
 
 Utilize the 7 pre-built KQL queries provided in this repository under [`kql-queries/`](../kql-queries/):
 

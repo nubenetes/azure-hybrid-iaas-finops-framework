@@ -542,6 +542,9 @@ The table below catalogs primary open-source and first-party repositories poweri
 | Tool / Platform | Organization & Repository | Core Enterprise Automation Capability |
 | :--- | :--- | :--- |
 | **Microsoft FinOps Toolkit** | [`microsoft/finops-toolkit`](https://github.com/microsoft/finops-toolkit) | FOCUS 1.0 schema lakehouse, Power BI templates, automated export pipelines, and Bicep/Terraform modules. |
+| **Azure Quick Review (AZQR)** | [`Azure/azqr`](https://github.com/Azure/azqr) | Official Microsoft CLI scanner evaluating subscriptions against Well-Architected Framework (WAF) cost & SLA best practices. |
+| **Azure Cost CLI** | [`mivano/azure-cost-cli`](https://github.com/mivano/azure-cost-cli) | Terminal-based cost queries, daily trends, resource group budgets, and Markdown exports in € and $. |
+| **Azure Tree (aztree)** | [`milanm/aztree`](https://github.com/milanm/aztree) | Fast interactive terminal tree visualizer for Azure tenant hierarchy, resource groups, tags, and orphaned assets. |
 | **Azure Optimization Engine** | [`microsoft/Azure-Optimization-Engine`](https://github.com/microsoft/Azure-Optimization-Engine) | Extensible Azure Log Analytics & Automation engine for custom enterprise rightsizing and idle resource alerting. |
 | **Azure Governance Visualizer** | [`JulianHayward/Azure-Governance-Visualizer`](https://github.com/JulianHayward/Azure-Governance-Visualizer) | Granular visibility into Management Group hierarchies, RBAC, Policy compliance, orphaned assets, and security posture. |
 | **Azure Resource Inventory** | [`Claudio-Merola/AzureResourceInventory`](https://github.com/Claudio-Merola/AzureResourceInventory) | Automated PowerShell inventory report generator with cost overlays, security baselines, and Visio network diagrams. |
