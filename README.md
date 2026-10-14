@@ -6,17 +6,22 @@
 [![Bicep v0.48+](https://img.shields.io/badge/Bicep-IaC_Nativo-0078D4?logo=microsoftazure)](https://learn.microsoft.com/azure/azure-resource-manager/bicep/)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B_(CLI_Calculator)-3776AB?logo=python)](automation/python/)
 [![PowerShell 7+](https://img.shields.io/badge/PowerShell-Runbooks_(Az)-5391FE?logo=powershell)](automation/powershell/)
+[![Docs: Español](https://img.shields.io/badge/Documento_Original-Espa%C3%B1ol-yellow.svg)](docs/informe-exhaustivo-finops-azure-iaas-es.md)
+[![Docs: English](https://img.shields.io/badge/Full_Report-English-blue.svg)](docs/comprehensive-finops-azure-iaas-report-en.md)
 [![Licencia: Apache 2.0](https://img.shields.io/badge/Licencia-Apache_2.0-blue.svg)](LICENSE)
 
 An enterprise-grade **FinOps architectural framework, decision engine, and Infrastructure-as-Code (IaC) blueprint** for optimizing hybrid Microsoft Azure IaaS environments (Windows Server, SQL Server on VMs, Hub-and-Spoke networking, ExpressRoute, and Azure Monitor).
 
 This framework formalizes, expands, and implements the principles outlined in the technical monograph *"Informe Exhaustivo de Prácticas FinOps y Optimización de Costes para Arquitecturas Azure IaaS Híbridas"*, providing mathematical break-even models, dual-engine IaC (Terraform AzureRM v4 and native Bicep), automated Azure Policy guardrails, Azure Resource Graph (ARG) audit queries, Day-2 PowerShell runbooks, and an interactive FinOps calculator CLI.
 
-> [!NOTE]
-> **Architectural Reference Notice**
-> 
-> This repository and its accompanying IaC solutions serve as an **architecture reference blueprint and decision model**. All code, mathematical calculations, and configurations have passed static analysis, unit testing (`pytest`/`unittest`), Terraform v1.15+ validation, and Bicep compilation (`az bicep build`).
-> Always validate and test in a non-production sandbox environment before applying permanent commitment discounts or automated deallocations.
+---
+
+## 📖 Complete Technical Report (Unabridged Markdown Transcriptions)
+
+The complete text of the original technical monograph is available in full fidelity within this repository:
+
+- 🇪🇸 **[Informe Exhaustivo de Prácticas FinOps y Optimización de Costes para Arquitecturas Azure IaaS Híbridas (Texto Íntegro en Español)](docs/informe-exhaustivo-finops-azure-iaas-es.md)**
+- 🇬🇧 **[Comprehensive Report on FinOps Practices and Cost Optimization for Hybrid Azure IaaS Architectures (Full Unabridged English Translation)](docs/comprehensive-finops-azure-iaas-report-en.md)**
 
 ---
 
@@ -24,22 +29,31 @@ This framework formalizes, expands, and implements the principles outlined in th
 
 - [1. 🏛️ Global Hybrid Architecture](#1-️-global-hybrid-architecture)
 - [2. 💡 Financial Impact: Baseline vs. FinOps Optimized](#2--financial-impact-baseline-vs-finops-optimized)
-- [3. 🧱 Core Architectural Pillars](#3--core-architectural-pillars)
-  - [3.1. Visibility, Tagging & Coercive Governance](#31-visibility-tagging--coercive-governance)
-  - [3.2. 3D Compute Optimization: Rightsizing, Lifecycle & Spot](#32-3d-compute-optimization-rightsizing-lifecycle--spot)
-  - [3.3. Advanced Microsoft Licensing: AHB & Constrained vCPUs (CCC)](#33-advanced-microsoft-licensing-ahb--constrained-vcpus-ccc)
-  - [3.4. Long-Term Financial Engineering: Commitment Portfolio](#34-long-term-financial-engineering-commitment-portfolio)
-  - [3.5. Decoupled Storage Subsystem: Premium SSD v2](#35-decoupled-storage-subsystem-premium-ssd-v2)
-  - [3.6. Hybrid Network Economics: ExpressRoute, Firewall & Endpoints](#36-hybrid-network-economics-expressroute-firewall--endpoints)
-  - [3.7. Observability Cost Containment: AMA, DCR & Basic Table Plans](#37-observability-cost-containment-ama-dcr--basic-table-plans)
-- [4. 📐 Mathematical Break-Even Models](#4--mathematical-break-even-models)
-- [5. 📜 Architecture Decision Records (ADRs)](#5--architecture-decision-records-adrs)
-- [6. 🔍 Azure Resource Graph (KQL) Audit Suite](#6--azure-resource-graph-kql-audit-suite)
-- [7. 🧮 FinOps Interactive Calculator CLI](#7--finops-interactive-calculator-cli)
-- [8. ⚙️ Day-2 Automation Runbooks](#8-️-day-2-automation-runbooks)
-- [9. 🚀 Infrastructure as Code Quick Start](#9--infrastructure-as-code-quick-start)
-- [10. 📂 Repository Structure](#10--repository-structure)
-- [11. 📚 Works Cited & References](#11--works-cited--references)
+- [3. 📚 Documentation Suite & Technical Guides (docs/)](#3--documentation-suite--technical-guides-docs)
+- [4. 🧱 Core Architectural Pillars](#4--core-architectural-pillars)
+  - [4.1. Visibility, Tagging & Coercive Governance](#41-visibility-tagging--coercive-governance)
+  - [4.2. 3D Compute Optimization: Rightsizing, Lifecycle & Spot](#42-3d-compute-optimization-rightsizing-lifecycle--spot)
+  - [4.3. Advanced Microsoft Licensing: AHB & Constrained vCPUs (CCC)](#43-advanced-microsoft-licensing-ahb--constrained-vcpus-ccc)
+  - [4.4. Long-Term Financial Engineering: Commitment Portfolio](#44-long-term-financial-engineering-commitment-portfolio)
+  - [4.5. Decoupled Storage Subsystem: Premium SSD v2](#45-decoupled-storage-subsystem-premium-ssd-v2)
+  - [4.6. Hybrid Network Economics: ExpressRoute, Firewall & Endpoints](#46-hybrid-network-economics-expressroute-firewall--endpoints)
+  - [4.7. Observability Cost Containment: AMA, DCR & Basic Table Plans](#47-observability-cost-containment-ama-dcr--basic-table-plans)
+- [5. 📐 Mathematical Break-Even Models](#5--mathematical-break-even-models)
+- [6. 📜 Architecture Decision Records (ADRs)](#6--architecture-decision-records-adrs)
+- [7. 🔍 Azure Resource Graph (KQL) Audit Suite](#7--azure-resource-graph-kql-audit-suite)
+- [8. 🧮 FinOps Interactive Calculator CLI](#8--finops-interactive-calculator-cli)
+- [9. ⚙️ Day-2 Automation Runbooks](#9-️-day-2-automation-runbooks)
+- [10. 🚀 Infrastructure as Code Quick Start](#10--infrastructure-as-code-quick-start)
+  - [10.1. Terraform / OpenTofu (AzureRM v4)](#101-terraform--opentofu-azurerm-v4)
+  - [10.2. Azure Bicep](#102-azure-bicep)
+- [11. 📂 Repository Structure](#11--repository-structure)
+- [12. 🌐 High Added-Value Knowledge Base & Curated Internet References](#12--high-added-value-knowledge-base--curated-internet-references)
+  - [12.1. Microsoft Learn Official Architecture & Sizing Standards](#121-microsoft-learn-official-architecture--sizing-standards)
+  - [12.2. FinOps Foundation Framework & Working Group Publications](#122-finops-foundation-framework--working-group-publications)
+  - [12.3. Mathematical & Pricing Break-Even Analyses](#123-mathematical--pricing-break-even-analyses)
+  - [12.4. Real-World Community Investigations, Reddit & Microsoft Q&A Deep Dives](#124-real-world-community-investigations-reddit--microsoft-qa-deep-dives)
+  - [12.5. Complete 61-Item Concordance Table](#125-complete-61-item-concordance-table)
+- [13. 📜 License](#13--license)
 
 ---
 
@@ -111,53 +125,70 @@ The table below illustrates a representative enterprise deployment (Hub-Spoke, 1
 
 ---
 
-## 3. 🧱 Core Architectural Pillars
+## 3. 📚 Documentation Suite & Technical Guides (`docs/`)
 
-### 3.1. Visibility, Tagging & Coercive Governance
+| Document | Language / Topic | Summary |
+| :--- | :--- | :--- |
+| **[Original Monograph (ES)](docs/informe-exhaustivo-finops-azure-iaas-es.md)** | Español (Texto Íntegro) | Transcripción completa y fidedigna del informe técnico original en Markdown. |
+| **[Original Monograph (EN)](docs/comprehensive-finops-azure-iaas-report-en.md)** | English (Full Unabridged) | Complete, unabridged English translation of the technical monograph. |
+| **[01. Governance & Tagging](docs/01-governance-tagging-cost-allocation.md)** | Governance & Chargeback | Coercive tagging taxonomy, Azure Policy rules, Hub cost allocation, and daily Parquet exports. |
+| **[02. Compute Rightsizing](docs/02-compute-rightsizing-lifecycle-spot.md)** | Compute & Lifecycle | 30-day P95/P99 rightsizing, Burstable series, guest OS shutdown trap, and VMSS Spot Priority Mix. |
+| **[03. Advanced Licensing](docs/03-licensing-ahb-constrained-vcpu.md)** | Licensing & Constrained vCPUs | Azure Hybrid Benefit (AHB), 180-day Dual-Use Rights, and Constrained vCPUs (`E32-8s_v5`) to save 75% on SQL. |
+| **[04. Commitment Engineering](docs/04-commitment-portfolio-ri-savings-plans.md)** | RIs & Savings Plans | The "Floor & Ceiling" commitment model: 3-Year RIs for immutable base + Savings Plans for elastic tiers. |
+| **[05. Decoupled Storage](docs/05-storage-optimization-premium-ssdv2.md)** | Premium SSD v2 | Eliminating RAID 0 striping; independent Capacity, IOPS, and MB/s sliders; zero-downtime scaling. |
+| **[06. Hybrid Networking](docs/06-hybrid-network-expressroute-firewall-endpoints.md)** | ExpressRoute & Firewall | Asymmetric egress, ExpressRoute break-even formulas, Firewall crossover, and Service Endpoints. |
+| **[07. Observability Containment](docs/07-observability-ama-dcr-log-analytics.md)** | AMA, DCR & Log Analytics | Edge XPath filtering (drop HTTP 200s, filter Event IDs), and Basic Table Plan (>80% savings). |
+| **[08. Anti-Patterns & Gotchas](docs/08-anti-patterns-and-gotchas.md)** | Troubleshooting & Traps | Catalog of the Top 15 architectural mistakes, licensing traps, and hidden cost leaks in Azure IaaS. |
+
+---
+
+## 4. 🧱 Core Architectural Pillars
+
+### 4.1. Visibility, Tagging & Coercive Governance
 - **Comprehensive Taxonomy**: Mandatory organizational dimensions (`CostCenter`, `Environment`, `Owner`, `Workload`, `SharedService`).
-- **Coercive Azure Policy**: Deployments lacking required financial context are rejected at ARM compilation (`deny-resources-without-tags.json`). Child resources automatically inherit tags from parent resource groups (`inherit-tags-from-rg.json`).
+- **Coercive Azure Policy**: Deployments lacking required financial context are rejected at ARM compilation ([`enforce-mandatory-tags.json`](policies/enforce-mandatory-tags.json)). Child resources automatically inherit tags from parent resource groups ([`inherit-tags-from-rg.json`](policies/inherit-tags-from-rg.json)).
 - **Hub-Spoke Cost Allocation**: Implements Azure Cost Allocation Rules to distribute central firewall and gateway costs proportionally to consuming spokes based on empirical network and compute metrics.
 - 📖 *Full Technical Guide*: [`docs/01-governance-tagging-cost-allocation.md`](docs/01-governance-tagging-cost-allocation.md)
 
-### 3.2. 3D Compute Optimization: Rightsizing, Lifecycle & Spot
+### 4.2. 3D Compute Optimization: Rightsizing, Lifecycle & Spot
 - **Empirical Rightsizing**: 30-day continuous telemetry focusing on P95 and P99 percentiles instead of averages.
 - **VM Series Specialization**: B-series burstable for Dev/Test (minimum B2s for Windows Server); F/D-series for stateless .NET IIS; E-series and `Ebdsv5` NVMe for SQL Server.
 - **The Deallocation Trap**: Eliminates the common mistake of shutting down VMs from the guest OS (`Stopped` state continues charging CPU/RAM at 100%). Enforces `Stopped (deallocated)` via Azure APIs ($0.00/hr compute).
 - **VMSS Priority Mix**: Configures scale sets with a reliable on-demand floor and elastic Spot instances for up to 90% discount on web scaling tiers.
 - 📖 *Full Technical Guide*: [`docs/02-compute-rightsizing-lifecycle-spot.md`](docs/02-compute-rightsizing-lifecycle-spot.md)
 
-### 3.3. Advanced Microsoft Licensing: AHB & Constrained vCPUs (CCC)
+### 4.3. Advanced Microsoft Licensing: AHB & Constrained vCPUs (CCC)
 - **Azure Hybrid Benefit (AHB)**: Amortizes existing Software Assurance investments to eliminate the Windows Server OS fee (~36% savings) and SQL Server engine fee (up to 85% combined savings).
 - **180-Day Dual-Use Rights**: Enables parallel testing and live migration of on-premises licenses to Azure for 6 months with zero audit penalties.
 - **SQL Server Developer Edition**: 100% feature parity with Enterprise at zero licensing cost in non-prod.
 - **Constrained vCPUs (CCC)**: Deploys `Standard_E32-8s_v5` to satisfy 256 GiB RAM and 80,000 IOPS while masking 24 cores from the OS. SQL Server invoices only 8 cores, yielding an immediate 75% license reduction.
 - 📖 *Full Technical Guide*: [`docs/03-licensing-ahb-constrained-vcpu.md`](docs/03-licensing-ahb-constrained-vcpu.md)
 
-### 3.4. Long-Term Financial Engineering: Commitment Portfolio
+### 4.4. Long-Term Financial Engineering: Commitment Portfolio
 - **The "Floor & Ceiling" Model**: Combines rigid 3-Year Reserved Instances (RIs) for 60-70% immutable baseline infrastructure with flexible Compute Savings Plans for elastic tiers, avoiding commitment lock-in while capturing up to 72% discounts.
 - 📖 *Full Technical Guide*: [`docs/04-commitment-portfolio-ri-savings-plans.md`](docs/04-commitment-portfolio-ri-savings-plans.md)
 
-### 3.5. Decoupled Storage Subsystem: Premium SSD v2
+### 4.5. Decoupled Storage Subsystem: Premium SSD v2
 - **Abolishing the RAID 0 Anti-Pattern**: Replaces Windows Storage Spaces striped P30/P40 disks with single decoupled Premium SSD v2 disks.
 - **Independent Sliders**: Adjust Capacity (GiB), IOPS, and Throughput (MB/s) independently. Every disk includes 3,000 IOPS and 125 MB/s free of charge.
 - **Zero-Downtime Tuning**: Dynamic performance scaling up to 4 times per 24-hour period allows boosting IOPS before nightly backup windows and dialing down afterwards.
 - 📖 *Full Technical Guide*: [`docs/05-storage-optimization-premium-ssdv2.md`](docs/05-storage-optimization-premium-ssdv2.md)
 
-### 3.6. Hybrid Network Economics: ExpressRoute, Firewall & Endpoints
+### 4.6. Hybrid Network Economics: ExpressRoute, Firewall & Endpoints
 - **ExpressRoute Break-Even**: Proves mathematically that the Unlimited plan requires sustained >73% line saturation 24/7. Hybrid enterprises transferring <240 TB/mo save $5,800/mo by deploying Metered.
 - **The Asymmetric Transition Trap**: Upgrading Metered to Unlimited is zero-downtime; downgrading Unlimited to Metered is blocked by Microsoft and requires circuit destruction. Always start Metered.
 - **Azure Firewall Crossover**: Evaluates the 12.74 TB/month crossover between Basic ($0.065/GB processing) and Standard ($0.016/GB processing).
 - **Service Endpoints vs. Private Endpoints**: Defaults to 100% free Service Endpoints for internal VNet-to-PaaS traffic, reserving Private Endpoints strictly for on-premises hybrid access.
 - 📖 *Full Technical Guide*: [`docs/06-hybrid-network-expressroute-firewall-endpoints.md`](docs/06-hybrid-network-expressroute-firewall-endpoints.md)
 
-### 3.7. Observability Cost Containment: AMA, DCR & Basic Table Plans
+### 4.7. Observability Cost Containment: AMA, DCR & Basic Table Plans
 - **Edge XPath Filtering**: Azure Monitor Agent evaluates XPath filters inside the Windows kernel, discarding HTTP 200-399 and non-critical Event IDs before data crosses the network.
 - **Log Analytics Basic Table Plan**: Reduces ingestion cost from ~$2.30/GB down to ~$0.50/GB (>78% savings) for high-volume network and firewall diagnostic logs.
 - 📖 *Full Technical Guide*: [`docs/07-observability-ama-dcr-log-analytics.md`](docs/07-observability-ama-dcr-log-analytics.md)
 
 ---
 
-## 4. 📐 Mathematical Break-Even Models
+## 5. 📐 Mathematical Break-Even Models
 
 | Model | Core Formula | Key Finding / Threshold | Documentation |
 | :--- | :--- | :--- | :--- |
@@ -167,18 +198,18 @@ The table below illustrates a representative enterprise deployment (Hub-Spoke, 1
 
 ---
 
-## 5. 📜 Architecture Decision Records (ADRs)
+## 6. 📜 Architecture Decision Records (ADRs)
 
 Key architectural trade-offs are documented as immutable Architecture Decision Records:
-- **[ADR-001](docs/adr/ADR-001-constrained-vcpu-for-sql-workloads.md)**: Adoption of Constrained vCPU VM Sizes for SQL Server IaaS Workloads.
-- **[ADR-002](docs/adr/ADR-002-premium-ssd-v2-decoupled-storage.md)**: Migration from Premium SSD v1 to Premium SSD v2 for Transactional Storage.
-- **[ADR-003](docs/adr/ADR-003-expressroute-metered-vs-unlimited.md)**: Default Selection of Metered Data Plan for Hybrid Azure ExpressRoute Circuits.
-- **[ADR-004](docs/adr/ADR-004-service-endpoints-vs-private-endpoints.md)**: Standardizing on Service Endpoints vs. Private Endpoints for PaaS Traffic.
-- **[ADR-005](docs/adr/ADR-005-ama-dcr-edge-log-filtering.md)**: Adoption of Azure Monitor Agent (AMA) with DCR Edge XPath Filtering.
+- **[ADR-001: Constrained vCPU for SQL Workloads](docs/adr/ADR-001-constrained-vcpu-for-sql-workloads.md)**: Adoption of Constrained vCPU VM Sizes for SQL Server IaaS Workloads.
+- **[ADR-002: Premium SSD v2 Decoupled Storage](docs/adr/ADR-002-premium-ssd-v2-decoupled-storage.md)**: Migration from Premium SSD v1 to Premium SSD v2 for Transactional Storage.
+- **[ADR-003: ExpressRoute Metered vs. Unlimited](docs/adr/ADR-003-expressroute-metered-vs-unlimited.md)**: Default Selection of Metered Data Plan for Hybrid Azure ExpressRoute Circuits.
+- **[ADR-004: Service Endpoints vs. Private Endpoints](docs/adr/ADR-004-service-endpoints-vs-private-endpoints.md)**: Standardizing on Service Endpoints vs. Private Endpoints for PaaS Traffic.
+- **[ADR-005: AMA DCR Edge Log Filtering](docs/adr/ADR-005-ama-dcr-edge-log-filtering.md)**: Adoption of Azure Monitor Agent (AMA) with DCR Edge XPath Filtering.
 
 ---
 
-## 6. 🔍 Azure Resource Graph (KQL) Audit Suite
+## 7. 🔍 Azure Resource Graph (KQL) Audit Suite
 
 A complete suite of KQL queries designed to run in Azure Resource Graph Explorer to detect cost leaks and licensing optimization candidates:
 
@@ -194,7 +225,7 @@ A complete suite of KQL queries designed to run in Azure Resource Graph Explorer
 
 ---
 
-## 7. 🧮 FinOps Interactive Calculator CLI
+## 8. 🧮 FinOps Interactive Calculator CLI
 
 A standalone Python command-line utility providing instant mathematical evaluations and TCO modeling:
 
@@ -224,7 +255,7 @@ Other available commands:
 
 ---
 
-## 8. ⚙️ Day-2 Automation Runbooks
+## 9. ⚙️ Day-2 Automation Runbooks
 
 Production-grade PowerShell runbooks for Azure Automation or scheduled tasks:
 - **[`Start-Stop-Deallocate-VMs.ps1`](automation/powershell/Start-Stop-Deallocate-VMs.ps1)**: Automatically deallocates non-prod and tagged VMs outside business hours.
@@ -233,9 +264,9 @@ Production-grade PowerShell runbooks for Azure Automation or scheduled tasks:
 
 ---
 
-## 9. 🚀 Infrastructure as Code Quick Start
+## 10. 🚀 Infrastructure as Code Quick Start
 
-### Terraform / OpenTofu (AzureRM v4)
+### 10.1. Terraform / OpenTofu (AzureRM v4)
 
 ```bash
 cd terraform
@@ -253,7 +284,7 @@ terraform plan -var="location=westeurope" -var="environment=prod"
 terraform apply -auto-approve
 ```
 
-### Azure Bicep
+### 10.2. Azure Bicep
 
 ```bash
 cd bicep
@@ -270,7 +301,7 @@ az deployment group create \
 
 ---
 
-## 10. 📂 Repository Structure
+## 11. 📂 Repository Structure
 
 ```text
 .
@@ -296,6 +327,8 @@ az deployment group create \
 │       ├── spokeDb.bicep
 │       └── spokeWeb.bicep
 ├── docs/
+│   ├── informe-exhaustivo-finops-azure-iaas-es.md   # Texto íntegro original del informe (Español)
+│   ├── comprehensive-finops-azure-iaas-report-en.md # Full unabridged technical report (English)
 │   ├── 01-governance-tagging-cost-allocation.md
 │   ├── 02-compute-rightsizing-lifecycle-spot.md
 │   ├── 03-licensing-ahb-constrained-vcpu.md
@@ -304,7 +337,7 @@ az deployment group create \
 │   ├── 06-hybrid-network-expressroute-firewall-endpoints.md
 │   ├── 07-observability-ama-dcr-log-analytics.md
 │   ├── 08-anti-patterns-and-gotchas.md
-│   ├── adr/                              # Architecture Decision Records
+│   ├── adr/                              # Architecture Decision Records (ADR-001 to ADR-005)
 │   │   ├── ADR-001-constrained-vcpu-for-sql-workloads.md
 │   │   ├── ADR-002-premium-ssd-v2-decoupled-storage.md
 │   │   ├── ADR-003-expressroute-metered-vs-unlimited.md
@@ -352,29 +385,144 @@ az deployment group create \
 
 ---
 
-## 11. 📚 Works Cited & References
+## 12. 🌐 High Added-Value Knowledge Base & Curated Internet References
 
-1. CloudZero (2026). *Azure Cost Optimization: The Complete Guide*.
-2. nOps (2026). *Azure Cost Optimization: Complete Guide*.
-3. Another DevOps Blog (2026). *Mastering Cost Allocation in Azure*.
-4. Microsoft Learn (2026). *Azure Managed Disk Types & Premium SSD v2 Specifications*.
-5. Microsoft Learn (2026). *Data Collection Rules (DCRs) and Azure Monitor Agent (AMA)*.
-6. Matías, C. (2026). *Azure Cost Optimization Guide: Practical Strategies That Actually Work*.
-7. Inventive HQ (2026). *Azure Cost Allocation with Tags & Shared Resources*.
-8. Microsoft Learn (2026). *Best Practices for Virtual Machine Cost Optimization*.
-9. VBeyond Digital (2026). *Fix Shared Chargeback Disputes in Azure Cost Management*.
-10. Microsoft Learn (2026). *Create and Manage Azure Cost Allocation Rules*.
-11. Sedai (2026). *Top 20 Azure Cost Optimization Strategies for 2026*.
-12. Intercept (2026). *Unlocking Azure SQL Pricing: Software Assurance & Hybrid Benefit*.
-13. Microsoft Learn (2026). *Checklist & Best Practices for SQL Server on Azure Virtual Machines*.
-14. Microsoft Learn (2026). *Constrained vCPU Sizes & Core Customization (CCC)*.
-15. EgressCost (2026). *Azure Bandwidth & Egress Pricing Explained*.
-16. Enforza (2026). *Azure Firewall Pricing: Fixed vs Variable Cost Optimization*.
-17. FastTrack for Azure (2026). *Azure Private Endpoints vs. Service Endpoints: Architectural Guide*.
-18. FinOps Foundation (2026). *FinOps for Azure Managed Disks: Optimizing for Value*.
+This section documents the foundational industry research, architectural standards, pricing disclosures, and real-world engineering benchmarks upon which the technical monograph and this repository are built.
+
+### 12.1. Microsoft Learn Official Architecture & Sizing Standards
+
+- **[Azure Managed Disk Types & Premium SSD v2 Specifications](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types)**:
+  *Key FinOps Takeaway*: Documents the architecture of Premium SSD v2, where Capacity, IOPS, and MB/s throughput are decoupled. Explains the included baseline of 3,000 IOPS and 125 MB/s free of charge and the rules for zero-downtime scaling up to 4 times per 24 hours.
+- **[Constrained vCPU Sizes & Core Customization (CCC)](https://learn.microsoft.com/en-us/azure/virtual-machines/constrained-vcpu)**:
+  *Key FinOps Takeaway*: The authoritative specification on how the Azure hypervisor masks processor presentation to Windows and SQL Server, enabling 50% to 75% software licensing cost reductions while preserving full physical host RAM and storage throughput.
+- **[Checklist & Best Practices for SQL Server on Azure VMs](https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-checklist?view=azuresql)**:
+  *Key FinOps Takeaway*: Engineering guidelines covering storage layout, tempdb placement, memory allocation, and the critical prohibition of Standard HDD for production data volumes.
+- **[Storage Best Practices for SQL Server on Azure Virtual Machines](https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-storage?view=azuresql)**:
+  *Key FinOps Takeaway*: Explains why host caching is disabled on Premium SSD v2, and how pairing modern `Ebdsv5` NVMe interfaces delivers sub-millisecond transaction log latency.
+- **[Pricing Guidance for SQL Server on Azure VMs](https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/pricing-guidance?view=azuresql)**:
+  *Key FinOps Takeaway*: Details the dual-licensing mechanics (Pay-As-You-Go per second vs. Azure Hybrid Benefit), Developer Edition exemptions, and the SQL IaaS Agent Extension.
+- **[Azure Hybrid Benefit for Windows Server](https://learn.microsoft.com/en-us/windows-server/get-started/azure-hybrid-benefit)**:
+  *Key FinOps Takeaway*: Explains how bringing Software Assurance (SA) core licenses eliminates the ~36% Windows OS markup, matching Linux base compute pricing.
+- **[Transition to Centrally Managed Azure Hybrid Benefit](https://learn.microsoft.com/en-us/azure/cost-management-billing/scope-level/transition-existing)**:
+  *Key FinOps Takeaway*: Explains the 180-day dual-use rights grace period during on-premises to cloud migration and enrollment-level scope management.
+- **[Create and Manage Azure Cost Allocation Rules](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/allocate-costs)**:
+  *Key FinOps Takeaway*: Official guide to configuring shared-cost redistribution in Cost Management (fixed percentage, even split, and proportional compute/network split).
+- **[Data Collection Rules (DCRs) and Azure Monitor Agent (AMA)](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview)**:
+  *Key FinOps Takeaway*: Technical documentation of XPath event filtering at the edge inside Windows Server, preventing high-volume telemetry from reaching billable ingestion pipelines.
+- **[Azure Monitor Logs Cost Calculations & Table Plans](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)**:
+  *Key FinOps Takeaway*: Outlines the pricing differential between standard Analytics tables ($2.30/GB) and Basic Table Plans (~$0.50/GB, >78% savings) for high-volume logs.
+
+### 12.2. FinOps Foundation Framework & Working Group Publications
+
+- **[FinOps Foundation: Optimizing Azure Managed Disks for Value](https://www.finops.org/wg/finops-for-azure-managed-disks-optimizing-for-value/)**:
+  *Key FinOps Takeaway*: Working group recommendations detailing the financial transition from monolithic P30/P40 disks to granular Premium SSD v2, addressing orphaned disk leakage and storage sizing rights.
+- **[FinOps Best Practices for Compute](https://learn.microsoft.com/en-us/cloud-computing/finops/best-practices/compute)**:
+  *Key FinOps Takeaway*: Joint Microsoft and FinOps Foundation guidelines covering rightsizing heuristics, the deallocated state lifecycle, and commitment discount portfolios.
+- **[CloudZero: Azure Cost Optimization Complete Guide](https://www.cloudzero.com/blog/azure-cost-optimization/)**:
+  *Key FinOps Takeaway*: Industry analysis of cloud unit economics, breaking down the 4 phases of continuous FinOps maturity and organizational showback/chargeback.
+
+### 12.3. Mathematical & Pricing Break-Even Analyses
+
+- **[EgressCost: Azure Bandwidth & Egress Pricing Explained](https://egresscost.com/azure/)**:
+  *Key FinOps Takeaway*: Independent empirical breakdown of Azure zonal data transfer tariffs (Zone 1, Zone 2, Zone 3) and asymmetric internet egress fees.
+- **[Azure ExpressRoute Pricing Breakdown & Circuit Analysis](https://azure.microsoft.com/en-us/pricing/details/expressroute/)**:
+  *Key FinOps Takeaway*: Official pricing matrices for ExpressRoute Metered vs. Unlimited ports, demonstrating the mathematical break-even threshold requiring >73% sustained 24/7 line saturation.
+- **[Pump.co: Azure ExpressRoute Pricing, Costs, Drivers & Savings](https://www.pump.co/blog/azure-expressroute-pricing/)**:
+  *Key FinOps Takeaway*: Analysis of corporate migration overspending on ExpressRoute Unlimited plans and operational strategies for starting with Metered circuits.
+- **[Critical Cloud: Azure Firewall Basic vs. Standard Cost Comparison](https://criticalcloud.ai/blog/azure/azure-firewall-basic-vs-standard-cost-comparison/)**:
+  *Key FinOps Takeaway*: Empirical evaluation of the data processing fee penalty ($0.065/GB on Basic vs. $0.016/GB on Standard), demonstrating the ~12.74 TB/month crossover point.
+- **[Enforza: Azure Firewall Pricing — What It Costs and How to Cut It](https://enforza.io/azure-firewall-cost/)**:
+  *Key FinOps Takeaway*: Tactical guide to deallocating non-production firewalls outside business hours using Azure Automation to eliminate the $912/mo fixed fee.
+- **[FastTrack for Azure: Private Endpoints vs. Service Endpoints](https://techcommunity.microsoft.com/blog/fasttrackforazureblog/azure-private-endpoint-vs-service-endpoint-a-comprehensive-guide/4363095)**:
+  *Key FinOps Takeaway*: Microsoft engineering deep-dive on why Service Endpoints (100% Free) should remain the default standard for internal Azure VNet-to-PaaS traffic, and when Private Endpoints justify their hourly and per-GB costs.
+
+### 12.4. Real-World Community Investigations, Reddit & Microsoft Q&A Deep Dives
+
+- **[Microsoft Q&A: Server Licensed Cores for Core Constrained vCPU VM Sizes](https://learn.microsoft.com/en-us/answers/questions/1336404/server-licensed-cores-for-core-constrained-vcpu-vm)**:
+  *Key FinOps Takeaway*: Community verification from Microsoft licensing specialists confirming that software license audits legally count only active cores exposed to the OS.
+- **[Microsoft Q&A: Azure VM Resize & SQL Server Standard License Per-Second Impact](https://learn.microsoft.com/en-us/answers/questions/5810958/azure-vm-resize-sql-server-standard-license-will-a)**:
+  *Key FinOps Takeaway*: Details the operational risk of scaling up a VM without reapplying CCC constraints, instantly triggering higher per-second license billing.
+- **[Reddit r/AZURE: SQL VM Sizing — IOPS vs NVMe Performance Benchmarks](https://www.reddit.com/r/AZURE/comments/1i0pnjt/sql_vm_sizing_iops_vs_nvme/)**:
+  *Key FinOps Takeaway*: Real-world DBA benchmarks comparing remote storage latency against local NVMe scratch storage for SQL Server tempdb.
+- **[Reddit r/AZURE: ExpressRoute Direct & Port Type Migration Traps](https://www.reddit.com/r/AZURE/comments/t651y8/expressroute_direct/)**:
+  *Key FinOps Takeaway*: Architectural warnings detailing the inability to downgrade from Unlimited to Metered in-place, necessitating telecom circuit recreation and downtime.
+- **[Reddit r/AZURE: Azure Monitor Agent (AMA) and Data Collection Rules in Practice](https://www.reddit.com/r/AZURE/comments/q1vcpu/azure_monitor_agent_and_data_collection_rules/)**:
+  *Key FinOps Takeaway*: Practical operator experiences applying XPath queries to silence IIS HTTP 200 noise and reduce monthly Log Analytics ingestion bills by 70%.
+- **[Microsoft Q&A: Applying Custom Data Collection Rules for AMA to Reduce Log Ingestion](https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r)**:
+  *Key FinOps Takeaway*: Concrete XPath recipes for filtering out non-actionable Windows Event IDs (such as process creation 4688 noise).
 
 ---
 
-## 📜 License
+### 12.5. Complete 61-Item Concordance Table
+
+The table below links every bibliographic reference cited in the original monograph [1–61] to its source URL:
+
+| Ref | Title & Source | Canonical URL |
+| :---: | :--- | :--- |
+| **[1]** | Azure Cost Optimization: The Complete Guide (2026) - CloudZero | [https://www.cloudzero.com/blog/azure-cost-optimization/](https://www.cloudzero.com/blog/azure-cost-optimization/) |
+| **[2]** | Azure Cost Optimization: Complete Guide 2026 - nOps | [https://www.nops.io/blog/azure-cost-optimization/](https://www.nops.io/blog/azure-cost-optimization/) |
+| **[3]** | Mastering Cost Allocation in Azure - Another DevOps Blog | [https://anotherdevops.blog/posts/cost-allocation/](https://anotherdevops.blog/posts/cost-allocation/) |
+| **[4]** | Azure Managed Disk Types - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types) |
+| **[5]** | Data Collection Rules (DCRs) in Azure Monitor - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview) |
+| **[6]** | Azure Cost Optimization Guide: Practical Strategies - Matías | [https://medium.com/@cocamatias/azure-cost-optimization-guide-practical-strategies-that-actually-work-9c542018f157](https://medium.com/@cocamatias/azure-cost-optimization-guide-practical-strategies-that-actually-work-9c542018f157) |
+| **[7]** | Azure Cost Allocation with Tags - Inventive HQ | [https://inventivehq.com/knowledge-base/microsoft-azure/how-to-enable-cost-allocation-for-shared-resources-in-azure](https://inventivehq.com/knowledge-base/microsoft-azure/how-to-enable-cost-allocation-for-shared-resources-in-azure) |
+| **[8]** | Best Practices for Virtual Machine Cost Optimization - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/virtual-machines/cost-optimization-best-practices](https://learn.microsoft.com/en-us/azure/virtual-machines/cost-optimization-best-practices) |
+| **[9]** | Azure Cost Management: Fix Shared Chargeback Disputes - VBeyond | [https://www.vbeyonddigital.com/blog/azure-cost-management-how-to-fix-shared-service-chargeback-disputes/](https://www.vbeyonddigital.com/blog/azure-cost-management-how-to-fix-shared-service-chargeback-disputes/) |
+| **[10]**| Create and Manage Azure Cost Allocation Rules - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/allocate-costs](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/allocate-costs) |
+| **[11]**| Cost Allocation Rules - REST API - Microsoft Learn | [https://learn.microsoft.com/en-us/rest/api/cost-management/cost-allocation-rules?view=rest-cost-management-2026-06-01](https://learn.microsoft.com/en-us/rest/api/cost-management/cost-allocation-rules?view=rest-cost-management-2026-06-01) |
+| **[12]**| Introduction to Cost Allocation - Microsoft Cost Management | [https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-allocation-introduction](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-allocation-introduction) |
+| **[13]**| Ensuring Effective Cost Allocation In Azure - Xebia | [https://xebia.com/articles/ensuring-effective-cost-allocation-in-azure/](https://xebia.com/articles/ensuring-effective-cost-allocation-in-azure/) |
+| **[14]**| Unlocking Azure SQL Pricing: How Much Does it Really Cost? - Intercept | [https://intercept.cloud/en-gb/blogs/azure-sql-pricing](https://intercept.cloud/en-gb/blogs/azure-sql-pricing) |
+| **[15]**| Top 20 Azure Cost Optimization Strategies for 2026 - Sedai | [https://sedai.io/blog/cost-optimization-strategies-azure](https://sedai.io/blog/cost-optimization-strategies-azure) |
+| **[16]**| Azure VM Cost Optimization: 4 FinOps Levers - EverythingCloud | [https://everythingcloud.com/insights/azure-vm-cost-optimization/](https://everythingcloud.com/insights/azure-vm-cost-optimization/) |
+| **[17]**| Checklist: Best Practices for SQL Server on Azure VMs - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-checklist?view=azuresql](https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-checklist?view=azuresql) |
+| **[18]**| Storage Best Practices for SQL Server on Azure VMs - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-storage?view=azuresql](https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/performance-guidelines-best-practices-storage?view=azuresql) |
+| **[19]**| Azure SQL Managed Instance Cost Optimization Strategies - Lucidity | [https://www.lucidity.cloud/feeds/blog/azure-sql-managed-instance-cost-optimization](https://www.lucidity.cloud/feeds/blog/azure-sql-managed-instance-cost-optimization) |
+| **[20]**| Pricing Guidance for SQL Server on Azure VMs - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/pricing-guidance?view=azuresql](https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/pricing-guidance?view=azuresql) |
+| **[21]**| FinOps Best Practices for Compute - Microsoft Learn | [https://learn.microsoft.com/en-us/cloud-computing/finops/best-practices/compute](https://learn.microsoft.com/en-us/cloud-computing/finops/best-practices/compute) |
+| **[22]**| Understanding Azure SQL Licensing Guide - 2-Data | [https://2-data.com/knowledge-hub/understanding-azure-sql-licensing-a-complete-pricing-guide/](https://2-data.com/knowledge-hub/understanding-azure-sql-licensing-a-complete-pricing-guide/) |
+| **[23]**| Azure Hybrid Benefit for Windows Server - Microsoft Learn | [https://learn.microsoft.com/en-us/windows-server/get-started/azure-hybrid-benefit](https://learn.microsoft.com/en-us/windows-server/get-started/azure-hybrid-benefit) |
+| **[24]**| Transition to Centrally Managed Azure Hybrid Benefit - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/cost-management-billing/scope-level/transition-existing](https://learn.microsoft.com/en-us/azure/cost-management-billing/scope-level/transition-existing) |
+| **[25]**| Azure Hybrid Benefit Explained - ProsperOps | [https://www.prosperops.com/blog/azure-hybrid-benefit/](https://www.prosperops.com/blog/azure-hybrid-benefit/) |
+| **[26]**| Azure Hybrid Benefit Pricing Overview - Microsoft Azure | [https://azure.microsoft.com/en-us/pricing/offers/hybrid-benefit](https://azure.microsoft.com/en-us/pricing/offers/hybrid-benefit) |
+| **[27]**| Azure Hybrid Benefit: Is it Worth It? - Intercept | [https://intercept.cloud/en-gb/blogs/azure-hybrid-benefit](https://intercept.cloud/en-gb/blogs/azure-hybrid-benefit) |
+| **[28]**| SQL Server Standard Virtual Machines Pricing - Microsoft Azure | [https://acom-sandbox.azure.net/en-us/pricing/details/virtual-machines/sql-server-standard/](https://acom-sandbox.azure.net/en-us/pricing/details/virtual-machines/sql-server-standard/) |
+| **[29]**| Constrained vCPU Sizes - Azure Virtual Machines | [https://docs.azure.cn/en-us/virtual-machines/constrained-vcpu](https://docs.azure.cn/en-us/virtual-machines/constrained-vcpu) |
+| **[30]**| VM vCore Customization for SQL Server - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/vm-vcore-customization-for-sql?view=azuresql](https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/vm-vcore-customization-for-sql?view=azuresql) |
+| **[31]**| Constrained vCPU Sizes Reference - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/virtual-machines/constrained-vcpu](https://learn.microsoft.com/en-us/azure/virtual-machines/constrained-vcpu) |
+| **[32]**| Server Licensed Cores for Core Constrained vCPU VM Sizes - Microsoft Q&A | [https://learn.microsoft.com/en-us/answers/questions/1336404/server-licensed-cores-for-core-constrained-vcpu-vm](https://learn.microsoft.com/en-us/answers/questions/1336404/server-licensed-cores-for-core-constrained-vcpu-vm) |
+| **[33]**| Azure VM Updates: Reduce Software Licensing Costs - BPS | [https://bpsme.com/reduce-software-licensing-costs-azure/](https://bpsme.com/reduce-software-licensing-costs-azure/) |
+| **[34]**| Azure VM Resize SQL Server Standard License - Microsoft Q&A | [https://learn.microsoft.com/en-us/answers/questions/5810958/azure-vm-resize-sql-server-standard-license-will-a](https://learn.microsoft.com/en-us/answers/questions/5810958/azure-vm-resize-sql-server-standard-license-will-a) |
+| **[35]**| Deploy SQL Server on Azure VMs with Premium SSD v2 - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/storage-configuration-premium-ssd-v2?view=azuresql](https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/storage-configuration-premium-ssd-v2?view=azuresql) |
+| **[36]**| Azure Managed Disks: Standard HDD vs SSD vs Premium - C# Corner | [https://www.c-sharpcorner.com/article/azure-infrastructure-series-7-azure-managed-disks-standard-hdd-vs-standard-ss/](https://www.c-sharpcorner.com/article/azure-infrastructure-series-7-azure-managed-disks-standard-hdd-vs-standard-ss/) |
+| **[37]**| FinOps for Azure Managed Disks: Optimizing for Value - FinOps Foundation | [https://www.finops.org/wg/finops-for-azure-managed-disks-optimizing-for-value/](https://www.finops.org/wg/finops-for-azure-managed-disks-optimizing-for-value/) |
+| **[38]**| SQL VM Sizing IOPs vs NVMe - Reddit r/AZURE | [https://www.reddit.com/r/AZURE/comments/1i0pnjt/sql_vm_sizing_iops_vs_nvme/](https://www.reddit.com/r/AZURE/comments/1i0pnjt/sql_vm_sizing_iops_vs_nvme/) |
+| **[39]**| Azure VM vs Disk vs Costs: Does Size Matter? - Robert Smit | [https://robertsmit.wordpress.com/2019/07/09/azure-vm-vs-disk-vs-costs-does-size-matter-or-a-higher-price-for-better-specifications-azure-storage-performance/](https://robertsmit.wordpress.com/2019/07/09/azure-vm-vs-disk-vs-costs-does-size-matter-or-a-higher-price-for-better-specifications-azure-storage-performance/) |
+| **[40]**| Managed Disks Pricing - Microsoft Azure | [https://azure.microsoft.com/en-us/pricing/details/managed-disks/](https://azure.microsoft.com/en-us/pricing/details/managed-disks/) |
+| **[41]**| Optimize Azure VM Disk Performance by Tier - OneUptime | [https://oneuptime.com/blog/post/2026-02-16-how-to-optimize-azure-vm-disk-performance-by-choosing-the-right-storage-tier/view](https://oneuptime.com/blog/post/2026-02-16-how-to-optimize-azure-vm-disk-performance-by-choosing-the-right-storage-tier/view) |
+| **[42]**| Azure ExpressRoute Pricing Details - Microsoft Azure | [https://azure.microsoft.com/en-us/pricing/details/expressroute/](https://azure.microsoft.com/en-us/pricing/details/expressroute/) |
+| **[43]**| Azure Bandwidth & Egress Pricing Explained (2026) - EgressCost | [https://egresscost.com/azure/](https://egresscost.com/azure/) |
+| **[44]**| Azure ExpressRoute Pricing: Costs, Drivers, and Savings - Pump.co | [https://www.pump.co/blog/azure-expressroute-pricing/](https://www.pump.co/blog/azure-expressroute-pricing/) |
+| **[45]**| Azure ExpressRoute Pricing Guide — Circuit + - EPC Group | [https://www.epcgroup.net/answers/azure-expressroute-pricing-guide](https://www.epcgroup.net/answers/azure-expressroute-pricing-guide) |
+| **[46]**| ExpressRoute Direct Discussions - Reddit r/AZURE | [https://www.reddit.com/r/AZURE/comments/t651y8/expressroute_direct/](https://www.reddit.com/r/AZURE/comments/t651y8/expressroute_direct/) |
+| **[47]**| Azure Firewall Pricing: What It Costs and How to Cut It - Enforza | [https://enforza.io/azure-firewall-cost/](https://enforza.io/azure-firewall-cost/) |
+| **[48]**| Azure Firewall: Pricing, Benefits & Best Practices Guide - Pump.co | [https://www.pump.co/blog/azure-firewall/](https://www.pump.co/blog/azure-firewall/) |
+| **[49]**| Azure Firewall Basic vs Standard: Cost Comparison - Critical Cloud | [https://criticalcloud.ai/blog/azure/azure-firewall-basic-vs-standard-cost-comparison/](https://criticalcloud.ai/blog/azure/azure-firewall-basic-vs-standard-cost-comparison/) |
+| **[50]**| Azure Firewall Pricing 2026: Hub-and-Spoke Cost Guide - Pixlodo | [https://pixlodo.com/azure-firewall-pricing/](https://pixlodo.com/azure-firewall-pricing/) |
+| **[51]**| Azure Private Endpoint vs. Service Endpoint Guide - FastTrack for Azure | [https://techcommunity.microsoft.com/blog/fasttrackforazureblog/azure-private-endpoint-vs-service-endpoint-a-comprehensive-guide/4363095](https://techcommunity.microsoft.com/blog/fasttrackforazureblog/azure-private-endpoint-vs-service-endpoint-a-comprehensive-guide/4363095) |
+| **[52]**| Azure Private Endpoint vs Service Endpoint: When to Use Which? - AzurePro | [https://www.azurepro.ae/azure-private-endpoint-vs-service-endpoint-when-to-use-which/](https://www.azurepro.ae/azure-private-endpoint-vs-service-endpoint-when-to-use-which/) |
+| **[53]**| Azure Networking: Service vs Private Endpoints - Jannik Reinhard | [https://jannikreinhard.com/service-endpoints-vs-private-endpoints/](https://jannikreinhard.com/service-endpoints-vs-private-endpoints/) |
+| **[54]**| Is Data Transfer More Expensive When Using Private Endpoints? - Microsoft Q&A | [https://learn.microsoft.com/en-us/answers/questions/1325138/is-it-true-that-data-transfer-is-more-expensive-wh](https://learn.microsoft.com/en-us/answers/questions/1325138/is-it-true-that-data-transfer-is-more-expensive-wh) |
+| **[55]**| Azure Data Collection Rules (DCR) Explained - Medium | [https://medium.com/@cloudwithaarya/azure-data-collection-rules-dcr-explained-azure-monitor-made-simple-2934c2311e78](https://medium.com/@cloudwithaarya/azure-data-collection-rules-dcr-explained-azure-monitor-made-simple-2934c2311e78) |
+| **[56]**| Azure Monitor Cost and Usage - GitHub Documentation | [https://github.com/MicrosoftDocs/azure-monitor-docs/blob/main/articles/azure-monitor/fundamentals/cost-usage.md](https://github.com/MicrosoftDocs/azure-monitor-docs/blob/main/articles/azure-monitor/fundamentals/cost-usage.md) |
+| **[57]**| Azure Monitor Pricing Overview - Microsoft Azure | [https://azure.microsoft.com/en-us/pricing/details/monitor/](https://azure.microsoft.com/en-us/pricing/details/monitor/) |
+| **[58]**| Azure Monitor Logs Cost Calculations And Options - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs) |
+| **[59]**| Azure Monitor Agent and Data Collection Rules - Reddit r/AZURE | [https://www.reddit.com/r/AZURE/comments/q1vcpu/azure_monitor_agent_and_data_collection_rules/](https://www.reddit.com/r/AZURE/comments/q1vcpu/azure_monitor_agent_and_data_collection_rules/) |
+| **[60]**| Cost Optimization in Azure Monitor - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/best-practices-cost](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/best-practices-cost) |
+| **[61]**| Applying Custom Data Collection Rules for AMA to Reduce Log - Microsoft Q&A | [https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r](https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r) |
+
+---
+
+## 13. 📜 License
 
 This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
