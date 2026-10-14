@@ -42,14 +42,15 @@ It implements, validates, and deepens the research from the technical monograph 
   - [10.1. Terraform / OpenTofu (AzureRM v4)](#101-terraform--opentofu-azurerm-v4)
   - [10.2. Azure Bicep](#102-azure-bicep)
 - [11. 📂 Repository Structure](#11--repository-structure)
-- [12. 🌐 High Added-Value Knowledge Base & Curated Internet References](#12--high-added-value-knowledge-base--curated-internet-references)
-  - [12.1. Microsoft Learn Official Architecture & Sizing Standards](#121-microsoft-learn-official-architecture--sizing-standards)
-  - [12.2. FinOps Foundation Framework & Working Group Publications](#122-finops-foundation-framework--working-group-publications)
-  - [12.3. Mathematical & Pricing Break-Even Analyses](#123-mathematical--pricing-break-even-analyses)
-  - [12.4. Real-World Community Investigations, Reddit & Microsoft Q&A Deep Dives](#124-real-world-community-investigations-reddit--microsoft-qa-deep-dives)
-  - [12.5. Complete 61-Item Concordance Table](#125-complete-61-item-concordance-table)
-  - [12.6. Modern 2026 FinOps Tooling & Automation Repositories](#126-modern-2026-finops-tooling--automation-repositories-github)
-- [13. 📜 License](#13--license)
+- [12. 🎥 Video Guides, Technical Shorts & Multimedia Sessions (YouTube)](#12--video-guides-technical-shorts--multimedia-sessions-youtube)
+- [13. 🌐 High Added-Value Knowledge Base & Curated Internet References](#13--high-added-value-knowledge-base--curated-internet-references)
+  - [13.1. Microsoft Learn Official Architecture & Sizing Standards](#131-microsoft-learn-official-architecture--sizing-standards)
+  - [13.2. FinOps Foundation Framework & Working Group Publications](#132-finops-foundation-framework--working-group-publications)
+  - [13.3. Mathematical & Pricing Break-Even Analyses](#133-mathematical--pricing-break-even-analyses)
+  - [13.4. Real-World Community Investigations, Reddit & Microsoft Q&A Deep Dives](#134-real-world-community-investigations-reddit--microsoft-qa-deep-dives)
+  - [13.5. Complete 61-Item Concordance Table](#135-complete-61-item-concordance-table)
+  - [13.6. Modern 2026 FinOps Tooling & Automation Repositories](#136-modern-2026-finops-tooling--automation-repositories-github)
+- [14. 📜 License](#14--license)
 
 ---
 
@@ -407,11 +408,99 @@ az deployment group create \
 
 ---
 
-## 12. 🌐 High Added-Value Knowledge Base & Curated Internet References
+## 12. 🎥 Video Guides, Technical Shorts & Multimedia Sessions (YouTube)
+
+The mathematical models, architectural patterns, and automation engines of this framework are accompanied by a dedicated series of technical video guides and shorts synthesized with **Gemini NotebookLM**.
+
+All episodes and technical shorts are hosted on the official YouTube channel [**@nubenetes**](https://youtube.com/@nubenetes).
+
+> [!NOTE]
+> **Multilingual Technical Content 🌐**:
+> The architectural podcast features native **Spanish** narration, while the rapid technical shorts feature native **English** voiceover with automatic subtitles (CC) in over **20 languages** for international engineering teams.
+
+### 📊 Technical Multimedia Catalog (8 Sessions)
+
+| Format | Title / Episode | Focus / Core Engineering Domain | Language | Duration | Direct YouTube Link |
+| :---: | :--- | :--- | :---: | :---: | :--- |
+| 🎙️ **Podcast** | [**Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas**](https://www.youtube.com/watch?v=Kt2MyQlUXew) | **Comprehensive Masterclass**: Full architecture overview, AHUB, SQL Server CCC, ExpressRoute break-even, and AMA DCR | 🇪🇸 Spanish *(CC 20+)* | `21:24` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=Kt2MyQlUXew) |
+| ⚡ **Short** | [**How the Azure FinOps Framework Slashes Cloud Bills**](https://www.youtube.com/shorts/ohhFQPy97U8) | **TCO Reduction ($173k to $39k/mo)**: Decoupling physical resources from licensing, storage, and networking | 🇬🇧 English *(CC 20+)* | `1:16` | [▶️ Watch Short](https://www.youtube.com/shorts/ohhFQPy97U8) |
+| ⚡ **Short** | [**Turning Azure FinOps Theory into Automated Action**](https://www.youtube.com/shorts/09oqxYUeHd8) | **Continuous Automation Pipeline**: IaC modules, ARG KQL audits, Day-2 PowerShell runbooks, and CLI calculators | 🇬🇧 English *(CC 20+)* | `1:19` | [▶️ Watch Short](https://www.youtube.com/shorts/09oqxYUeHd8) |
+| ⚡ **Short** | [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) | **Lifecycle Management**: Guest OS shutdown trap vs. Azure control-plane deallocation to zero compute fees | 🇬🇧 English *(CC 20+)* | `1:13` | [▶️ Watch Short](https://www.youtube.com/shorts/G49JolO2L2I) |
+| ⚡ **Short** | [**How Core Masking Slashes Cloud Database Costs**](https://www.youtube.com/shorts/EZQ6GnAEtpE) | **SQL Server Constrained vCPUs**: Masking 24 cores on E32-8s_v5 to save 75% on licensing while keeping 256 GB RAM | 🇬🇧 English *(CC 20+)* | `1:27` | [▶️ Watch Short](https://www.youtube.com/shorts/EZQ6GnAEtpE) |
+| ⚡ **Short** | [**How Azure Premium SSD v2 Decouples Storage**](https://www.youtube.com/shorts/FseN2K1O9PU) | **Storage Subsystem**: Independent IOPS/throughput sliders, eliminating RAID 0 striping and unneeded gigabytes | 🇬🇧 English *(CC 20+)* | `1:08` | [▶️ Watch Short](https://www.youtube.com/shorts/FseN2K1O9PU) |
+| ⚡ **Short** | [**How Edge Filtering Slashes Azure Log Costs**](https://www.youtube.com/shorts/qzkXGfuQmT4) | **Observability Containment**: Dropping 90%+ routine logs at the edge with AMA XPath and Basic Table Plans | 🇬🇧 English *(CC 20+)* | `1:30` | [▶️ Watch Short](https://www.youtube.com/shorts/qzkXGfuQmT4) |
+| ⚡ **Short** | [**How Cloud Unlimited Plans Trap You**](https://www.youtube.com/shorts/Xd2adpKN6VM) | **ExpressRoute Economics**: 240 TB/mo break-even threshold, asymmetric downgrade trap, and Metered default | 🇬🇧 English *(CC 20+)* | `1:24` | [▶️ Watch Short](https://www.youtube.com/shorts/Xd2adpKN6VM) |
+
+<details>
+<summary>📂 <strong>Detailed Agenda, Transcripts & Engineering Takeaways</strong></summary>
+
+<br/>
+
+#### 1. Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas (21:24)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=Kt2MyQlUXew](https://www.youtube.com/watch?v=Kt2MyQlUXew)
+- ⏱️ **Duration**: 21:24
+- 🏷️ **Domain**: Full Hybrid IaaS Architecture, Governance, Compute, SQL Licensing, Networking, Observability
+- 📝 **Technical Overview**:
+> Deep-dive architectural podcast covering the end-to-end framework. Analyzes how hybrid Windows Server and SQL Server enterprise architectures can reduce operating expenses by over 77% ($1.6M+ annually). Explores the 4 core pillars: Compute rightsizing and deallocation, SQL Server licensing optimization via Constrained vCPUs and AHUB, network transit modeling for ExpressRoute and Azure Firewall, and kernel-level log filtering via Azure Monitor Agent.
+
+#### 2. How the Azure FinOps Framework Slashes Cloud Bills (1:16)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/ohhFQPy97U8](https://www.youtube.com/shorts/ohhFQPy97U8)
+- ⏱️ **Duration**: 1:16
+- 🏷️ **Domain**: Global TCO, Mathematical Decoupling, Enterprise Framework Overview
+- 📝 **Technical Overview**:
+> Analyzes how a real-world enterprise architecture reduced monthly expenditure from $173,000 down to $39,000 without sacrificing capacity or SLAs. Explains the principle of decoupling physical requirements from software billing meters, including SQL licensing core masking, decoupled storage performance, metered hybrid circuits, and automated policy guardrails.
+
+#### 3. Turning Azure FinOps Theory into Automated Action (1:19)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/09oqxYUeHd8](https://www.youtube.com/shorts/09oqxYUeHd8)
+- ⏱️ **Duration**: 1:19
+- 🏷️ **Domain**: Continuous Automation Engine, IaC, Azure Resource Graph, PowerShell Runbooks, CLI Calculators
+- 📝 **Technical Overview**:
+> Demonstrates why passive cost dashboards fail and how to build a continuous, self-cleaning FinOps automation pipeline. Covers Day-1 IaC deployment with Terraform and Bicep, real-time tenant scanning for waste using KQL queries on Azure Resource Graph, automated off-hours deallocation runbooks in PowerShell, and predictive break-even modeling with the Python CLI calculator.
+
+#### 4. The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated (1:13)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/G49JolO2L2I](https://www.youtube.com/shorts/G49JolO2L2I)
+- ⏱️ **Duration**: 1:13
+- 🏷️ **Domain**: Compute Lifecycle, Hypervisor Reservation, Stopped vs. Stopped (Deallocated)
+- 📝 **Technical Overview**:
+> Explains the expensive trap of guest OS shutdown. Shutting down from the Windows Start menu leaves the hypervisor holding CPU and RAM capacity, continuing 100% of compute billing. Only stopping the VM via Azure control plane APIs releases hardware back to the Azure pool, dropping compute fees to $0.00/hour.
+
+#### 5. How Core Masking Slashes Cloud Database Costs (1:27)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/EZQ6GnAEtpE](https://www.youtube.com/shorts/EZQ6GnAEtpE)
+- ⏱️ **Duration**: 1:27
+- 🏷️ **Domain**: Database Licensing, Constrained vCPUs (Standard_E32-8s_v5), Azure Hybrid Benefit
+- 📝 **Technical Overview**:
+> Highlights how enterprise databases are licensed per core rather than by memory. By provisioning constrained vCPUs (such as Standard_E32-8s_v5), 24 physical cores are masked from the OS while maintaining full access to 256 GB RAM and max IOPS. This reduces SQL Server licensing by 75%, saving nearly $100,000 per month on enterprise database nodes.
+
+#### 6. How Azure Premium SSD v2 Decouples Storage (1:08)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/FseN2K1O9PU](https://www.youtube.com/shorts/FseN2K1O9PU)
+- ⏱️ **Duration**: 1:08
+- 🏷️ **Domain**: Storage Economics, Premium SSD v2, Decoupled Capacity/IOPS/Throughput
+- 📝 **Technical Overview**:
+> Explores how Premium SSD v2 eliminates the traditional trap of buying massive, unneeded disk capacity just to unlock performance. Decouples size (GiB), IOPS, and throughput (MB/s). Includes 3,000 IOPS and 125 MB/s baseline free of charge, with dynamic zero-downtime performance scaling for nightly database backup windows.
+
+#### 7. How Edge Filtering Slashes Azure Log Costs (1:30)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/qzkXGfuQmT4](https://www.youtube.com/shorts/qzkXGfuQmT4)
+- ⏱️ **Duration**: 1:30
+- 🏷️ **Domain**: Observability Cost Containment, Azure Monitor Agent, DCR XPath Filtering, Basic Table Plan
+- 📝 **Technical Overview**:
+> Addresses runaway telemetry costs where log ingestion bills exceed VM hosting costs. Shows how the Azure Monitor Agent (AMA) uses kernel-level XPath filtering to drop over 90% of routine HTTP 200/300 logs inside the VM before network transit, routing remaining security events to low-cost Basic Table Plans to cut monitoring costs from $7,600 to $1,500/month.
+
+#### 8. How Cloud Unlimited Plans Trap You (1:24)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/Xd2adpKN6VM](https://www.youtube.com/shorts/Xd2adpKN6VM)
+- ⏱️ **Duration**: 1:24
+- 🏷️ **Domain**: Hybrid Network Economics, ExpressRoute Metered vs. Unlimited, Break-Even Formula
+- 📝 **Technical Overview**:
+> Details the financial math of Azure ExpressRoute telecom pricing. Demonstrates that a 1 Gbps circuit requires sustained transfer of more than 240 TB per month (>73% saturation 24/7) to justify the $6,400/month Unlimited plan. Highlights the asymmetric downgrade restriction, proving why enterprises must always default to Metered circuits.
+
+</details>
+
+---
+
+## 13. 🌐 High Added-Value Knowledge Base & Curated Internet References
 
 This section documents the foundational industry research, architectural standards, pricing disclosures, and real-world engineering benchmarks upon which the technical monograph and this repository are built.
 
-### 12.1. Microsoft Learn Official Architecture & Sizing Standards
+### 13.1. Microsoft Learn Official Architecture & Sizing Standards
 
 - **[Azure Managed Disk Types & Premium SSD v2 Specifications](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types)**:
   *Key FinOps Takeaway*: Documents the architecture of Premium SSD v2, where Capacity, IOPS, and MB/s throughput are decoupled. Explains the included baseline of 3,000 IOPS and 125 MB/s free of charge and the rules for zero-downtime scaling up to 4 times per 24 hours.
@@ -434,7 +523,7 @@ This section documents the foundational industry research, architectural standar
 - **[Azure Monitor Logs Cost Calculations & Table Plans](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)**:
   *Key FinOps Takeaway*: Outlines the pricing differential between standard Analytics tables ($2.30/GB / ~€2.12/GB) and Basic Table Plans (~$0.50/GB / ~€0.46/GB, >78% savings) for high-volume logs.
 
-### 12.2. FinOps Foundation Framework & Working Group Publications
+### 13.2. FinOps Foundation Framework & Working Group Publications
 
 - **[FinOps Foundation: Optimizing Azure Managed Disks for Value](https://www.finops.org/wg/finops-for-azure-managed-disks-optimizing-for-value/)**:
   *Key FinOps Takeaway*: Working group recommendations detailing the financial transition from monolithic P30/P40 disks to granular Premium SSD v2, addressing orphaned disk leakage and storage sizing rights.
@@ -443,7 +532,7 @@ This section documents the foundational industry research, architectural standar
 - **[CloudZero: Azure Cost Optimization Complete Guide](https://www.cloudzero.com/blog/azure-cost-optimization/)**:
   *Key FinOps Takeaway*: Industry analysis of cloud unit economics, breaking down the 4 phases of continuous FinOps maturity and organizational showback/chargeback.
 
-### 12.3. Mathematical & Pricing Break-Even Analyses
+### 13.3. Mathematical & Pricing Break-Even Analyses
 
 - **[EgressCost: Azure Bandwidth & Egress Pricing Explained](https://egresscost.com/azure/)**:
   *Key FinOps Takeaway*: Independent empirical breakdown of Azure zonal data transfer tariffs (Zone 1, Zone 2, Zone 3) and asymmetric internet egress fees.
@@ -458,7 +547,7 @@ This section documents the foundational industry research, architectural standar
 - **[FastTrack for Azure: Private Endpoints vs. Service Endpoints](https://techcommunity.microsoft.com/blog/fasttrackforazureblog/azure-private-endpoint-vs-service-endpoint-a-comprehensive-guide/4363095)**:
   *Key FinOps Takeaway*: Microsoft engineering deep-dive on why Service Endpoints (100% Free) should remain the default standard for internal Azure VNet-to-PaaS traffic, and when Private Endpoints justify their hourly and per-GB costs.
 
-### 12.4. Real-World Community Investigations, Reddit & Microsoft Q&A Deep Dives
+### 13.4. Real-World Community Investigations, Reddit & Microsoft Q&A Deep Dives
 
 - **[Microsoft Q&A: Server Licensed Cores for Core Constrained vCPU VM Sizes](https://learn.microsoft.com/en-us/answers/questions/1336404/server-licensed-cores-for-core-constrained-vcpu-vm)**:
   *Key FinOps Takeaway*: Community verification from Microsoft licensing specialists confirming that software license audits legally count only active cores exposed to the OS.
@@ -475,7 +564,7 @@ This section documents the foundational industry research, architectural standar
 
 ---
 
-### 12.5. Complete 61-Item Concordance Table
+### 13.5. Complete 61-Item Concordance Table
 
 The table below links every bibliographic reference cited in the original monograph [1–61] to its source URL:
 
@@ -543,7 +632,7 @@ The table below links every bibliographic reference cited in the original monogr
 | **[60]**| Cost Optimization in Azure Monitor - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/best-practices-cost](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/best-practices-cost) |
 | **[61]**| Applying Custom Data Collection Rules for AMA to Reduce Log - Microsoft Q&A | [https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r](https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r) |
 
-### 12.6. Modern 2026 FinOps Tooling & Automation Repositories (GitHub)
+### 13.6. Modern 2026 FinOps Tooling & Automation Repositories (GitHub)
 
 The table below catalogs primary open-source and first-party repositories powering modern enterprise Azure FinOps automation:
 
@@ -562,6 +651,6 @@ The table below catalogs primary open-source and first-party repositories poweri
 
 ---
 
-## 13. 📜 License
+## 14. 📜 License
 
 This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.

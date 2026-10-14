@@ -2,6 +2,8 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 01. Governance & Tagging](01-governance-tagging-cost-allocation.md) | [➡️ Next: 03. Advanced Licensing](03-licensing-ahb-constrained-vcpu.md)
 
+> 📽️ **Video Guide**: Watch the technical short [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) (`1:13`) to see why shutting down from inside the guest OS continues 100% compute billing, and how Azure control-plane deallocation releases hardware back to the pool.
+
 ## 1. The Lift-and-Shift Fallacy
 
 The most common antipattern in cloud migrations is 1:1 hardware mapping: translating an on-premises physical server with 16 cores and 64 GB RAM directly into an equivalent Azure VM SKU without empirical analysis. On-premises servers were historically overprovisioned to accommodate 3-year capacity growth. Replicating this headroom in the cloud introduces 50-70% permanent financial waste.

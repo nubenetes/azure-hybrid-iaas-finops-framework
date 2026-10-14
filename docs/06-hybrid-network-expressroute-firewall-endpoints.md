@@ -2,6 +2,8 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 05. Decoupled Storage](05-storage-optimization-premium-ssdv2.md) | [➡️ Next: 07. Observability Containment](07-observability-ama-dcr-log-analytics.md)
 
+> 📽️ **Video Guide**: Watch the technical short [**How Cloud Unlimited Plans Trap You**](https://www.youtube.com/shorts/Xd2adpKN6VM) (`1:24`) detailing the 240 TB/mo break-even threshold on ExpressRoute and the irreversible downgrade lock.
+
 ## 1. Network Asymmetry in Cloud Architecture
 
 Cloud hyperscalers implement an asymmetrical billing policy for network data:

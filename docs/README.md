@@ -13,6 +13,23 @@ flowchart TD
 ```
 
 ---
+---
+
+## 🎥 Multimedia Video Sessions & Technical Shorts
+
+All foundational pillars and mathematical models are accompanied by technical video episodes on YouTube ([**@nubenetes**](https://youtube.com/@nubenetes)):
+
+| Topic | Video / Short | Duration | Direct Link |
+| :--- | :--- | :---: | :--- |
+| **Comprehensive Architecture** | 🎙️ [Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas](https://www.youtube.com/watch?v=Kt2MyQlUXew) | `21:24` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=Kt2MyQlUXew) |
+| **Framework Overview** | ⚡ [How the Azure FinOps Framework Slashes Cloud Bills](https://www.youtube.com/shorts/ohhFQPy97U8) | `1:16` | [▶️ Watch Short](https://www.youtube.com/shorts/ohhFQPy97U8) |
+| **Automation Pipeline** | ⚡ [Turning Azure FinOps Theory into Automated Action](https://www.youtube.com/shorts/09oqxYUeHd8) | `1:19` | [▶️ Watch Short](https://www.youtube.com/shorts/09oqxYUeHd8) |
+| **Compute Lifecycle** | ⚡ [The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated](https://www.youtube.com/shorts/G49JolO2L2I) | `1:13` | [▶️ Watch Short](https://www.youtube.com/shorts/G49JolO2L2I) |
+| **Database Licensing** | ⚡ [How Core Masking Slashes Cloud Database Costs](https://www.youtube.com/shorts/EZQ6GnAEtpE) | `1:27` | [▶️ Watch Short](https://www.youtube.com/shorts/EZQ6GnAEtpE) |
+| **Decoupled Storage** | ⚡ [How Azure Premium SSD v2 Decouples Storage](https://www.youtube.com/shorts/FseN2K1O9PU) | `1:08` | [▶️ Watch Short](https://www.youtube.com/shorts/FseN2K1O9PU) |
+| **Log Containment** | ⚡ [How Edge Filtering Slashes Azure Log Costs](https://www.youtube.com/shorts/qzkXGfuQmT4) | `1:30` | [▶️ Watch Short](https://www.youtube.com/shorts/qzkXGfuQmT4) |
+| **Network Economics** | ⚡ [How Cloud Unlimited Plans Trap You](https://www.youtube.com/shorts/Xd2adpKN6VM) | `1:24` | [▶️ Watch Short](https://www.youtube.com/shorts/Xd2adpKN6VM) |
+
 
 ## 🗺️ Curated Reading Paths
 

@@ -2,6 +2,8 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 06. Hybrid Networking](06-hybrid-network-expressroute-firewall-endpoints.md) | [➡️ Next: 08. Anti-Patterns & Gotchas](08-anti-patterns-and-gotchas.md)
 
+> 📽️ **Video Guide**: Watch the technical short [**How Edge Filtering Slashes Azure Log Costs**](https://www.youtube.com/shorts/qzkXGfuQmT4) (`1:30`) showing how kernel-level XPath filtering in AMA drops 90%+ routine logs before network transit, cutting telemetry bills by over 78%.
+
 ## 1. The "Runaway Telemetry" Syndrome
 
 In enterprise Windows Server environments running Internet Information Services (IIS) and self-managed SQL Server databases, telemetry generation is continuous:

@@ -6,6 +6,11 @@ This document catalogs the most prevalent architectural mistakes, licensing trap
 
 ---
 
+> 📽️ **Related Video Shorts**:
+> - ⚡ [The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated](https://www.youtube.com/shorts/G49JolO2L2I) (`1:13`)
+> - ⚡ [How Cloud Unlimited Plans Trap You](https://www.youtube.com/shorts/Xd2adpKN6VM) (`1:24`)
+> - ⚡ [How Edge Filtering Slashes Azure Log Costs](https://www.youtube.com/shorts/qzkXGfuQmT4) (`1:30`)
+
 ## 1. Compute & Lifecycle Anti-Patterns
 
 ### Anti-Pattern 1: The Guest OS "Shutdown" Ghost Charge

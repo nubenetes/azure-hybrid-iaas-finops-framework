@@ -2,6 +2,9 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | 🇪🇸 **[Versión Original en Español](informe-exhaustivo-finops-azure-iaas-es.md)** | [➡️ Guide 01: Governance & Tagging](01-governance-tagging-cost-allocation.md)
 
+> 🎙️ **Multimedia Companion on YouTube**:
+> Listen to the comprehensive masterclass [**Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas**](https://www.youtube.com/watch?v=Kt2MyQlUXew) (`21:24`) and explore the technical shorts series on [**@nubenetes**](https://youtube.com/@nubenetes).
+
 ## Introduction and FinOps Paradigm in Structural IaaS Environments
 
 The discipline of FinOps (Cloud Financial Operations) transcends mere tactical cost reduction, establishing itself as an operational and cultural model that aligns engineering decisions with business value and financial efficiency in the cloud [1]. In the Microsoft Azure ecosystem, the application of these principles varies radically depending on the service model. While Platform-as-a-Service (PaaS) architectures delegate a large part of infrastructure efficiency to the cloud provider, Infrastructure-as-a-Service (IaaS) architectures demand direct fiduciary accountability from solutions architects and systems engineers.

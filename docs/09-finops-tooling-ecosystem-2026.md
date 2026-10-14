@@ -2,6 +2,8 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 08. Anti-Patterns & Gotchas](08-anti-patterns-and-gotchas.md) | [➡️ Next: 10. Audit Playbook](10-audit-optimization-playbook-step-by-step.md)
 
+> 📽️ **Video Guide**: Watch the technical short [**Turning Azure FinOps Theory into Automated Action**](https://www.youtube.com/shorts/09oqxYUeHd8) (`1:19`) on building a continuous automation pipeline with Terraform, Bicep, Azure Resource Graph KQL, and PowerShell runbooks.
+
 ## 1. Executive Summary & Evolution of Cloud Cost Tooling
 
 In 2026, FinOps tooling has evolved from retrospective monthly spreadsheet audits into **real-time policy-as-code, shift-left IaC cost estimation, interactive terminal CLIs, and automated lakehouse telemetry**. 

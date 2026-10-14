@@ -2,6 +2,8 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 09. FinOps Tooling (2026)](09-finops-tooling-ecosystem-2026.md) | [➡️ Next: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md)
 
+> 📽️ **Video Guide**: Watch [**Turning Azure FinOps Theory into Automated Action**](https://www.youtube.com/shorts/09oqxYUeHd8) (`1:19`) for an overview of the automated detection and remediation lifecycle.
+
 ## 1. Playbook Overview & Architecture
 
 This playbook defines an actionable, repeatable, and enterprise-grade procedure for conducting automated FinOps audits and executing remediations across hybrid Azure IaaS estates. It bridges automated tooling—such as **Azure Resource Inventory (ARI)**, **Azure Resource Graph (ARG)**, **Infracost**, and **Steampipe**—with Day-2 remediation runbooks and continuous policy guardrails.

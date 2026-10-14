@@ -2,6 +2,8 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 04. Commitment Engineering](04-commitment-portfolio-ri-savings-plans.md) | [➡️ Next: 06. Hybrid Networking](06-hybrid-network-expressroute-firewall-endpoints.md)
 
+> 📽️ **Video Guide**: Watch the technical short [**How Azure Premium SSD v2 Decouples Storage**](https://www.youtube.com/shorts/FseN2K1O9PU) (`1:08`) explaining how independent sliders for Capacity, IOPS, and MB/s eliminate software RAID 0 striping and unneeded gigabytes.
+
 ## 1. Storage as the Primary SQL Server Bottleneck
 
 In transactional database systems (SQL Server on Azure VMs), disk storage performance is critical:

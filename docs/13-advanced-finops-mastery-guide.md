@@ -2,6 +2,8 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 12. Legacy Results](12-legacy-architecture-governance-results.md) | [➡️ Next: Architecture Decision Records](adr/README.md)
 
+> 📽️ **Video Guide**: Watch the technical short [**How the Azure FinOps Framework Slashes Cloud Bills**](https://www.youtube.com/shorts/ohhFQPy97U8) (`1:16`) explaining the multi-tiered decoupling strategy that cuts $173k monthly bills to $39k.
+
 ## 1. Executive Framework: The FinOps Iron Triangle
 
 In enterprise cloud computing, cost optimization is frequently misunderstood as a purely financial or procurement exercise. Traditional IT organizations attempt to reduce cloud spend by issuing top-down mandates to "turn off servers" or imposing arbitrary budget freezes, which inevitably causes friction with product teams, damages developer velocity, and introduces operational instability.
