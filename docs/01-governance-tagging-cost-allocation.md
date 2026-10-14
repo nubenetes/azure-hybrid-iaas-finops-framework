@@ -33,10 +33,10 @@ Relying on manual tag entry during portal deployments or CI/CD runs inevitably l
 
 ```mermaid
 graph TD
-    Deploy[Resource Deployment Request] --> PolicyCheck{Azure Policy Check}
-    PolicyCheck -->|Missing Required Tags| Deny[Deny Deployment (403 Forbidden)]
-    PolicyCheck -->|Tags Present| Allow[Deploy Resource]
-    PolicyCheck -->|Missing Tags on RG Child| Inherit[Modify: Inherit Tags from RG]
+    Deploy["Resource Deployment Request"] --> PolicyCheck{"Azure Policy Check"}
+    PolicyCheck -->|Missing Required Tags| Deny["Deny Deployment (403 Forbidden)"]
+    PolicyCheck -->|Tags Present| Allow["Deploy Resource"]
+    PolicyCheck -->|Missing Tags on RG Child| Inherit["Modify: Inherit Tags from RG"]
 ```
 
 1. **Deny Effect (`enforce-mandatory-tags.json`)**:

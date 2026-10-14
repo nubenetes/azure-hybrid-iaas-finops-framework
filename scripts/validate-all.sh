@@ -47,9 +47,13 @@ done
 echo "✅ All Azure Policy JSON definitions are valid!"
 
 # 5. Check Shell Scripts with bash -n (syntax check)
-echo "[5/5] Syntax checking Shell scripts..."
+echo "[5/6] Syntax checking Shell scripts..."
 bash -n "${REPO_ROOT}/scripts/validate-all.sh"
 echo "✅ All shell scripts syntax verified!"
+
+# 6. Validate Mermaid diagrams syntax across all Markdown files
+echo "[6/6] Validating Mermaid diagram syntax across documentation..."
+python3 "${REPO_ROOT}/scripts/validate-mermaid.py"
 
 echo "=========================================================="
 echo " 🎉 ALL VALIDATIONS PASSED CLEANLY!"

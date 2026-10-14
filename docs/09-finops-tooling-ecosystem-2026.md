@@ -327,12 +327,12 @@ aztree --subscription "<SUBSCRIPTION_GUID>" --type "Microsoft.Network/publicIPAd
 
 ```mermaid
 graph LR
-    Dev[Developer / DevOps] -->|git push branch| PR[Pull Request in GitHub / Azure DevOps]
-    PR --> GHA[Infracost CI Pipeline]
-    GHA --> CloudPricing[Infracost Cloud Pricing API]
-    GHA --> Comment[Automated PR Comment with Monthly Cost Diff ($ & €)]
-    Comment --> Reviewer{FinOps / Tech Lead Review}
-    Reviewer -->|Approved| Merge[Merge & Deploy Terraform]
+    Dev["Developer / DevOps"] -->|git push branch| PR["Pull Request in GitHub / Azure DevOps"]
+    PR --> GHA["Infracost CI Pipeline"]
+    GHA --> CloudPricing["Infracost Cloud Pricing API"]
+    GHA --> Comment["Automated PR Comment with Monthly Cost Diff ($ & €)"]
+    Comment --> Reviewer{"FinOps / Tech Lead Review"}
+    Reviewer -->|Approved| Merge["Merge & Deploy Terraform"]
 ```
 
 #### GitHub Actions Workflow Example (`.github/workflows/infracost.yml`):
