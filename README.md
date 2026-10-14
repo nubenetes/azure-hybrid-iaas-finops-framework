@@ -48,6 +48,7 @@ It implements, validates, and deepens the research from the technical monograph 
   - [12.3. Mathematical & Pricing Break-Even Analyses](#123-mathematical--pricing-break-even-analyses)
   - [12.4. Real-World Community Investigations, Reddit & Microsoft Q&A Deep Dives](#124-real-world-community-investigations-reddit--microsoft-qa-deep-dives)
   - [12.5. Complete 61-Item Concordance Table](#125-complete-61-item-concordance-table)
+  - [12.6. Modern 2026 FinOps Tooling & Automation Repositories](#126-modern-2026-finops-tooling--automation-repositories-github)
 - [13. 📜 License](#13--license)
 
 ---
@@ -136,6 +137,10 @@ The table below illustrates a representative enterprise deployment (Hub-Spoke, 1
 | **[06. Hybrid Networking](docs/06-hybrid-network-expressroute-firewall-endpoints.md)** | ExpressRoute & Firewall | Asymmetric egress, ExpressRoute break-even formulas, Firewall crossover, and Service Endpoints. |
 | **[07. Observability Containment](docs/07-observability-ama-dcr-log-analytics.md)** | AMA, DCR & Log Analytics | Edge XPath filtering (drop HTTP 200s, filter Event IDs), and Basic Table Plan (>80% savings). |
 | **[08. Anti-Patterns & Gotchas](docs/08-anti-patterns-and-gotchas.md)** | Troubleshooting & Traps | Catalog of the Top 15 architectural mistakes, licensing traps, and hidden cost leaks in Azure IaaS. |
+| **[09. FinOps Tooling Ecosystem (2026)](docs/09-finops-tooling-ecosystem-2026.md)** | Tooling & Open-Source | Modern 2026 ecosystem: FinOps Toolkit, AOE, AzGovViz, ARI, Infracost, Steampipe, Cloud Custodian. |
+| **[10. Audit & Optimization Playbook](docs/10-audit-optimization-playbook-step-by-step.md)** | Step-by-Step Playbook | Automated discovery, waste remediation, shift-left PR gates, live SQL auditing, and Eisenhower matrix. |
+| **[11. Enterprise Roadmap & Calendar](docs/11-enterprise-roadmap-calendar-milestones.md)** | 24-Week Implementation Plan | 5-phase execution plan, Day-0 to Day-180 milestones, enterprise RACI matrix, and ROI velocity curve. |
+| **[12. Legacy Architecture Governance & Results](docs/12-legacy-architecture-governance-results.md)** | Legacy Systems & Results | Non-invasive optimization for legacy IaaS, waiver workflows, before/after results (-77.4%), and unit economics. |
 
 ---
 
@@ -314,6 +319,7 @@ az deployment group create \
 │       └── ci-lint-validate.yml          # GitHub Actions CI for Terraform, Bicep, Python & Shell
 ├── automation/
 │   ├── powershell/
+│   │   ├── Cleanup-OrphanedDisks.ps1     # Automated unattached disk backup and quarantine deletion
 │   │   ├── Deconstruct-AzureFirewall-NonProd.ps1
 │   │   ├── Optimize-PremiumSSDv2-IOPS.ps1
 │   │   └── Start-Stop-Deallocate-VMs.ps1
@@ -341,6 +347,10 @@ az deployment group create \
 │   ├── 06-hybrid-network-expressroute-firewall-endpoints.md
 │   ├── 07-observability-ama-dcr-log-analytics.md
 │   ├── 08-anti-patterns-and-gotchas.md
+│   ├── 09-finops-tooling-ecosystem-2026.md          # 2026 Microsoft & Open-Source FinOps tools
+│   ├── 10-audit-optimization-playbook-step-by-step.md # Step-by-step audit & remediation playbook
+│   ├── 11-enterprise-roadmap-calendar-milestones.md # 24-week implementation calendar & RACI
+│   ├── 12-legacy-architecture-governance-results.md # Legacy estate governance & quantitative ROI
 │   ├── adr/                              # Architecture Decision Records (ADR-001 to ADR-005)
 │   │   ├── ADR-001-constrained-vcpu-for-sql-workloads.md
 │   │   ├── ADR-002-premium-ssd-v2-decoupled-storage.md
@@ -524,6 +534,20 @@ The table below links every bibliographic reference cited in the original monogr
 | **[59]**| Azure Monitor Agent and Data Collection Rules - Reddit r/AZURE | [https://www.reddit.com/r/AZURE/comments/q1vcpu/azure_monitor_agent_and_data_collection_rules/](https://www.reddit.com/r/AZURE/comments/q1vcpu/azure_monitor_agent_and_data_collection_rules/) |
 | **[60]**| Cost Optimization in Azure Monitor - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/best-practices-cost](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/best-practices-cost) |
 | **[61]**| Applying Custom Data Collection Rules for AMA to Reduce Log - Microsoft Q&A | [https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r](https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r) |
+
+### 12.6. Modern 2026 FinOps Tooling & Automation Repositories (GitHub)
+
+The table below catalogs primary open-source and first-party repositories powering modern enterprise Azure FinOps automation:
+
+| Tool / Platform | Organization & Repository | Core Enterprise Automation Capability |
+| :--- | :--- | :--- |
+| **Microsoft FinOps Toolkit** | [`microsoft/finops-toolkit`](https://github.com/microsoft/finops-toolkit) | FOCUS 1.0 schema lakehouse, Power BI templates, automated export pipelines, and Bicep/Terraform modules. |
+| **Azure Optimization Engine** | [`microsoft/Azure-Optimization-Engine`](https://github.com/microsoft/Azure-Optimization-Engine) | Extensible Azure Log Analytics & Automation engine for custom enterprise rightsizing and idle resource alerting. |
+| **Azure Governance Visualizer** | [`JulianHayward/Azure-Governance-Visualizer`](https://github.com/JulianHayward/Azure-Governance-Visualizer) | Granular visibility into Management Group hierarchies, RBAC, Policy compliance, orphaned assets, and security posture. |
+| **Azure Resource Inventory** | [`Claudio-Merola/AzureResourceInventory`](https://github.com/Claudio-Merola/AzureResourceInventory) | Automated PowerShell inventory report generator with cost overlays, security baselines, and Visio network diagrams. |
+| **Infracost** | [`infracost/infracost`](https://github.com/infracost/infracost) | Shift-left pre-merge cloud cost estimation, budget diffs, and automated PR guardrails for Terraform and Bicep. |
+| **Steampipe Azure Plugin** | [`turbot/steampipe-plugin-azure`](https://github.com/turbot/steampipe-plugin-azure) | Real-time zero-ETL SQL querying across live Azure cloud infrastructure, resource graph, and billing endpoints. |
+| **Cloud Custodian** | [`cloud-custodian/cloud-custodian`](https://github.com/cloud-custodian/cloud-custodian) | Declarative YAML policy engine for real-time automated waste reclamation, auto-tagging, and resource deallocation. |
 
 ---
 
