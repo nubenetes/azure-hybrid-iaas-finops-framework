@@ -1,5 +1,7 @@
 # 02. Compute Layer Optimization: Rightsizing, Lifecycle Management & Spot Elasticity
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 01. Governance & Tagging](01-governance-tagging-cost-allocation.md) | [➡️ Next: 03. Advanced Licensing](03-licensing-ahb-constrained-vcpu.md)
+
 ## 1. The Lift-and-Shift Fallacy
 
 The most common antipattern in cloud migrations is 1:1 hardware mapping: translating an on-premises physical server with 16 cores and 64 GB RAM directly into an equivalent Azure VM SKU without empirical analysis. On-premises servers were historically overprovisioned to accommodate 3-year capacity growth. Replicating this headroom in the cloud introduces 50-70% permanent financial waste.
@@ -93,3 +95,12 @@ To achieve high availability with Spot economics on IIS web farms:
 - Configure a **Virtual Machine Scale Set (VMSS)** with a **Priority Mix Policy**.
 - Set a **Base Layer** of on-demand or Reserved Instances (e.g., 2 dedicated instances) to guarantee 100% baseline uptime for HTTP traffic.
 - Configure all scaling surge instances (from 3 up to 20 instances) to be filled by **Spot instances**, absorbing temporary spikes at a 90% discount.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 01. Governance & Tagging](01-governance-tagging-cost-allocation.md) | [📚 Documentation Index](README.md) | [➡️ Next: 03. Advanced Licensing](03-licensing-ahb-constrained-vcpu.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](03-licensing-ahb-constrained-vcpu.md) |
+

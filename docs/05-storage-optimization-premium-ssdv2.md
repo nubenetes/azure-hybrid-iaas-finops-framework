@@ -1,5 +1,7 @@
 # 05. Transactional Storage Optimization: Premium SSD v2 & Decoupled I/O
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 04. Commitment Engineering](04-commitment-portfolio-ri-savings-plans.md) | [➡️ Next: 06. Hybrid Networking](06-hybrid-network-expressroute-firewall-endpoints.md)
+
 ## 1. Storage as the Primary SQL Server Bottleneck
 
 In transactional database systems (SQL Server on Azure VMs), disk storage performance is critical:
@@ -80,3 +82,12 @@ Scenario: High-throughput database requiring 1 TiB data volume and 12,000 IOPS, 
 2. **Zonal Deployment**: Disks must be deployed in the same Availability Zone (e.g., Zone 1, 2, or 3) as the VM.
 3. **VM Generation Compatibility**: Requires Gen2 VMs and modern VM families (e.g. v5 series).
 4. **When to Consider Ultra Disks**: Only if sustained transactional latency must be in the microsecond range with requirements exceeding 80,000 IOPS on a single disk.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 04. Commitment Engineering](04-commitment-portfolio-ri-savings-plans.md) | [📚 Documentation Index](README.md) | [➡️ Next: 06. Hybrid Networking](06-hybrid-network-expressroute-firewall-endpoints.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](06-hybrid-network-expressroute-firewall-endpoints.md) |
+

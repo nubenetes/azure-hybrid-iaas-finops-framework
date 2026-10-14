@@ -1,5 +1,7 @@
 # ADR-003: Default Selection of Metered Data Plan for Hybrid Azure ExpressRoute Circuits
 
+> 🧭 **Navigation**: [🏠 Framework Root](../../README.md) | [📚 Documentation Index](../README.md) | [📜 All ADRs](README.md) | [⬅️ Previous: ADR-002: Premium SSD v2](ADR-002-premium-ssd-v2-decoupled-storage.md) | [➡️ Next: ADR-004: Service Endpoints](ADR-004-service-endpoints-vs-private-endpoints.md)
+
 ## Status
 Accepted
 
@@ -24,3 +26,12 @@ Furthermore, Azure allows non-disruptive, in-place upgrades from Metered to Unli
 
 ### Negative / Trade-offs
 - Monthly networking expenditure contains a variable component proportional to monthly egress volume.
+
+---
+
+## 🧭 Navigation
+
+| [⬅️ Previous: ADR-002: Premium SSD v2](ADR-002-premium-ssd-v2-decoupled-storage.md) | [📜 All ADRs (Index)](README.md) | [➡️ Next: ADR-004: Service Endpoints](ADR-004-service-endpoints-vs-private-endpoints.md) |
+| :--- | :---: | ---: |
+| [📚 Documentation Index](../README.md) | [🏠 Framework Root](../../README.md) | [Next Architectural Decision ➡️](ADR-004-service-endpoints-vs-private-endpoints.md) |
+

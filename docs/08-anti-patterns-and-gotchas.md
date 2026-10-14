@@ -1,5 +1,7 @@
 # 08. Enterprise FinOps: Top 15 Architectural Anti-Patterns & Hidden Gotchas
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 07. Observability Containment](07-observability-ama-dcr-log-analytics.md) | [➡️ Next: 09. FinOps Tooling (2026)](09-finops-tooling-ecosystem-2026.md)
+
 This document catalogs the most prevalent architectural mistakes, licensing traps, and hidden cost leaks encountered in enterprise Azure IaaS hybrid environments, along with concrete remediations.
 
 ---
@@ -96,3 +98,12 @@ This document catalogs the most prevalent architectural mistakes, licensing trap
 - **Symptom**: Storing millions of routine firewall allow/deny logs in the standard Analytics table for 1 year.
 - **Trap**: Extreme storage and ingestion costs for data that is almost never interactively queried.
 - **Remediation**: Move high-volume firewall diagnostic logs to the **Basic Table Plan ($0.50/GB)** and archive old logs at $0.02/GB/month.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 07. Observability Containment](07-observability-ama-dcr-log-analytics.md) | [📚 Documentation Index](README.md) | [➡️ Next: 09. FinOps Tooling (2026)](09-finops-tooling-ecosystem-2026.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](09-finops-tooling-ecosystem-2026.md) |
+

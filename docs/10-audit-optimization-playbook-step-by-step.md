@@ -1,5 +1,7 @@
 # 10. End-to-End Azure FinOps Audit & Optimization Playbook (Step-by-Step)
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 09. FinOps Tooling (2026)](09-finops-tooling-ecosystem-2026.md) | [➡️ Next: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md)
+
 ## 1. Playbook Overview & Architecture
 
 This playbook defines an actionable, repeatable, and enterprise-grade procedure for conducting automated FinOps audits and executing remediations across hybrid Azure IaaS estates. It bridges automated tooling—such as **Azure Resource Inventory (ARI)**, **Azure Resource Graph (ARG)**, **Infracost**, and **Steampipe**—with Day-2 remediation runbooks and continuous policy guardrails.
@@ -370,3 +372,12 @@ Weekly:    Shift-left Infracost PR telemetry reviewed by DevOps leads
 Monthly:   ARG KQL fleet queries & CCoE FinOps review of unallocated spend
 Quarterly: Reservation & Savings Plan true-up (expiry check & utilization >95%)
 ```
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 09. FinOps Tooling (2026)](09-finops-tooling-ecosystem-2026.md) | [📚 Documentation Index](README.md) | [➡️ Next: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](11-enterprise-roadmap-calendar-milestones.md) |
+

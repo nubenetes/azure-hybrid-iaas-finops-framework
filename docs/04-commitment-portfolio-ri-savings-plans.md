@@ -1,5 +1,7 @@
 # 04. Long-Term Financial Engineering: The Hybrid Commitment Portfolio
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 03. Advanced Licensing](03-licensing-ahb-constrained-vcpu.md) | [➡️ Next: 05. Decoupled Storage](05-storage-optimization-premium-ssdv2.md)
+
 ## 1. Beyond Architectural Rightsizing
 
 While architectural rightsizing directly alters infrastructure configurations, commitment discounts are purely **financial instruments**. They secure steep price reductions in exchange for contractual usage commitments over 1-year or 3-year horizons.
@@ -57,3 +59,12 @@ To prevent underutilization and commitment waste:
 1. **Scoping**: Purchase commitments at the **Shared (Billing Account / Management Group)** scope whenever possible, rather than locking them to a single subscription or resource group.
 2. **KQL Audit Queries**: Schedule weekly Azure Resource Graph queries to calculate the **Commitment Coverage Ratio** and **Commitment Utilization Ratio**.
 3. **Threshold Guardrails**: Target an overall coverage ratio between **80% and 85%**. Exceeding 90% coverage risks incurring waste if workloads are migrated or optimized.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 03. Advanced Licensing](03-licensing-ahb-constrained-vcpu.md) | [📚 Documentation Index](README.md) | [➡️ Next: 05. Decoupled Storage](05-storage-optimization-premium-ssdv2.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](05-storage-optimization-premium-ssdv2.md) |
+

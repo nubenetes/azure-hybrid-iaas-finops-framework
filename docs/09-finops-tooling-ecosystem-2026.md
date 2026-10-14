@@ -1,5 +1,7 @@
 # 09. Modern FinOps Tooling Ecosystem (2026): Microsoft & Open-Source Solutions
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 08. Anti-Patterns & Gotchas](08-anti-patterns-and-gotchas.md) | [➡️ Next: 10. Audit Playbook](10-audit-optimization-playbook-step-by-step.md)
+
 ## 1. Executive Summary & Evolution of Cloud Cost Tooling
 
 In 2026, FinOps tooling has evolved from retrospective monthly spreadsheet audits into **real-time policy-as-code, shift-left IaC cost estimation, interactive terminal CLIs, and automated lakehouse telemetry**. 
@@ -448,3 +450,12 @@ policies:
 | **Steampipe** | Live SQL Auditing | [`turbot/steampipe`](https://github.com/turbot/steampipe) | ✅ Yes (AGPL) | Ad-hoc SQL querying across live Azure cloud infrastructure | Local CLI / Docker |
 | **Cloud Custodian** | Autonomous Governance | [`cloud-custodian/cloud-custodian`](https://github.com/cloud-custodian/cloud-custodian) | ✅ Yes (Apache) | Declarative YAML automated remediation and off-hours scheduling | Container / Scheduled Task |
 | **Sedai / ProsperOps** | Commercial Autonomous AI| Proprietary | ❌ Commercial | Continuous automated rightsizing and commitment portfolio management | Managed SaaS |
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 08. Anti-Patterns & Gotchas](08-anti-patterns-and-gotchas.md) | [📚 Documentation Index](README.md) | [➡️ Next: 10. Audit Playbook](10-audit-optimization-playbook-step-by-step.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](10-audit-optimization-playbook-step-by-step.md) |
+

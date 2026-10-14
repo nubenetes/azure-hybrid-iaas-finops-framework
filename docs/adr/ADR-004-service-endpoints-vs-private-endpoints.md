@@ -1,5 +1,7 @@
 # ADR-004: Standardizing on Service Endpoints vs. Private Endpoints for PaaS Traffic
 
+> 🧭 **Navigation**: [🏠 Framework Root](../../README.md) | [📚 Documentation Index](../README.md) | [📜 All ADRs](README.md) | [⬅️ Previous: ADR-003: ExpressRoute Plan](ADR-003-expressroute-metered-vs-unlimited.md) | [➡️ Next: ADR-005: AMA DCR Filtering](ADR-005-ama-dcr-edge-log-filtering.md)
+
 ## Status
 Accepted
 
@@ -25,3 +27,12 @@ Deploying Private Endpoints indiscriminately across dozens of spoke subnets intr
 
 ### Negative / Trade-offs
 - On-premises hosts cannot access the PaaS service via Service Endpoints (must use internet with IP firewall rules or deploy dedicated Private Endpoints for hybrid access).
+
+---
+
+## 🧭 Navigation
+
+| [⬅️ Previous: ADR-003: ExpressRoute Plan](ADR-003-expressroute-metered-vs-unlimited.md) | [📜 All ADRs (Index)](README.md) | [➡️ Next: ADR-005: AMA DCR Filtering](ADR-005-ama-dcr-edge-log-filtering.md) |
+| :--- | :---: | ---: |
+| [📚 Documentation Index](../README.md) | [🏠 Framework Root](../../README.md) | [Next Architectural Decision ➡️](ADR-005-ama-dcr-edge-log-filtering.md) |
+

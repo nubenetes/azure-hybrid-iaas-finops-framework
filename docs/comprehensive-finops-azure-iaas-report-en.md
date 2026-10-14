@@ -1,5 +1,7 @@
 # Comprehensive Report on FinOps Practices and Cost Optimization for Hybrid Azure IaaS Architectures
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | 🇪🇸 **[Versión Original en Español](informe-exhaustivo-finops-azure-iaas-es.md)** | [➡️ Guide 01: Governance & Tagging](01-governance-tagging-cost-allocation.md)
+
 ## Introduction and FinOps Paradigm in Structural IaaS Environments
 
 The discipline of FinOps (Cloud Financial Operations) transcends mere tactical cost reduction, establishing itself as an operational and cultural model that aligns engineering decisions with business value and financial efficiency in the cloud [1]. In the Microsoft Azure ecosystem, the application of these principles varies radically depending on the service model. While Platform-as-a-Service (PaaS) architectures delegate a large part of infrastructure efficiency to the cloud provider, Infrastructure-as-a-Service (IaaS) architectures demand direct fiduciary accountability from solutions architects and systems engineers.
@@ -284,3 +286,12 @@ Executing these tenets builds hybrid IaaS architectures where Total Cost of Owne
 59. Azure Monitor agent and Data Collection Rules - Reddit, https://www.reddit.com/r/AZURE/comments/q1vcpu/azure_monitor_agent_and_data_collection_rules/
 60. Cost optimization in Azure Monitor - Microsoft Learn, https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/best-practices-cost
 61. Applying Custom Data Collection Rules for AMA to Reduce Log, https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r
+
+---
+
+## 🧭 Navigation & Implementation Guides
+
+| [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [➡️ Guide 01: Governance](01-governance-tagging-cost-allocation.md) |
+| :--- | :---: | ---: |
+| 🇬🇧 **Full English Translation** | [Math Models Index](math-models/README.md) | 🇪🇸 [Original Spanish Monograph](informe-exhaustivo-finops-azure-iaas-es.md) |
+

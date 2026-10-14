@@ -1,5 +1,7 @@
 # 01. Visibility, Tagging Taxonomy, and Coercive Governance
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [➡️ Next: 02. Compute Rightsizing](02-compute-rightsizing-lifecycle-spot.md)
+
 ## 1. The FinOps Axiom: You Cannot Optimize What You Cannot See
 
 In structural Infrastructure-as-a-Service (IaaS) deployments, cloud sprawl is accelerated by self-service provisioning. Without proactive controls, resources accumulate across subscriptions with ambiguous ownership and zero financial attribution.
@@ -77,3 +79,12 @@ To detect anomalies, forecast trends, and cross-reference cloud spending with ER
 - Configure daily automated cost and usage exports (**FOCUS format or standard Amortized Cost**) in **Apache Parquet format**.
 - Target exports to an **Azure Data Lake Storage Gen2 (ADLS Gen2)** container.
 - Connect ADLS Gen2 directly to **Microsoft Fabric / Azure Synapse** or **Power BI** for automated executive showback and chargeback reporting.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [➡️ Next: 02. Compute Rightsizing](02-compute-rightsizing-lifecycle-spot.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](02-compute-rightsizing-lifecycle-spot.md) |
+

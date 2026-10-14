@@ -1,5 +1,7 @@
 # 03. Advanced Microsoft Licensing: AHB, Dual-Use Rights & Constrained vCPUs
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 02. Compute Rightsizing](02-compute-rightsizing-lifecycle-spot.md) | [➡️ Next: 04. Commitment Engineering](04-commitment-portfolio-ri-savings-plans.md)
+
 ## 1. The Cost Weight of Software Intellectual Property
 
 In Microsoft enterprise IaaS architectures, the cost of software licenses—specifically **Windows Server** and **SQL Server**—frequently dwarfs the cost of the underlying virtualized hardware:
@@ -88,3 +90,12 @@ graph TD
 
 ### 5.3 NUMA Affinity & Latency Elimination
 High-core VMs often span multiple virtual NUMA nodes. When SQL Server threads cross NUMA boundaries, memory access latency spikes and scheduler thread contention occurs. Restricting active cores to 8 or 16 within a single NUMA boundary eliminates thread contention warnings and optimizes cache locality.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 02. Compute Rightsizing](02-compute-rightsizing-lifecycle-spot.md) | [📚 Documentation Index](README.md) | [➡️ Next: 04. Commitment Engineering](04-commitment-portfolio-ri-savings-plans.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](04-commitment-portfolio-ri-savings-plans.md) |
+

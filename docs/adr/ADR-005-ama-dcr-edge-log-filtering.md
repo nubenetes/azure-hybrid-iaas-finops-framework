@@ -1,5 +1,7 @@
 # ADR-005: Adoption of Azure Monitor Agent (AMA) with DCR Edge XPath Filtering
 
+> 🧭 **Navigation**: [🏠 Framework Root](../../README.md) | [📚 Documentation Index](../README.md) | [📜 All ADRs](README.md) | [⬅️ Previous: ADR-004: Service Endpoints](ADR-004-service-endpoints-vs-private-endpoints.md) | [➡️ Next: Mathematical Models](../math-models/README.md)
+
 ## Status
 Accepted
 
@@ -24,3 +26,12 @@ Under legacy monitoring architectures (Log Analytics Agent / MMA), all logs were
 
 ### Negative / Trade-offs
 - Granular analytics for routine 200 OK traffic must rely on client-side analytics (e.g. Application Insights / Google Analytics) rather than raw server W3C logs.
+
+---
+
+## 🧭 Navigation
+
+| [⬅️ Previous: ADR-004: Service Endpoints](ADR-004-service-endpoints-vs-private-endpoints.md) | [📜 All ADRs (Index)](README.md) | [➡️ Next: Mathematical Models](../math-models/README.md) |
+| :--- | :---: | ---: |
+| [📚 Documentation Index](../README.md) | [🏠 Framework Root](../../README.md) | [Next Architectural Decision ➡️](../math-models/README.md) |
+

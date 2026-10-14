@@ -1,5 +1,7 @@
 # 07. Observability Cost Containment: AMA, DCR Edge Filtering & Table Plans
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 06. Hybrid Networking](06-hybrid-network-expressroute-firewall-endpoints.md) | [➡️ Next: 08. Anti-Patterns & Gotchas](08-anti-patterns-and-gotchas.md)
+
 ## 1. The "Runaway Telemetry" Syndrome
 
 In enterprise Windows Server environments running Internet Information Services (IIS) and self-managed SQL Server databases, telemetry generation is continuous:
@@ -88,3 +90,12 @@ Log Analytics provides multiple **Table Plans** with differing cost profiles:
 
 > [!TIP]
 > Route high-volume Azure Firewall denial logs, NSG flow logs, and IIS raw diagnostic streams to the **Basic Table Plan** to slash workspace ingestion bills while maintaining compliance archives.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 06. Hybrid Networking](06-hybrid-network-expressroute-firewall-endpoints.md) | [📚 Documentation Index](README.md) | [➡️ Next: 08. Anti-Patterns & Gotchas](08-anti-patterns-and-gotchas.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](08-anti-patterns-and-gotchas.md) |
+

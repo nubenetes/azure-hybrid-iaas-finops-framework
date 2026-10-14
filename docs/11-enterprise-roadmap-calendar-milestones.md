@@ -1,5 +1,7 @@
 # 11. Enterprise FinOps Roadmap, Calendar & Milestones (24-Week Plan)
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 10. Audit Playbook](10-audit-optimization-playbook-step-by-step.md) | [➡️ Next: 12. Legacy Results](12-legacy-architecture-governance-results.md)
+
 ## 1. Executive Summary & Phased Transformation Methodology
 
 Sustainable cloud financial engineering in enterprise hybrid environments is not a one-time auditing exercise; it is an organizational and operational capability. This roadmap outlines a battle-tested **24-Week (6-Month) Phased Transformation Program** designed to systematically reduce Azure IaaS waste, modernize legacy workloads, implement automated governance, and establish a culture of cost accountability across distributed engineering teams.
@@ -170,3 +172,12 @@ Week 24 (Optimized): $39,077 / month   (€35,951 / month)   [-77.4%]
 ```
 
 The transformation achieves full financial breakeven within the first 6 weeks, yielding an ongoing annual recurring savings of **$1,607,856 / year** (**€1,479,228 / year**).
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 10. Audit Playbook](10-audit-optimization-playbook-step-by-step.md) | [📚 Documentation Index](README.md) | [➡️ Next: 12. Legacy Results](12-legacy-architecture-governance-results.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](12-legacy-architecture-governance-results.md) |
+

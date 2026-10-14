@@ -1,5 +1,7 @@
 # ADR-002: Migration from Premium SSD v1 to Premium SSD v2 for Transactional Storage
 
+> 🧭 **Navigation**: [🏠 Framework Root](../../README.md) | [📚 Documentation Index](../README.md) | [📜 All ADRs](README.md) | [⬅️ Previous: ADR-001: Constrained vCPU](ADR-001-constrained-vcpu-for-sql-workloads.md) | [➡️ Next: ADR-003: ExpressRoute Plan](ADR-003-expressroute-metered-vs-unlimited.md)
+
 ## Status
 Accepted
 
@@ -23,3 +25,12 @@ We mandate the adoption of **Premium SSD v2** for all production SQL Server tran
 - **No Host Caching**: Premium SSD v2 does not support read-only host caching. (Mitigated by sub-millisecond baseline latency and Ebdsv5 NVMe interfaces).
 - **Zonal Availability Requirement**: Premium SSD v2 disks must be created in the same Azure Availability Zone as the VM.
 - **VM Series Compatibility**: Requires modern VM series (e.g., v5 series such as Ebdsv5/Ebsv5 or Dsv5).
+
+---
+
+## 🧭 Navigation
+
+| [⬅️ Previous: ADR-001: Constrained vCPU](ADR-001-constrained-vcpu-for-sql-workloads.md) | [📜 All ADRs (Index)](README.md) | [➡️ Next: ADR-003: ExpressRoute Plan](ADR-003-expressroute-metered-vs-unlimited.md) |
+| :--- | :---: | ---: |
+| [📚 Documentation Index](../README.md) | [🏠 Framework Root](../../README.md) | [Next Architectural Decision ➡️](ADR-003-expressroute-metered-vs-unlimited.md) |
+

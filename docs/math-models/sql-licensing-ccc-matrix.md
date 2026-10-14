@@ -1,5 +1,7 @@
 # Mathematical Model: SQL Server Licensing, Constrained vCPUs (CCC), and AHB Synergy
 
+> 🧭 **Navigation**: [🏠 Framework Root](../../README.md) | [📚 Documentation Index](../README.md) | [📐 Math Models Index](README.md) | [⬅️ Previous: Firewall SKU Crossover](firewall-sku-crossover.md) | [➡️ Next: Documentation Portal](../README.md)
+
 ## 1. Executive Summary
 
 SQL Server licensing in an enterprise IaaS model represents the single highest software cost multiplier. In Azure, SQL Server is billed **per active virtual core (vCPU)** exposed to the Guest Operating System:
@@ -53,3 +55,12 @@ Assumptions: Europe Zone 1 / Spain Central / West Europe / East US, 730 hours/mo
 | **Constrained E32-8s_v5 + Windows AHB**| $1,868.80 (€1,719.30) | 8 | $3,202.64 (€2,946.43) | $0.00 (€0.00) | **$5,071.44 (€4,665.72)** | **$60,857.28 (€55,988.70)** | **67.0% ($123,442 / €113,566 / yr)** |
 | **E32-8s_v5 + Win AHB + SQL AHB** | $1,868.80 (€1,719.30) | 8 | $0.00 (€0.00) | $0.00 (€0.00) | **$1,868.80 (€1,719.30)** | **$22,425.60 (€20,631.55)** | **87.8% ($161,873 / €148,923 / yr)** |
 | **E32-8s_v5 + Win AHB + SQL AHB + 3-Yr RI** | $654.08 (€601.75) | 8 | $0.00 (€0.00) | $0.00 (€0.00) | **$654.08 (€601.75)** | **$7,848.96 (€7,221.04)** | **95.7% ($176,450 / €162,334 / yr)** |
+
+---
+
+## 🧭 Navigation
+
+| [⬅️ Previous: Firewall SKU Crossover](firewall-sku-crossover.md) | [📐 Math Models Index](README.md) | [➡️ Next: Documentation Portal](../README.md) |
+| :--- | :---: | ---: |
+| [📚 Documentation Index](../README.md) | [🏠 Framework Root](../../README.md) | [Next Mathematical Model ➡️](../README.md) |
+

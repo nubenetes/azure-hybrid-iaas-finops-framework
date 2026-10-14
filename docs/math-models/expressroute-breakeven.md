@@ -1,5 +1,7 @@
 # Mathematical Model: Azure ExpressRoute Metered vs. Unlimited Break-Even Analysis
 
+> 🧭 **Navigation**: [🏠 Framework Root](../../README.md) | [📚 Documentation Index](../README.md) | [📐 Math Models Index](README.md) | [➡️ Next: Firewall SKU Crossover](firewall-sku-crossover.md)
+
 ## 1. Executive Summary
 
 Azure ExpressRoute connectivity provides two primary billing models for private peering circuits:
@@ -84,3 +86,12 @@ graph LR
 > However, Azure **strictly forbids** in-place downgrades from **Unlimited to Metered**. To downgrade, you must delete the existing ExpressRoute circuit, break on-premises BGP peering, re-provision a new circuit with the telco carrier (a 3 to 8 week telecom lead time), and re-establish configuration.
 > 
 > **FinOps Cardinal Rule**: **ALWAYS deploy new ExpressRoute circuits on the Metered Data Plan.** Monitor egress bandwidth via Azure Monitor network metrics. Only switch to Unlimited if empirical egress exceeds the break-even threshold for 3 consecutive months.
+
+---
+
+## 🧭 Navigation
+
+| [📐 Math Models Index](README.md) | [📐 Math Models Index](README.md) | [➡️ Next: Firewall SKU Crossover](firewall-sku-crossover.md) |
+| :--- | :---: | ---: |
+| [📚 Documentation Index](../README.md) | [🏠 Framework Root](../../README.md) | [Next Mathematical Model ➡️](firewall-sku-crossover.md) |
+

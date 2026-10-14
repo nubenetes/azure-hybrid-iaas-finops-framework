@@ -1,5 +1,7 @@
 # Informe Exhaustivo de Prácticas FinOps y Optimización de Costes para Arquitecturas Azure IaaS Híbridas
 
+> 🧭 **Navegación**: [🏠 Inicio del Repositorio](../README.md) | [📚 Portal de Documentación](README.md) | 🇬🇧 **[Read English Translation](comprehensive-finops-azure-iaas-report-en.md)** | [➡️ Guía 01: Gobernanza y Etiquetas](01-governance-tagging-cost-allocation.md)
+
 ## Introducción y Paradigma FinOps en Entornos IaaS Estructurales
 
 La disciplina de FinOps (Cloud Financial Operations) trasciende la mera reducción de costes táctica, configurándose como un modelo operativo y cultural que alinea las decisiones de ingeniería con el valor comercial y la eficiencia financiera en la nube [1]. En el ecosistema de Microsoft Azure, la aplicación de estos principios varía radicalmente en función del modelo de servicio. Mientras que las arquitecturas basadas en Plataforma como Servicio (PaaS) delegan gran parte de la eficiencia de la infraestructura al proveedor de la nube, las arquitecturas fundamentadas en Infraestructura como Servicio (IaaS) exigen una responsabilidad fiduciaria directa por parte de los arquitectos de soluciones e ingenieros de sistemas.
@@ -286,3 +288,12 @@ En suma, la aplicación de estos preceptos forja arquitecturas IaaS híbridas cu
 59. Azure Monitor agent and Data Collection Rules - Reddit, https://www.reddit.com/r/AZURE/comments/q1vcpu/azure_monitor_agent_and_data_collection_rules/
 60. Cost optimization in Azure Monitor - Microsoft Learn, https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/best-practices-cost
 61. Applying Custom Data Collection Rules for AMA to Reduce Log, https://learn.microsoft.com/en-us/answers/questions/2086637/applying-custom-data-collection-rules-for-ama-to-r
+
+---
+
+## 🧭 Navegación y Guías de Implementación
+
+| [🏠 Inicio del Repositorio](../README.md) | [📚 Portal de Documentación](README.md) | [➡️ Guía 01: Gobernanza](01-governance-tagging-cost-allocation.md) |
+| :--- | :---: | ---: |
+| 🇪🇸 **Texto Íntegro Original** | [Directorio de Modelos](math-models/README.md) | 🇬🇧 [English Translation](comprehensive-finops-azure-iaas-report-en.md) |
+

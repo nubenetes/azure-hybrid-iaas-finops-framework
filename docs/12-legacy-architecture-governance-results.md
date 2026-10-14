@@ -1,5 +1,7 @@
 # 12. Legacy Architecture FinOps Governance & Quantitative Results
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md) | [➡️ Next: Architecture Decision Records](adr/README.md)
+
 ## 1. The Legacy IaaS Dilemma: Constraints and Realities
 
 In enterprise environments, the vast majority of cloud spend is tied to **legacy ("heredada") architectures** rather than greenfield cloud-native microservices. These systems present unique architectural constraints that prevent standard PaaS refactoring:
@@ -166,3 +168,12 @@ pie title Modern Cloud Spend Distribution (Post-Optimization)
    $$\text{Waste Ratio} = \frac{\text{Spend on Unattached Disks, Idle IPs, Unused Gateways}}{\text{Total Cloud Spend}} = 0.0\%$$
 4. **Unit Economics: Cost per Transaction**:
    Decreased from **$0.0142 (€0.0131)** to **$0.0032 (€0.0029)** per processed transaction, demonstrating that profitability scales with user adoption.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md) | [📚 Documentation Index](README.md) | [➡️ Next: Architecture Decision Records](adr/README.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](adr/README.md) |
+

@@ -125,8 +125,11 @@ The table below illustrates a representative enterprise deployment (Hub-Spoke, 1
 
 ## 3. 📚 Documentation Suite & Technical Guides (`docs/`)
 
+> 🧭 **Interactive Documentation Portal**: For role-based reading paths (Executive, FinOps Analyst, DevOps/SRE, DBA) and complete navigation, explore **[`docs/README.md`](docs/README.md)**.
+
 | Document | Language / Topic | Summary |
 | :--- | :--- | :--- |
+| **[📚 Documentation Portal](docs/README.md)** | Index & Navigation | Complete portal with role-based reading paths, directory index, and quick resource maps. |
 | **[Original Monograph (ES)](docs/informe-exhaustivo-finops-azure-iaas-es.md)** | Español (Texto Íntegro) | Transcripción completa y fidedigna del informe técnico original en Markdown. |
 | **[Original Monograph (EN)](docs/comprehensive-finops-azure-iaas-report-en.md)** | English (Full Unabridged) | Complete, unabridged English translation of the technical monograph. |
 | **[01. Governance & Tagging](docs/01-governance-tagging-cost-allocation.md)** | Governance & Chargeback | Coercive tagging taxonomy, Azure Policy rules, Hub cost allocation, and daily Parquet exports. |
@@ -137,10 +140,12 @@ The table below illustrates a representative enterprise deployment (Hub-Spoke, 1
 | **[06. Hybrid Networking](docs/06-hybrid-network-expressroute-firewall-endpoints.md)** | ExpressRoute & Firewall | Asymmetric egress, ExpressRoute break-even formulas, Firewall crossover, and Service Endpoints. |
 | **[07. Observability Containment](docs/07-observability-ama-dcr-log-analytics.md)** | AMA, DCR & Log Analytics | Edge XPath filtering (drop HTTP 200s, filter Event IDs), and Basic Table Plan (>80% savings). |
 | **[08. Anti-Patterns & Gotchas](docs/08-anti-patterns-and-gotchas.md)** | Troubleshooting & Traps | Catalog of the Top 15 architectural mistakes, licensing traps, and hidden cost leaks in Azure IaaS. |
-| **[09. FinOps Tooling Ecosystem (2026)](docs/09-finops-tooling-ecosystem-2026.md)** | Tooling & Open-Source | Modern 2026 ecosystem: FinOps Toolkit, AOE, AzGovViz, ARI, Infracost, Steampipe, Cloud Custodian. |
+| **[09. FinOps Tooling Ecosystem (2026)](docs/09-finops-tooling-ecosystem-2026.md)** | Tooling & Open-Source | Modern 2026 ecosystem: FinOps Toolkit, AZQR, Azure Cost CLI, aztree, AOE, AzGovViz, Infracost, Steampipe. |
 | **[10. Audit & Optimization Playbook](docs/10-audit-optimization-playbook-step-by-step.md)** | Step-by-Step Playbook | Automated discovery, waste remediation, shift-left PR gates, live SQL auditing, and Eisenhower matrix. |
 | **[11. Enterprise Roadmap & Calendar](docs/11-enterprise-roadmap-calendar-milestones.md)** | 24-Week Implementation Plan | 5-phase execution plan, Day-0 to Day-180 milestones, enterprise RACI matrix, and ROI velocity curve. |
 | **[12. Legacy Architecture Governance & Results](docs/12-legacy-architecture-governance-results.md)** | Legacy Systems & Results | Non-invasive optimization for legacy IaaS, waiver workflows, before/after results (-77.4%), and unit economics. |
+| **[📜 Architecture Decision Records](docs/adr/README.md)** | ADRs (ADR-001 to ADR-005) | Formal records for SQL CCC, Premium SSD v2, ExpressRoute, Service Endpoints, and AMA DCR. |
+| **[📐 Mathematical Models](docs/math-models/README.md)** | Economic Proofs (USD $ & EUR €)| Break-even formulas for ExpressRoute, Azure Firewall crossover, and SQL Server CCC core licensing. |
 
 ---
 

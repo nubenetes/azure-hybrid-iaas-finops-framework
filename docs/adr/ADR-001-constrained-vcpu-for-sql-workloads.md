@@ -1,5 +1,7 @@
 # ADR-001: Adoption of Constrained vCPU VM Sizes for SQL Server IaaS Workloads
 
+> 🧭 **Navigation**: [🏠 Framework Root](../../README.md) | [📚 Documentation Index](../README.md) | [📜 All ADRs](README.md) | [➡️ Next: ADR-002: Premium SSD v2](ADR-002-premium-ssd-v2-decoupled-storage.md)
+
 ## Status
 Accepted
 
@@ -25,3 +27,12 @@ The Azure hypervisor will restrict the exposed virtual processors to the guest o
 ### Negative / Trade-offs
 - Base compute hardware and un-discounted Windows OS charges remain billed at the underlying 32-core SKU tier.
 - If transactional concurrency unexpectedly spikes beyond 8 cores, resizing requires VM restart or moving to a higher constrained tier (`E32-16s_v5`).
+
+---
+
+## 🧭 Navigation
+
+| [📜 All ADRs (Index)](README.md) | [📜 All ADRs (Index)](README.md) | [➡️ Next: ADR-002: Premium SSD v2](ADR-002-premium-ssd-v2-decoupled-storage.md) |
+| :--- | :---: | ---: |
+| [📚 Documentation Index](../README.md) | [🏠 Framework Root](../../README.md) | [Next Architectural Decision ➡️](ADR-002-premium-ssd-v2-decoupled-storage.md) |
+

@@ -1,5 +1,7 @@
 # Mathematical Model: Azure Firewall SKU Crossover & Break-Even Analysis
 
+> 🧭 **Navigation**: [🏠 Framework Root](../../README.md) | [📚 Documentation Index](../README.md) | [📐 Math Models Index](README.md) | [⬅️ Previous: ExpressRoute Break-Even](expressroute-breakeven.md) | [➡️ Next: SQL Licensing CCC Matrix](sql-licensing-ccc-matrix.md)
+
 ## 1. Executive Summary
 
 Azure Firewall is a cloud-native, fully stateful Network-as-a-Service (PaaS) deployed within the central Hub VNet of a hub-spoke topology. Azure Firewall utilizes a **two-dimensional pricing model**:
@@ -54,3 +56,12 @@ $$V_{\text{crossover}} = \frac{624.15}{0.049} \approx 12,737.76 \text{ GB} \appr
 | **20,000 GB (20 TB)** | $1,588.35 (**€1,461.28**)| $1,232.50 (**€1,133.90**)| $1,597.50 (**€1,469.70**) | **Standard** (Saves $355.85 / €327.38) |
 | **50,000 GB (50 TB)** | $3,538.35 (**€3,255.28**)| $1,712.50 (**€1,575.50**)| $2,077.50 (**€1,911.30**) | **Standard** (Saves $1,825.85 / €1,679.78) |
 | **100,000 GB (100 TB)**| $6,788.35 (**€6,245.28**)| $2,512.50 (**€2,311.50**)| $2,877.50 (**€2,647.30**) | **Standard** (Saves $4,275.85 / €3,933.78) |
+
+---
+
+## 🧭 Navigation
+
+| [⬅️ Previous: ExpressRoute Break-Even](expressroute-breakeven.md) | [📐 Math Models Index](README.md) | [➡️ Next: SQL Licensing CCC Matrix](sql-licensing-ccc-matrix.md) |
+| :--- | :---: | ---: |
+| [📚 Documentation Index](../README.md) | [🏠 Framework Root](../../README.md) | [Next Mathematical Model ➡️](sql-licensing-ccc-matrix.md) |
+

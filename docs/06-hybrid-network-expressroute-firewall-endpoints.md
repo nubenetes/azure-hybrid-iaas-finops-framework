@@ -1,5 +1,7 @@
 # 06. Hybrid Network Economics: ExpressRoute, Azure Firewall & PaaS Endpoints
 
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 05. Decoupled Storage](05-storage-optimization-premium-ssdv2.md) | [➡️ Next: 07. Observability Containment](07-observability-ama-dcr-log-analytics.md)
+
 ## 1. Network Asymmetry in Cloud Architecture
 
 Cloud hyperscalers implement an asymmetrical billing policy for network data:
@@ -82,3 +84,12 @@ When VMs in spoke subnets communicate with Azure PaaS services (Azure Storage fo
 
 > [!TIP]
 > **FinOps Rule of Thumb**: Default to **Virtual Network Service Endpoints** for all internal Azure VM-to-PaaS communication. Only deploy Private Endpoints when an on-premises host must reach the Azure PaaS resource via ExpressRoute or when strict regulatory mandates explicitly forbid public IP exposure.
+
+---
+
+## 🧭 Navigation & Reading Path
+
+| [⬅️ Previous: 05. Decoupled Storage](05-storage-optimization-premium-ssdv2.md) | [📚 Documentation Index](README.md) | [➡️ Next: 07. Observability Containment](07-observability-ama-dcr-log-analytics.md) |
+| :--- | :---: | ---: |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](07-observability-ama-dcr-log-analytics.md) |
+
