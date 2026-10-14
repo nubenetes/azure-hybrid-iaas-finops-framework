@@ -59,7 +59,7 @@ Transcriptions of the foundational 19-page empirical research paper *"Informe Ex
 
 ---
 
-### 2. 🧱 Thematic Architectural Guides (Sequential 01 – 12)
+### 2. 🧱 Thematic Architectural Guides (Sequential 01 – 13)
 
 | # | Guide Title | Primary Topic & Key Takeaway | Target Role |
 | :-: | :--- | :--- | :--- |
@@ -75,6 +75,7 @@ Transcriptions of the foundational 19-page empirical research paper *"Informe Ex
 | **10** | **[Step-by-Step Audit & Remediation Playbook](10-audit-optimization-playbook-step-by-step.md)** | Discovery with ARI/ARG, waste cleanup, shift-left PR gates, and Eisenhower matrix. | Platform Eng |
 | **11** | **[Enterprise Roadmap, Calendar & RACI](11-enterprise-roadmap-calendar-milestones.md)** | 24-week phased implementation plan, Day-0 to Day-180 milestones, and RACI matrix. | PMO / Director |
 | **12** | **[Legacy Architecture Governance & Results](12-legacy-architecture-governance-results.md)** | Non-invasive optimization, Policy waivers, 77.4% before/after results table, KPIs. | CIO / Architect|
+| **13** | **[Advanced FinOps Mastery Guide](13-advanced-finops-mastery-guide.md)** | The FinOps Iron Triangle, priority tiers, dependency graphs, 6 deadly sins, and 2026 solutions. | All Roles |
 
 ---
 

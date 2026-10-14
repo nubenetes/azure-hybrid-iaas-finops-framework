@@ -19,7 +19,8 @@ GUIDES = [
     ("09-finops-tooling-ecosystem-2026.md", "09. FinOps Tooling (2026)", ("08-anti-patterns-and-gotchas.md", "08. Anti-Patterns & Gotchas"), ("10-audit-optimization-playbook-step-by-step.md", "10. Audit Playbook")),
     ("10-audit-optimization-playbook-step-by-step.md", "10. Audit Playbook", ("09-finops-tooling-ecosystem-2026.md", "09. FinOps Tooling (2026)"), ("11-enterprise-roadmap-calendar-milestones.md", "11. Enterprise Roadmap")),
     ("11-enterprise-roadmap-calendar-milestones.md", "11. Enterprise Roadmap", ("10-audit-optimization-playbook-step-by-step.md", "10. Audit Playbook"), ("12-legacy-architecture-governance-results.md", "12. Legacy Results")),
-    ("12-legacy-architecture-governance-results.md", "12. Legacy Results", ("11-enterprise-roadmap-calendar-milestones.md", "11. Enterprise Roadmap"), ("adr/README.md", "Architecture Decision Records")),
+    ("12-legacy-architecture-governance-results.md", "12. Legacy Results", ("11-enterprise-roadmap-calendar-milestones.md", "11. Enterprise Roadmap"), ("13-advanced-finops-mastery-guide.md", "13. Advanced FinOps Blueprint")),
+    ("13-advanced-finops-mastery-guide.md", "13. Advanced FinOps Blueprint", ("12-legacy-architecture-governance-results.md", "12. Legacy Results"), ("adr/README.md", "Architecture Decision Records")),
 ]
 
 ADRS = [

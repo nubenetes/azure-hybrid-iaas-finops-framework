@@ -144,6 +144,7 @@ The table below illustrates a representative enterprise deployment (Hub-Spoke, 1
 | **[10. Audit & Optimization Playbook](docs/10-audit-optimization-playbook-step-by-step.md)** | Step-by-Step Playbook | Automated discovery, waste remediation, shift-left PR gates, live SQL auditing, and Eisenhower matrix. |
 | **[11. Enterprise Roadmap & Calendar](docs/11-enterprise-roadmap-calendar-milestones.md)** | 24-Week Implementation Plan | 5-phase execution plan, Day-0 to Day-180 milestones, enterprise RACI matrix, and ROI velocity curve. |
 | **[12. Legacy Architecture Governance & Results](docs/12-legacy-architecture-governance-results.md)** | Legacy Systems & Results | Non-invasive optimization for legacy IaaS, waiver workflows, before/after results (-77.4%), and unit economics. |
+| **[13. Advanced FinOps Mastery Guide](docs/13-advanced-finops-mastery-guide.md)** | Strategic Cost Blueprint | The FinOps Iron Triangle, priority tiers, dependency graphs, 6 deadly sins, and 2026 solutions. |
 | **[📜 Architecture Decision Records](docs/adr/README.md)** | ADRs (ADR-001 to ADR-005) | Formal records for SQL CCC, Premium SSD v2, ExpressRoute, Service Endpoints, and AMA DCR. |
 | **[📐 Mathematical Models](docs/math-models/README.md)** | Economic Proofs (USD $ & EUR €)| Break-even formulas for ExpressRoute, Azure Firewall crossover, and SQL Server CCC core licensing. |
 
@@ -342,6 +343,7 @@ az deployment group create \
 │       ├── spokeDb.bicep
 │       └── spokeWeb.bicep
 ├── docs/
+│   ├── README.md                         # Master Documentation Portal & Role-Based Reading Paths
 │   ├── informe-exhaustivo-finops-azure-iaas-es.md   # Texto íntegro original del informe (Español)
 │   ├── comprehensive-finops-azure-iaas-report-en.md # Full unabridged technical report (English)
 │   ├── 01-governance-tagging-cost-allocation.md
@@ -356,6 +358,7 @@ az deployment group create \
 │   ├── 10-audit-optimization-playbook-step-by-step.md # Step-by-step audit & remediation playbook
 │   ├── 11-enterprise-roadmap-calendar-milestones.md # 24-week implementation calendar & RACI
 │   ├── 12-legacy-architecture-governance-results.md # Legacy estate governance & quantitative ROI
+│   ├── 13-advanced-finops-mastery-guide.md          # Definitive FinOps blueprint, traps & solutions
 │   ├── adr/                              # Architecture Decision Records (ADR-001 to ADR-005)
 │   │   ├── ADR-001-constrained-vcpu-for-sql-workloads.md
 │   │   ├── ADR-002-premium-ssd-v2-decoupled-storage.md

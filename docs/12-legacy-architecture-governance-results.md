@@ -1,6 +1,6 @@
 # 12. Legacy Architecture FinOps Governance & Quantitative Results
 
-> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md) | [➡️ Next: Architecture Decision Records](adr/README.md)
+> 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md) | [➡️ Next: 13. Advanced FinOps Blueprint](13-advanced-finops-mastery-guide.md)
 
 ## 1. The Legacy IaaS Dilemma: Constraints and Realities
 
@@ -173,7 +173,7 @@ pie title Modern Cloud Spend Distribution (Post-Optimization)
 
 ## 🧭 Navigation & Reading Path
 
-| [⬅️ Previous: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md) | [📚 Documentation Index](README.md) | [➡️ Next: Architecture Decision Records](adr/README.md) |
+| [⬅️ Previous: 11. Enterprise Roadmap](11-enterprise-roadmap-calendar-milestones.md) | [📚 Documentation Index](README.md) | [➡️ Next: 13. Advanced FinOps Blueprint](13-advanced-finops-mastery-guide.md) |
 | :--- | :---: | ---: |
-| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](adr/README.md) |
+| [🏠 Return to Framework Root](../README.md) | **[Interactive Docs Directory](README.md)** | [Next Thematic Module ➡️](13-advanced-finops-mastery-guide.md) |
 
