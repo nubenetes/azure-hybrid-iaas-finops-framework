@@ -23,7 +23,7 @@ It implements, validates, and deepens the research from the technical monograph 
 ## 📑 Table of Contents
 
 - [1. 🏛️ Global Hybrid Architecture](#1-️-global-hybrid-architecture)
-- [2. 💡 Financial Impact: Baseline vs. FinOps Optimized](#2--financial-impact-baseline-vs-finops-optimized)
+- [2. 💡 Financial Impact: Baseline vs. FinOps Optimized (USD $ & EUR €)](#2--financial-impact-baseline-vs-finops-optimized-usd---eur-)
 - [3. 📚 Documentation Suite & Technical Guides (docs/)](#3--documentation-suite--technical-guides-docs)
 - [4. 🧱 Core Architectural Pillars](#4--core-architectural-pillars)
   - [4.1. Visibility, Tagging & Coercive Governance](#41-visibility-tagging--coercive-governance)
@@ -36,7 +36,7 @@ It implements, validates, and deepens the research from the technical monograph 
 - [5. 📐 Mathematical Break-Even Models](#5--mathematical-break-even-models)
 - [6. 📜 Architecture Decision Records (ADRs)](#6--architecture-decision-records-adrs)
 - [7. 🔍 Azure Resource Graph (KQL) Audit Suite](#7--azure-resource-graph-kql-audit-suite)
-- [8. 🧮 FinOps Interactive Calculator CLI](#8--finops-interactive-calculator-cli)
+- [8. 🧮 FinOps Interactive Calculator CLI (Dual-Currency & Regions)](#8--finops-interactive-calculator-cli-dual-currency--regions)
 - [9. ⚙️ Day-2 Automation Runbooks](#9-️-day-2-automation-runbooks)
 - [10. 🚀 Infrastructure as Code Quick Start](#10--infrastructure-as-code-quick-start)
   - [10.1. Terraform / OpenTofu (AzureRM v4)](#101-terraform--opentofu-azurerm-v4)
@@ -63,7 +63,7 @@ flowchart TD
     end
 
     subgraph Hub["🛡️ Central Hub VNet (Shared Security & Core)"]
-        ERGW["ExpressRoute Gateway<br/>(Metered Plan: $436/mo + $0.025/GB)"]
+        ERGW["ExpressRoute Gateway<br/>(Metered Plan: $436/mo / €401/mo)"]
         FW["Azure Firewall (Standard or Basic)<br/>(Crossover Point: 12.74 TB/mo)"]
         ADReplicas["AD DS Domain Controllers<br/>(3-Year Reserved Instances - 72% off)"]
         CostAlloc["Cost Allocation Engine<br/>(Proportional Chargeback to Spokes)"]
@@ -81,7 +81,7 @@ flowchart TD
 
     subgraph Observability["📊 FinOps Observability & Governance"]
         AMA["Azure Monitor Agent (AMA)<br/>DCR XPath Filtering (Drop HTTP 200/300)"]
-        BasicTable["Log Analytics Workspace<br/>Basic Table Plan ($0.50/GB vs $2.30/GB)<br/>(>80% Log Ingestion Reduction)"]
+        BasicTable["Log Analytics Workspace<br/>Basic Table Plan (€0.46/GB vs €2.12/GB)<br/>(>80% Log Ingestion Reduction)"]
         PolicyEnforce["Azure Policy Engine<br/>Deny Untagged | Enforce AHB | Restrict Dev SKUs"]
     end
 
@@ -101,22 +101,24 @@ flowchart TD
 
 ---
 
-## 2. 💡 Financial Impact: Baseline vs. FinOps Optimized
+## 2. 💡 Financial Impact: Baseline vs. FinOps Optimized (USD $ & EUR €)
 
-The table below illustrates a representative enterprise deployment (Hub-Spoke, 10 SQL Server database nodes, 30 IIS web server instances, ExpressRoute 1 Gbps, and centralized telemetry):
+The table below illustrates a representative enterprise deployment (Hub-Spoke, 10 SQL Server database nodes, 30 IIS web server instances, ExpressRoute 1 Gbps, and centralized telemetry) modeled for European and US Zone 1 regions (**Spain Central / Madrid** and **West Europe / Netherlands** alongside **East US**):
+
+> 💶 **Dual Currency Modeling**: All financial estimates are presented in both **USD ($)** and **EUR (€)** using the reference conversion rate ($1.00 \text{ USD} \approx €0.92 \text{ EUR} / €1.00 \text{ EUR} \approx $1.087 \text{ USD}$).
 
 | Architecture Layer | Unoptimized Lift-and-Shift | FinOps Framework Optimized | Monthly Savings | Annual Savings |
 | :--- | :--- | :--- | :--- | :--- |
-| **SQL Server Licensing** | Unconstrained `E32s_v5` (32 cores) PAYG = **$128,105/mo** | Constrained `E32-8s_v5` (8 cores) + AHB = **$0/mo (SA) or $32,026/mo** | **-$96,079 / mo** | **$1,152,948 / yr** |
-| **Windows Server OS** | Default PAYG licensing (~36% surcharge) = **$14,280/mo** | Azure Hybrid Benefit (AHB) enabled across all VMs = **$0/mo** | **-$14,280 / mo** | **$171,360 / yr** |
-| **Database Storage** | Striped P40 disks on Premium v1 (40 TB) = **$5,530/mo** | Decoupled Premium SSD v2 (5 TB + 13.5k IOPS) = **$1,365/mo** | **-$4,165 / mo** | **$49,980 / yr** |
-| **ExpressRoute Circuit** | 1 Gbps Unlimited Plan ($6,450 port flat) = **$6,450/mo** | 1 Gbps Metered Plan ($436 port + 8 TB egress) = **$636/mo** | **-$5,814 / mo** | **$69,768 / yr** |
-| **Web Tier Compute** | Static 24/7 D-series PAYG VMs = **$9,850/mo** | VMSS Priority Mix (2 On-Demand Base + Spot Burst) = **$3,450/mo** | **-$6,400 / mo** | **$76,800 / yr** |
-| **Telemetry & Logs** | Full unfiltered IIS W3C & Security logs = **$7,600/mo** | AMA + DCR XPath Edge filter + Basic Table Plan = **$1,520/mo** | **-$6,080 / mo** | **$72,960 / yr** |
-| **PaaS Endpoint Traffic** | Private Endpoints on all internal subnets = **$1,250/mo** | VNet Service Endpoints (100% Free) = **$0/mo** | **-$1,250 / mo** | **$15,000 / yr** |
-| **TOTAL TCO** | **$173,065 / month** | **$39,077 / month** | **-$133,988 / mo** | **$1,607,856 / yr** |
+| **SQL Server Licensing** | Unconstrained `E32s_v5` (32 cores) PAYG = **$128,105 / €117,857 / mo** | Constrained `E32-8s_v5` (8 cores) + AHB = **$0 (SA) or $32,026 / €29,464 / mo** | **-$96,079 / -€88,393 / mo** | **$1,152,948 / €1,060,712 / yr** |
+| **Windows Server OS** | Default PAYG licensing (~36% surcharge) = **$14,280 / €13,138 / mo** | Azure Hybrid Benefit (AHB) enabled across all VMs = **$0 / €0 / mo** | **-$14,280 / -€13,138 / mo** | **$171,360 / €157,651 / yr** |
+| **Database Storage** | Striped P40 disks on Premium v1 (40 TB) = **$5,530 / €5,088 / mo** | Decoupled Premium SSD v2 (5 TB + 13.5k IOPS) = **$1,365 / €1,256 / mo** | **-$4,165 / -€3,832 / mo** | **$49,980 / €45,982 / yr** |
+| **ExpressRoute Circuit** | 1 Gbps Unlimited Plan ($6,450 port flat) = **$6,450 / €5,934 / mo** | 1 Gbps Metered Plan ($436 port + 8 TB egress) = **$636 / €585 / mo** | **-$5,814 / -€5,349 / mo** | **$69,768 / €64,187 / yr** |
+| **Web Tier Compute** | Static 24/7 D-series PAYG VMs = **$9,850 / €9,062 / mo** | VMSS Priority Mix (2 On-Demand Base + Spot Burst) = **$3,450 / €3,174 / mo** | **-$6,400 / -€5,888 / mo** | **$76,800 / €70,656 / yr** |
+| **Telemetry & Logs** | Full unfiltered IIS W3C & Security logs = **$7,600 / €6,992 / mo** | AMA + DCR XPath Edge filter + Basic Table Plan = **$1,520 / €1,398 / mo** | **-$6,080 / -€5,594 / mo** | **$72,960 / €67,123 / yr** |
+| **PaaS Endpoint Traffic** | Private Endpoints on all internal subnets = **$1,250 / €1,150 / mo** | VNet Service Endpoints (100% Free) = **$0 / €0 / mo** | **-$1,250 / -€1,150 / mo** | **$15,000 / €13,800 / yr** |
+| **TOTAL TCO** | **$173,065 / €159,220 / month** | **$39,077 / €35,951 / month** | **-$133,988 / -€123,269 / mo** | **$1,607,856 / €1,479,228 / yr** |
 
-> 💰 **Bottom Line Impact**: Implementing this framework generates a **77.4% sustained reduction in monthly cloud expenditure**, eliminating over **$1.6 Million USD annually** in infrastructure waste.
+> 💰 **Bottom Line Impact**: Implementing this framework generates a **77.4% sustained reduction in monthly cloud expenditure**, eliminating over **$1.6 Million USD (~€1.48 Million EUR) annually** in infrastructure waste.
 
 ---
 
@@ -170,7 +172,7 @@ The table below illustrates a representative enterprise deployment (Hub-Spoke, 1
 - 📖 *Full Technical Guide*: [`docs/05-storage-optimization-premium-ssdv2.md`](docs/05-storage-optimization-premium-ssdv2.md)
 
 ### 4.6. Hybrid Network Economics: ExpressRoute, Firewall & Endpoints
-- **ExpressRoute Break-Even**: Proves mathematically that the Unlimited plan requires sustained >73% line saturation 24/7. Hybrid enterprises transferring <240 TB/mo save $5,800/mo by deploying Metered.
+- **ExpressRoute Break-Even**: Proves mathematically that the Unlimited plan requires sustained >73% line saturation 24/7. Hybrid enterprises transferring <240 TB/mo save $5,800/mo (~€5,336/mo) by deploying Metered.
 - **The Asymmetric Transition Trap**: Upgrading Metered to Unlimited is zero-downtime; downgrading Unlimited to Metered is blocked by Microsoft and requires circuit destruction. Always start Metered.
 - **Azure Firewall Crossover**: Evaluates the 12.74 TB/month crossover between Basic ($0.065/GB processing) and Standard ($0.016/GB processing).
 - **Service Endpoints vs. Private Endpoints**: Defaults to 100% free Service Endpoints for internal VNet-to-PaaS traffic, reserving Private Endpoints strictly for on-premises hybrid access.
@@ -178,18 +180,18 @@ The table below illustrates a representative enterprise deployment (Hub-Spoke, 1
 
 ### 4.7. Observability Cost Containment: AMA, DCR & Basic Table Plans
 - **Edge XPath Filtering**: Azure Monitor Agent evaluates XPath filters inside the Windows kernel, discarding HTTP 200-399 and non-critical Event IDs before data crosses the network.
-- **Log Analytics Basic Table Plan**: Reduces ingestion cost from ~$2.30/GB down to ~$0.50/GB (>78% savings) for high-volume network and firewall diagnostic logs.
+- **Log Analytics Basic Table Plan**: Reduces ingestion cost from ~$2.30/GB (~€2.12/GB) down to ~$0.50/GB (~€0.46/GB) (>78% savings) for high-volume network and firewall diagnostic logs.
 - 📖 *Full Technical Guide*: [`docs/07-observability-ama-dcr-log-analytics.md`](docs/07-observability-ama-dcr-log-analytics.md)
 
 ---
 
 ## 5. 📐 Mathematical Break-Even Models
 
-| Model | Core Formula | Key Finding / Threshold | Documentation |
+| Model | Core Formula | Key Finding / Threshold (Dual Currency) | Documentation |
 | :--- | :--- | :--- | :--- |
-| **ExpressRoute Break-Even** | $E_{\text{break-even}} = \frac{P_{\text{unlimited}} - P_{\text{metered}}}{C_{\text{egress}}}$ | 1 Gbps circuit break-even = **240.6 TB/month (73.2% 24/7 saturation)** | [`docs/math-models/expressroute-breakeven.md`](docs/math-models/expressroute-breakeven.md) |
-| **Firewall SKU Crossover** | $V_{\text{crossover}} = \frac{\Delta \text{Fixed}}{\Delta \text{Processing Rate}}$ | Basic vs. Standard crossover = **12.74 TB/month** (250 Mbps throttle on Basic) | [`docs/math-models/firewall-sku-crossover.md`](docs/math-models/firewall-sku-crossover.md) |
-| **SQL Server Constrained Cores**| $R_{\text{savings}} = \left(1 - \frac{N_{\text{active}}}{N_{\text{phys}}}\right) \times 100\%$ | `E32-8s_v5` yields **75% software licensing reduction** with full 256 GiB RAM | [`docs/math-models/sql-licensing-ccc-matrix.md`](docs/math-models/sql-licensing-ccc-matrix.md) |
+| **ExpressRoute Break-Even** | $E_{\text{break-even}} = \frac{P_{\text{unlimited}} - P_{\text{metered}}}{C_{\text{egress}}}$ | 1 Gbps circuit break-even = **240.6 TB/month (73.2% 24/7 saturation)**. Unlimited ($6,450 / €5,934) vs Metered ($436 / €401). | [`docs/math-models/expressroute-breakeven.md`](docs/math-models/expressroute-breakeven.md) |
+| **Firewall SKU Crossover** | $V_{\text{crossover}} = \frac{\Delta \text{Fixed}}{\Delta \text{Processing Rate}}$ | Basic vs. Standard crossover = **12.74 TB/month** ($0.065 / €0.060 per GB vs $0.016 / €0.0147 per GB). | [`docs/math-models/firewall-sku-crossover.md`](docs/math-models/firewall-sku-crossover.md) |
+| **SQL Server Constrained Cores**| $R_{\text{savings}} = \left(1 - \frac{N_{\text{active}}}{N_{\text{phys}}}\right) \times 100\%$ | `E32-8s_v5` yields **75% software licensing reduction** with full 256 GiB RAM. Saves $9,607 / €8,839 monthly. | [`docs/math-models/sql-licensing-ccc-matrix.md`](docs/math-models/sql-licensing-ccc-matrix.md) |
 
 ---
 
@@ -220,33 +222,40 @@ A complete suite of KQL queries designed to run in Azure Resource Graph Explorer
 
 ---
 
-## 8. 🧮 FinOps Interactive Calculator CLI
+## 8. 🧮 FinOps Interactive Calculator CLI (Dual-Currency & Regions)
 
-A standalone Python command-line utility providing instant mathematical evaluations and TCO modeling:
+A standalone Python command-line utility providing instant mathematical evaluations and TCO modeling supporting **Spain Central (Madrid)**, **West Europe (Netherlands)**, and **East US** in both **USD ($)** and **EUR (€)**:
 
 ```bash
-# Compare ExpressRoute Metered vs. Unlimited for a 1 Gbps circuit with 5,000 GB egress:
-python3 automation/python/finops_calculator.py expressroute --bandwidth 1000 --monthly-egress-gb 5000
+# Compare ExpressRoute Metered vs. Unlimited in Spain Central (Madrid) with dual currency:
+python3 automation/python/finops_calculator.py expressroute --bandwidth 1000 --monthly-egress-gb 5000 --region spaincentral
 
 # Output:
-# =======================================================
-#  AZURE FINOPS ENGINE: EXPRESSROUTE
-# =======================================================
-#  Bandwidth Mbps                : 1000
-#  Monthly Egress Gb             : 5000.0
-#  Cost Metered Usd              : 561.0
-#  Cost Unlimited Usd            : 6450.0
-#  Breakeven Egress Tb           : 234.92
-#  Breakeven Saturation Pct      : 73.23
-#  Recommendation                : Metered
-#  Monthly Savings Usd           : 5889.0
-# =======================================================
+# =========================================================================
+#  AZURE FINOPS ENGINE: EXPRESSROUTE | Spain Central (Madrid)
+#  Currency Rate: 1 USD = 0.92 EUR
+# =========================================================================
+#  Region                          : Spain Central (Madrid)
+#  Bandwidth Mbps                  : 1000
+#  Monthly Egress Gb               : 5000.0
+#  Egress Rate Usd Per Gb          : 0.025
+#  Egress Rate Eur Per Gb          : 0.023
+#  Cost Metered Usd                : $561.00
+#  Cost Metered Eur                : €516.12
+#  Cost Unlimited Usd              : $6,450.00
+#  Cost Unlimited Eur              : €5,934.00
+#  Breakeven Egress Tb             : 234.92
+#  Breakeven Saturation Pct        : 73.23
+#  Recommendation                  : Metered
+#  Monthly Savings Usd             : $5,889.00
+#  Monthly Savings Eur             : €5,417.88
+# =========================================================================
 ```
 
 Other available commands:
-- `python3 automation/python/finops_calculator.py firewall --monthly-gb 20000`
-- `python3 automation/python/finops_calculator.py sql-licensing --physical-cores 32 --active-cores 8 --windows-ahb --ri-years 3`
-- `python3 automation/python/finops_calculator.py storage --capacity-gb 1024 --iops 12000 --throughput 250`
+- `python3 automation/python/finops_calculator.py firewall --monthly-gb 20000 --region spaincentral`
+- `python3 automation/python/finops_calculator.py sql-licensing --physical-cores 32 --active-cores 8 --windows-ahb --ri-years 3 --region spaincentral`
+- `python3 automation/python/finops_calculator.py storage --capacity-gb 1024 --iops 12000 --throughput 250 --region spaincentral`
 
 ---
 
@@ -272,8 +281,8 @@ terraform init
 # Validate configuration
 terraform validate
 
-# Review FinOps optimized execution plan
-terraform plan -var="location=westeurope" -var="environment=prod"
+# Review FinOps optimized execution plan for Spain Central or West Europe
+terraform plan -var="location=spaincentral" -var="environment=prod"
 
 # Deploy reference architecture
 terraform apply -auto-approve
@@ -287,11 +296,11 @@ cd bicep
 # Compile and validate Bicep template
 az bicep build --file main.bicep
 
-# Deploy using Azure CLI
+# Deploy using Azure CLI in Spain Central (Madrid)
 az deployment group create \
   --resource-group rg-finops-core-prod \
   --template-file main.bicep \
-  --parameters @main.bicepparam
+  --parameters location='spaincentral' @main.bicepparam
 ```
 
 ---
@@ -309,7 +318,7 @@ az deployment group create \
 │   │   ├── Optimize-PremiumSSDv2-IOPS.ps1
 │   │   └── Start-Stop-Deallocate-VMs.ps1
 │   └── python/
-│       ├── finops_calculator.py          # Interactive CLI financial calculator
+│       ├── finops_calculator.py          # Interactive CLI financial calculator (USD $ & EUR €)
 │       ├── requirements.txt
 │       └── test_finops_calculator.py     # Unit test suite verifying mathematical models
 ├── bicep/
@@ -338,7 +347,7 @@ az deployment group create \
 │   │   ├── ADR-003-expressroute-metered-vs-unlimited.md
 │   │   ├── ADR-004-service-endpoints-vs-private-endpoints.md
 │   │   └── ADR-005-ama-dcr-edge-log-filtering.md
-│   └── math-models/                      # Mathematical Break-Even Formulations
+│   └── math-models/                      # Mathematical Break-Even Formulations (USD & EUR)
 │       ├── expressroute-breakeven.md
 │       ├── firewall-sku-crossover.md
 │       └── sql-licensing-ccc-matrix.md
@@ -405,7 +414,7 @@ This section documents the foundational industry research, architectural standar
 - **[Data Collection Rules (DCRs) and Azure Monitor Agent (AMA)](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview)**:
   *Key FinOps Takeaway*: Technical documentation of XPath event filtering at the edge inside Windows Server, preventing high-volume telemetry from reaching billable ingestion pipelines.
 - **[Azure Monitor Logs Cost Calculations & Table Plans](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)**:
-  *Key FinOps Takeaway*: Outlines the pricing differential between standard Analytics tables ($2.30/GB) and Basic Table Plans (~$0.50/GB, >78% savings) for high-volume logs.
+  *Key FinOps Takeaway*: Outlines the pricing differential between standard Analytics tables ($2.30/GB / ~€2.12/GB) and Basic Table Plans (~$0.50/GB / ~€0.46/GB, >78% savings) for high-volume logs.
 
 ### 12.2. FinOps Foundation Framework & Working Group Publications
 
@@ -427,7 +436,7 @@ This section documents the foundational industry research, architectural standar
 - **[Critical Cloud: Azure Firewall Basic vs. Standard Cost Comparison](https://criticalcloud.ai/blog/azure/azure-firewall-basic-vs-standard-cost-comparison/)**:
   *Key FinOps Takeaway*: Empirical evaluation of the data processing fee penalty ($0.065/GB on Basic vs. $0.016/GB on Standard), demonstrating the ~12.74 TB/month crossover point.
 - **[Enforza: Azure Firewall Pricing — What It Costs and How to Cut It](https://enforza.io/azure-firewall-cost/)**:
-  *Key FinOps Takeaway*: Tactical guide to deallocating non-production firewalls outside business hours using Azure Automation to eliminate the $912/mo fixed fee.
+  *Key FinOps Takeaway*: Tactical guide to deallocating non-production firewalls outside business hours using Azure Automation to eliminate the $912/mo (~€840/mo) fixed fee.
 - **[FastTrack for Azure: Private Endpoints vs. Service Endpoints](https://techcommunity.microsoft.com/blog/fasttrackforazureblog/azure-private-endpoint-vs-service-endpoint-a-comprehensive-guide/4363095)**:
   *Key FinOps Takeaway*: Microsoft engineering deep-dive on why Service Endpoints (100% Free) should remain the default standard for internal Azure VNet-to-PaaS traffic, and when Private Endpoints justify their hourly and per-GB costs.
 
@@ -462,7 +471,7 @@ The table below links every bibliographic reference cited in the original monogr
 | **[6]** | Azure Cost Optimization Guide: Practical Strategies - Matías | [https://medium.com/@cocamatias/azure-cost-optimization-guide-practical-strategies-that-actually-work-9c542018f157](https://medium.com/@cocamatias/azure-cost-optimization-guide-practical-strategies-that-actually-work-9c542018f157) |
 | **[7]** | Azure Cost Allocation with Tags - Inventive HQ | [https://inventivehq.com/knowledge-base/microsoft-azure/how-to-enable-cost-allocation-for-shared-resources-in-azure](https://inventivehq.com/knowledge-base/microsoft-azure/how-to-enable-cost-allocation-for-shared-resources-in-azure) |
 | **[8]** | Best Practices for Virtual Machine Cost Optimization - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/virtual-machines/cost-optimization-best-practices](https://learn.microsoft.com/en-us/azure/virtual-machines/cost-optimization-best-practices) |
-| **[9]** | Azure Cost Management: Fix Shared Chargeback Disputes - VBeyond | [https://www.vbeyonddigital.com/blog/azure-cost-management-how-to-fix-shared-service-chargeback-disputes/](https://www.vbeyonddigital.com/blog/azure-cost-management-how-to-fix-shared-service-chargeback-disputes/) |
+| **[9]** | Azure Cost Management: Fix Shared Chargeback Disputes - VBeyond | [https://www.vbeyonddigital.com/blog/azure-cost-management-how-to-fix-shared-service-chargeback-disputes/](https://www.vbeyonddigital.com/blog/azure-cost-management-how-to-fix-shared-service-chargeback-disputes/)|
 | **[10]**| Create and Manage Azure Cost Allocation Rules - Microsoft Learn | [https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/allocate-costs](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/allocate-costs) |
 | **[11]**| Cost Allocation Rules - REST API - Microsoft Learn | [https://learn.microsoft.com/en-us/rest/api/cost-management/cost-allocation-rules?view=rest-cost-management-2026-06-01](https://learn.microsoft.com/en-us/rest/api/cost-management/cost-allocation-rules?view=rest-cost-management-2026-06-01) |
 | **[12]**| Introduction to Cost Allocation - Microsoft Cost Management | [https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-allocation-introduction](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-allocation-introduction) |
