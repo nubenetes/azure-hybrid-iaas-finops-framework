@@ -1,0 +1,14 @@
+location          = "westeurope"
+environment       = "prod"
+firewall_sku_tier = "Standard"
+admin_username    = "finopsadmin"
+admin_password    = "ChangeMe-SuperSecure2026!#"
+
+tags = {
+  CostCenter    = "CC-FIN-4010"
+  Department    = "Platform-Engineering"
+  Environment   = "Production"
+  Owner         = "finops-lead@company.com"
+  Workload      = "Hybrid-IaaS-Reference"
+  SharedService = "false"
+}

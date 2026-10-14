@@ -1,0 +1,23 @@
+// FinOps Audit Query: Find Unattached / Orphaned Managed Disks (Generating Storage Costs Indefinitely)
+// Run in Azure Resource Graph Explorer
+Resources
+| where type =~ 'microsoft.compute/disks'
+| where managedBy == "" or isnull(managedBy)
+| extend diskSizeGB = toint(properties.diskSizeGB)
+| extend diskSKU = tostring(sku.name)
+| extend diskTier = tostring(sku.tier)
+| extend timeCreated = tostring(properties.timeCreated)
+| extend costCenter = tostring(tags['CostCenter'])
+| extend environment = tostring(tags['Environment'])
+| project 
+    subscriptionId, 
+    resourceGroup, 
+    name, 
+    diskSKU, 
+    diskTier, 
+    diskSizeGB, 
+    timeCreated, 
+    costCenter, 
+    environment,
+    FinOpsAction = "Review and delete orphaned disk or create snapshot and purge"
+| order by diskSizeGB desc

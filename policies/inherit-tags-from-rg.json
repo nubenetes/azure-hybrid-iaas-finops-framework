@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-09-01/policyDefinition.json#",
+  "properties": {
+    "displayName": "FinOps: Automatically inherit tags from parent Resource Group",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Automatically copies CostCenter and Environment tags from the parent Resource Group if not specified on the child resource.",
+    "metadata": {
+      "category": "Cost Optimization",
+      "version": "1.0.0"
+    },
+    "parameters": {
+      "tagName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name",
+          "description": "Tag to inherit from parent Resource Group"
+        },
+        "defaultValue": "CostCenter"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "[concat('tags[', parameters('tagName'), ']')]",
+            "notEquals": "[resourceGroup().tags[parameters('tagName')]]"
+          },
+          {
+            "value": "[resourceGroup().tags[parameters('tagName')]]",
+            "notEquals": ""
+          }
+        ]
+      },
+      "then": {
+        "effect": "modify",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+          ],
+          "operations": [
+            {
+              "operation": "addOrReplace",
+              "field": "[concat('tags[', parameters('tagName'), ']')]",
+              "value": "[resourceGroup().tags[parameters('tagName')]]"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

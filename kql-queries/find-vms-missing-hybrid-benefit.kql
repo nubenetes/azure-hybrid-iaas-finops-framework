@@ -1,0 +1,19 @@
+// FinOps Audit Query: Find Windows and SQL VMs Missing Azure Hybrid Benefit (AHB)
+// Run in Azure Resource Graph Explorer
+Resources
+| where type =~ 'microsoft.compute/virtualmachines'
+| extend osType = tostring(properties.storageProfile.osDisk.osType)
+| extend licenseType = tostring(properties.licenseType)
+| extend vmSize = tostring(properties.hardwareProfile.vmSize)
+| where osType =~ 'Windows'
+| where licenseType != 'Windows_Server' and licenseType != 'Windows_Client'
+| project 
+    subscriptionId, 
+    resourceGroup, 
+    name, 
+    vmSize, 
+    osType, 
+    licenseType, 
+    currentBilling = "Paying ~36% Windows OS Surcharge",
+    FinOpsAction = "Apply AHB: Update licenseType to Windows_Server to drop to Linux base rate"
+| order by vmSize asc

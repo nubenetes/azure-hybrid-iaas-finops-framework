@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-09-01/policyDefinition.json#",
+  "properties": {
+    "displayName": "FinOps: Enforce or Audit Azure Hybrid Benefit on Windows VMs",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Audits or modifies Windows Server VMs to enable Azure Hybrid Benefit (licenseType = Windows_Server), eliminating the ~36% OS surcharge.",
+    "metadata": {
+      "category": "Cost Optimization",
+      "version": "1.0.0"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Audit or Deny"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny"
+        ],
+        "defaultValue": "Audit"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/virtualMachines"
+          },
+          {
+            "field": "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType",
+            "equals": "Windows"
+          },
+          {
+            "field": "Microsoft.Compute/virtualMachines/licenseType",
+            "notIn": [
+              "Windows_Server",
+              "Windows_Client"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  }
+}

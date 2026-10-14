@@ -1,0 +1,12 @@
+// FinOps KQL Query: Audit High-Volume Log Analytics Ingestion by Table & Computer
+// Run in Azure Log Analytics Workspace
+Usage
+| where TimeGenerated > ago(30d)
+| where IsBillable == true
+| summarize TotalGBSent = sum(Quantity) / 1000 by DataType, Solution
+| sort by TotalGBSent desc
+| extend EstimatedMonthlyCostUSD = TotalGBSent * 2.30
+| extend FinOpsRecommendation = case(
+    DataType in ("AzureDiagnostics", "AZFWNetworkRule", "W3CIISLog"), "Candidate for Basic Table Plan (~$0.50/GB) or AMA DCR XPath Edge Filter",
+    "Review retention and sampling frequency"
+)

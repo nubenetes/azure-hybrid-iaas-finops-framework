@@ -1,0 +1,17 @@
+// FinOps Audit Query: Find Unassociated Public IP Addresses (Incurring Hourly Idle Reservation Fees)
+// Run in Azure Resource Graph Explorer
+Resources
+| where type =~ 'microsoft.network/publicipaddresses'
+| where properties.ipConfiguration == "" or isnull(properties.ipConfiguration)
+| extend ipAddress = tostring(properties.ipAddress)
+| extend skuName = tostring(sku.name)
+| extend allocationMethod = tostring(properties.publicIPAllocationMethod)
+| project 
+    subscriptionId, 
+    resourceGroup, 
+    name, 
+    skuName, 
+    allocationMethod, 
+    ipAddress,
+    FinOpsAction = "Unassociated Public IP: Dissociate or delete to eliminate hourly reservation tax"
+| order by resourceGroup asc, name asc

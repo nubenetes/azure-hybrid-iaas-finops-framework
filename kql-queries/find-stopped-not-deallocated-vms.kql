@@ -1,0 +1,23 @@
+// FinOps Audit Query: Find Virtual Machines Stopped from Guest OS (Still Incurring Full Compute Charges)
+// Run in Azure Resource Graph Explorer
+Resources
+| where type =~ 'microsoft.compute/virtualmachines'
+| extend powerState = tostring(properties.extended.instanceView.powerState.code)
+| extend vmSize = tostring(properties.hardwareProfile.vmSize)
+| extend osType = tostring(properties.storageProfile.osDisk.osType)
+| extend costCenter = tostring(tags['CostCenter'])
+| extend environment = tostring(tags['Environment'])
+| extend owner = tostring(tags['Owner'])
+| where powerState =~ 'PowerState/stopped' // Note: 'stopped' means guest OS shutdown, NOT 'deallocated'
+| project 
+    subscriptionId, 
+    resourceGroup, 
+    name, 
+    vmSize, 
+    osType, 
+    powerState, 
+    costCenter, 
+    environment, 
+    owner,
+    FinOpsAction = "CRITICAL: Run Stop-AzVM or az vm deallocate to stop billing CPU/RAM!"
+| order by resourceGroup asc, name asc

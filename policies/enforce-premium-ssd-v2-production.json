@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-09-01/policyDefinition.json#",
+  "properties": {
+    "displayName": "FinOps: Audit or Enforce Premium SSD v2 for Database Volumes",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Audits production database managed disks that still use legacy Premium SSD v1, encouraging migration to decoupled Premium SSD v2.",
+    "metadata": {
+      "category": "Cost Optimization",
+      "version": "1.0.0"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "allowedValues": [
+          "Audit",
+          "Deny"
+        ],
+        "defaultValue": "Audit"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/disks"
+          },
+          {
+            "field": "tags['Workload']",
+            "equals": "SQLServer"
+          },
+          {
+            "field": "Microsoft.Compute/disks/sku.name",
+            "in": [
+              "Premium_LRS",
+              "StandardSSD_LRS",
+              "Standard_LRS"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  }
+}

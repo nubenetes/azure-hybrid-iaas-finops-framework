@@ -1,0 +1,9 @@
+image: python:3.11
+
+pipelines:
+  default:
+    - step:
+        name: Validate FinOps Framework
+        script:
+          - python -m unittest discover -s automation/python -p "test_*.py" -v
+          - for f in policies/*.json; do python -m json.tool "$f" > /dev/null; done

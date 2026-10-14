@@ -1,0 +1,17 @@
+// FinOps Audit Query: Find Oversized Premium SSD v1 Disks (P30, P40, P50) Candidate for Premium SSD v2
+// Run in Azure Resource Graph Explorer
+Resources
+| where type =~ 'microsoft.compute/disks'
+| where sku.name =~ 'Premium_LRS' or sku.name =~ 'Premium_ZRS'
+| extend diskSizeGB = toint(properties.diskSizeGB)
+| extend vmAttached = tostring(managedBy)
+| where diskSizeGB >= 1024 // P30 is 1024 GB, P40 is 2048 GB
+| project 
+    subscriptionId, 
+    resourceGroup, 
+    name, 
+    skuName = sku.name, 
+    diskSizeGB, 
+    vmAttached,
+    FinOpsAction = "Migrate to Premium SSD v2: Decouple capacity from IOPS, save up to 75% on unused storage"
+| order by diskSizeGB desc

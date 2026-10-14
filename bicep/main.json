@@ -1,0 +1,837 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.48.1.52935",
+      "templateHash": "10708571822212789267"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Deployment region"
+      }
+    },
+    "firewallSkuTier": {
+      "type": "string",
+      "defaultValue": "Standard",
+      "metadata": {
+        "description": "Azure Firewall SKU Tier: Basic or Standard"
+      }
+    },
+    "adminUsername": {
+      "type": "string",
+      "defaultValue": "finopsadmin",
+      "metadata": {
+        "description": "Administrator username"
+      }
+    },
+    "adminPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Administrator password"
+      }
+    },
+    "tags": {
+      "type": "object",
+      "defaultValue": {
+        "CostCenter": "CC-FIN-4010",
+        "Department": "Platform-Engineering",
+        "Environment": "Production",
+        "Owner": "finops-lead@company.com",
+        "Workload": "Hybrid-IaaS-Reference",
+        "SharedService": "false"
+      },
+      "metadata": {
+        "description": "FinOps Core Tags"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2025-04-01",
+      "name": "hubNetworkDeploy",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "firewallSkuTier": {
+            "value": "[parameters('firewallSkuTier')]"
+          },
+          "tags": {
+            "value": "[union(parameters('tags'), createObject('SharedService', 'true', 'Tier', 'Hub-Security'))]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.48.1.52935",
+              "templateHash": "15275685335095280798"
+            }
+          },
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]",
+              "metadata": {
+                "description": "Location for Hub resources"
+              }
+            },
+            "firewallSkuTier": {
+              "type": "string",
+              "defaultValue": "Standard",
+              "allowedValues": [
+                "Basic",
+                "Standard",
+                "Premium"
+              ],
+              "metadata": {
+                "description": "Azure Firewall SKU Tier: Basic or Standard"
+              }
+            },
+            "tags": {
+              "type": "object",
+              "defaultValue": {},
+              "metadata": {
+                "description": "Tags for resources"
+              }
+            }
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/virtualNetworks",
+              "apiVersion": "2023-09-01",
+              "name": "vnet-hub-prod",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "addressSpace": {
+                  "addressPrefixes": [
+                    "10.0.0.0/16"
+                  ]
+                },
+                "subnets": [
+                  {
+                    "name": "AzureFirewallSubnet",
+                    "properties": {
+                      "addressPrefix": "10.0.1.0/24"
+                    }
+                  },
+                  {
+                    "name": "GatewaySubnet",
+                    "properties": {
+                      "addressPrefix": "10.0.2.0/24"
+                    }
+                  },
+                  {
+                    "name": "snet-shared-services",
+                    "properties": {
+                      "addressPrefix": "10.0.3.0/24"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Microsoft.Network/publicIPAddresses",
+              "apiVersion": "2023-09-01",
+              "name": "pip-firewall-hub",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "sku": {
+                "name": "Standard"
+              },
+              "properties": {
+                "publicIPAllocationMethod": "Static"
+              }
+            },
+            {
+              "type": "Microsoft.Network/firewallPolicies",
+              "apiVersion": "2023-09-01",
+              "name": "afwp-hub-security",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "sku": {
+                  "tier": "[parameters('firewallSkuTier')]"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.Network/azureFirewalls",
+              "apiVersion": "2023-09-01",
+              "name": "afw-hub-core",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "sku": {
+                  "name": "AZFW_VNet",
+                  "tier": "[parameters('firewallSkuTier')]"
+                },
+                "firewallPolicy": {
+                  "id": "[resourceId('Microsoft.Network/firewallPolicies', 'afwp-hub-security')]"
+                },
+                "ipConfigurations": [
+                  {
+                    "name": "ipconfig-firewall",
+                    "properties": {
+                      "subnet": {
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet-hub-prod', 'AzureFirewallSubnet')]"
+                      },
+                      "publicIPAddress": {
+                        "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'pip-firewall-hub')]"
+                      }
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', 'pip-firewall-hub')]",
+                "[resourceId('Microsoft.Network/firewallPolicies', 'afwp-hub-security')]",
+                "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-hub-prod')]"
+              ]
+            }
+          ],
+          "outputs": {
+            "hubVnetId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-hub-prod')]"
+            },
+            "hubVnetName": {
+              "type": "string",
+              "value": "vnet-hub-prod"
+            },
+            "firewallPrivateIp": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Network/azureFirewalls', 'afw-hub-core'), '2023-09-01').ipConfigurations[0].properties.privateIPAddress]"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2025-04-01",
+      "name": "spokeWebDeploy",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "hubVnetId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'hubNetworkDeploy'), '2025-04-01').outputs.hubVnetId.value]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "tags": {
+            "value": "[union(parameters('tags'), createObject('Tier', 'Spoke-Web'))]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.48.1.52935",
+              "templateHash": "7246393266407817097"
+            }
+          },
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]",
+              "metadata": {
+                "description": "Location for Web Spoke resources"
+              }
+            },
+            "hubVnetId": {
+              "type": "string",
+              "metadata": {
+                "description": "Hub VNet Resource ID for peering"
+              }
+            },
+            "adminUsername": {
+              "type": "string",
+              "defaultValue": "azureadmin",
+              "metadata": {
+                "description": "Administrator username"
+              }
+            },
+            "adminPassword": {
+              "type": "securestring",
+              "metadata": {
+                "description": "Administrator password"
+              }
+            },
+            "tags": {
+              "type": "object",
+              "defaultValue": {},
+              "metadata": {
+                "description": "Tags for resources"
+              }
+            }
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/virtualNetworks",
+              "apiVersion": "2023-09-01",
+              "name": "vnet-spoke-web-prod",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "addressSpace": {
+                  "addressPrefixes": [
+                    "10.1.0.0/16"
+                  ]
+                },
+                "subnets": [
+                  {
+                    "name": "snet-web-tier",
+                    "properties": {
+                      "addressPrefix": "10.1.1.0/24",
+                      "serviceEndpoints": [
+                        {
+                          "service": "Microsoft.Storage"
+                        },
+                        {
+                          "service": "Microsoft.KeyVault"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+              "apiVersion": "2023-09-01",
+              "name": "[format('{0}/{1}', 'vnet-spoke-web-prod', 'peer-spoke-web-to-hub')]",
+              "properties": {
+                "remoteVirtualNetwork": {
+                  "id": "[parameters('hubVnetId')]"
+                },
+                "allowVirtualNetworkAccess": true,
+                "allowForwardedTraffic": true
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-spoke-web-prod')]"
+              ]
+            },
+            {
+              "type": "Microsoft.Compute/virtualMachineScaleSets",
+              "apiVersion": "2023-09-01",
+              "name": "vmss-iis-web",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "sku": {
+                "name": "Standard_D2s_v5",
+                "tier": "Standard",
+                "capacity": 3
+              },
+              "properties": {
+                "overprovision": false,
+                "upgradePolicy": {
+                  "mode": "Manual"
+                },
+                "virtualMachineProfile": {
+                  "licenseType": "Windows_Server",
+                  "osProfile": {
+                    "computerNamePrefix": "iis",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]"
+                  },
+                  "storageProfile": {
+                    "imageReference": {
+                      "publisher": "MicrosoftWindowsServer",
+                      "offer": "WindowsServer",
+                      "sku": "2022-datacenter-azure-edition",
+                      "version": "latest"
+                    },
+                    "osDisk": {
+                      "createOption": "FromImage",
+                      "caching": "ReadWrite",
+                      "managedDisk": {
+                        "storageAccountType": "StandardSSD_LRS"
+                      }
+                    }
+                  },
+                  "networkProfile": {
+                    "networkInterfaceConfigurations": [
+                      {
+                        "name": "nic-iis-web",
+                        "properties": {
+                          "primary": true,
+                          "ipConfigurations": [
+                            {
+                              "name": "ipconfig-iis",
+                              "properties": {
+                                "subnet": {
+                                  "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet-spoke-web-prod', 'snet-web-tier')]"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "priority": "Spot",
+                  "evictionPolicy": "Deallocate"
+                }
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-spoke-web-prod')]"
+              ]
+            }
+          ],
+          "outputs": {
+            "spokeWebVnetId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-spoke-web-prod')]"
+            },
+            "vmssId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Compute/virtualMachineScaleSets', 'vmss-iis-web')]"
+            }
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'hubNetworkDeploy')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2025-04-01",
+      "name": "spokeDbDeploy",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "hubVnetId": {
+            "value": "[reference(resourceId('Microsoft.Resources/deployments', 'hubNetworkDeploy'), '2025-04-01').outputs.hubVnetId.value]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "tags": {
+            "value": "[union(parameters('tags'), createObject('Tier', 'Spoke-Database'))]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.48.1.52935",
+              "templateHash": "9851320357891853389"
+            }
+          },
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]",
+              "metadata": {
+                "description": "Location for Database Spoke resources"
+              }
+            },
+            "zone": {
+              "type": "string",
+              "defaultValue": "1",
+              "metadata": {
+                "description": "Availability Zone for Premium SSD v2"
+              }
+            },
+            "hubVnetId": {
+              "type": "string",
+              "metadata": {
+                "description": "Hub VNet Resource ID for peering"
+              }
+            },
+            "adminUsername": {
+              "type": "string",
+              "defaultValue": "sqladmin",
+              "metadata": {
+                "description": "Administrator username"
+              }
+            },
+            "adminPassword": {
+              "type": "securestring",
+              "metadata": {
+                "description": "Administrator password"
+              }
+            },
+            "tags": {
+              "type": "object",
+              "defaultValue": {},
+              "metadata": {
+                "description": "Tags for resources"
+              }
+            }
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Network/virtualNetworks",
+              "apiVersion": "2023-09-01",
+              "name": "vnet-spoke-db-prod",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "addressSpace": {
+                  "addressPrefixes": [
+                    "10.2.0.0/16"
+                  ]
+                },
+                "subnets": [
+                  {
+                    "name": "snet-database-tier",
+                    "properties": {
+                      "addressPrefix": "10.2.1.0/24",
+                      "serviceEndpoints": [
+                        {
+                          "service": "Microsoft.Storage"
+                        },
+                        {
+                          "service": "Microsoft.KeyVault"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+              "apiVersion": "2023-09-01",
+              "name": "[format('{0}/{1}', 'vnet-spoke-db-prod', 'peer-spoke-db-to-hub')]",
+              "properties": {
+                "remoteVirtualNetwork": {
+                  "id": "[parameters('hubVnetId')]"
+                },
+                "allowVirtualNetworkAccess": true,
+                "allowForwardedTraffic": true
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-spoke-db-prod')]"
+              ]
+            },
+            {
+              "type": "Microsoft.Network/networkInterfaces",
+              "apiVersion": "2023-09-01",
+              "name": "nic-sql-prod-01",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "ipConfigurations": [
+                  {
+                    "name": "ipconfig-sql",
+                    "properties": {
+                      "privateIPAllocationMethod": "Dynamic",
+                      "subnet": {
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet-spoke-db-prod', 'snet-database-tier')]"
+                      }
+                    }
+                  }
+                ]
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-spoke-db-prod')]"
+              ]
+            },
+            {
+              "type": "Microsoft.Compute/disks",
+              "apiVersion": "2023-04-02",
+              "name": "disk-sql-data-v2",
+              "location": "[parameters('location')]",
+              "zones": [
+                "[parameters('zone')]"
+              ],
+              "tags": "[parameters('tags')]",
+              "sku": {
+                "name": "PremiumV2_LRS"
+              },
+              "properties": {
+                "creationData": {
+                  "createOption": "Empty"
+                },
+                "diskSizeGB": 512,
+                "diskIOPSReadWrite": 13500,
+                "diskMBpsReadWrite": 250
+              }
+            },
+            {
+              "type": "Microsoft.Compute/virtualMachines",
+              "apiVersion": "2023-09-01",
+              "name": "vm-sql-prod-01",
+              "location": "[parameters('location')]",
+              "zones": [
+                "[parameters('zone')]"
+              ],
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "hardwareProfile": {
+                  "vmSize": "Standard_E32-8s_v5"
+                },
+                "licenseType": "Windows_Server",
+                "osProfile": {
+                  "computerName": "sql-prod-01",
+                  "adminUsername": "[parameters('adminUsername')]",
+                  "adminPassword": "[parameters('adminPassword')]"
+                },
+                "storageProfile": {
+                  "imageReference": {
+                    "publisher": "MicrosoftSQLServer",
+                    "offer": "sql2022-ws2022",
+                    "sku": "enterprise-gen2",
+                    "version": "latest"
+                  },
+                  "osDisk": {
+                    "name": "osdisk-sql-prod-01",
+                    "caching": "ReadWrite",
+                    "createOption": "FromImage",
+                    "managedDisk": {
+                      "storageAccountType": "Premium_LRS"
+                    }
+                  },
+                  "dataDisks": [
+                    {
+                      "lun": 10,
+                      "name": "disk-sql-data-v2",
+                      "createOption": "Attach",
+                      "caching": "None",
+                      "managedDisk": {
+                        "id": "[resourceId('Microsoft.Compute/disks', 'disk-sql-data-v2')]"
+                      }
+                    }
+                  ]
+                },
+                "networkProfile": {
+                  "networkInterfaces": [
+                    {
+                      "id": "[resourceId('Microsoft.Network/networkInterfaces', 'nic-sql-prod-01')]"
+                    }
+                  ]
+                }
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.Compute/disks', 'disk-sql-data-v2')]",
+                "[resourceId('Microsoft.Network/networkInterfaces', 'nic-sql-prod-01')]"
+              ]
+            }
+          ],
+          "outputs": {
+            "spokeDbVnetId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-spoke-db-prod')]"
+            },
+            "sqlVmId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Compute/virtualMachines', 'vm-sql-prod-01')]"
+            },
+            "sqlVmPrivateIp": {
+              "type": "string",
+              "value": "[reference(resourceId('Microsoft.Network/networkInterfaces', 'nic-sql-prod-01'), '2023-09-01').ipConfigurations[0].properties.privateIPAddress]"
+            }
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'hubNetworkDeploy')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2025-04-01",
+      "name": "observabilityDeploy",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "tags": {
+            "value": "[union(parameters('tags'), createObject('Tier', 'Shared-Observability'))]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.48.1.52935",
+              "templateHash": "2181565656407816005"
+            }
+          },
+          "parameters": {
+            "location": {
+              "type": "string",
+              "defaultValue": "[resourceGroup().location]",
+              "metadata": {
+                "description": "Location for Observability resources"
+              }
+            },
+            "retentionInDays": {
+              "type": "int",
+              "defaultValue": 30,
+              "metadata": {
+                "description": "Log Analytics retention in days"
+              }
+            },
+            "tags": {
+              "type": "object",
+              "defaultValue": {},
+              "metadata": {
+                "description": "Tags for resources"
+              }
+            }
+          },
+          "resources": [
+            {
+              "type": "Microsoft.OperationalInsights/workspaces",
+              "apiVersion": "2022-10-01",
+              "name": "law-finops-core",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "sku": {
+                  "name": "PerGB2018"
+                },
+                "retentionInDays": "[parameters('retentionInDays')]"
+              }
+            },
+            {
+              "type": "Microsoft.Insights/dataCollectionRules",
+              "apiVersion": "2022-06-01",
+              "name": "dcr-finops-windows-filtered",
+              "location": "[parameters('location')]",
+              "tags": "[parameters('tags')]",
+              "properties": {
+                "destinations": {
+                  "logAnalytics": [
+                    {
+                      "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', 'law-finops-core')]",
+                      "name": "law-destination"
+                    }
+                  ]
+                },
+                "dataFlows": [
+                  {
+                    "streams": [
+                      "Microsoft-WindowsEvent",
+                      "Microsoft-Perf"
+                    ],
+                    "destinations": [
+                      "law-destination"
+                    ]
+                  }
+                ],
+                "dataSources": {
+                  "windowsEventLogs": [
+                    {
+                      "streams": [
+                        "Microsoft-WindowsEvent"
+                      ],
+                      "name": "security-filtered-source",
+                      "xPathQueries": [
+                        "Security!*[System[(EventID=4625 or EventID=4672 or EventID=4720 or EventID=4726 or EventID=4738)]]"
+                      ]
+                    }
+                  ],
+                  "performanceCounters": [
+                    {
+                      "streams": [
+                        "Microsoft-Perf"
+                      ],
+                      "samplingFrequencyInSeconds": 60,
+                      "counterSpecifiers": [
+                        "\\Processor Information(_Total)\\% Processor Time",
+                        "\\Memory\\Available MBytes",
+                        "\\PhysicalDisk(_Total)\\Avg. Disk sec/Read",
+                        "\\PhysicalDisk(_Total)\\Avg. Disk sec/Write"
+                      ],
+                      "name": "perf-counter-source"
+                    }
+                  ]
+                }
+              },
+              "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces', 'law-finops-core')]"
+              ]
+            }
+          ],
+          "outputs": {
+            "workspaceId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.OperationalInsights/workspaces', 'law-finops-core')]"
+            },
+            "dcrId": {
+              "type": "string",
+              "value": "[resourceId('Microsoft.Insights/dataCollectionRules', 'dcr-finops-windows-filtered')]"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "hubVnetId": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', 'hubNetworkDeploy'), '2025-04-01').outputs.hubVnetId.value]"
+    },
+    "firewallPrivateIp": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', 'hubNetworkDeploy'), '2025-04-01').outputs.firewallPrivateIp.value]"
+    },
+    "spokeWebVnetId": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', 'spokeWebDeploy'), '2025-04-01').outputs.spokeWebVnetId.value]"
+    },
+    "spokeDbVnetId": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', 'spokeDbDeploy'), '2025-04-01').outputs.spokeDbVnetId.value]"
+    },
+    "sqlVmPrivateIp": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', 'spokeDbDeploy'), '2025-04-01').outputs.sqlVmPrivateIp.value]"
+    },
+    "logAnalyticsWorkspaceId": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Resources/deployments', 'observabilityDeploy'), '2025-04-01').outputs.workspaceId.value]"
+    }
+  }
+}

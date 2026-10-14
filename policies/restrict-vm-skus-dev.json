@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-09-01/policyDefinition.json#",
+  "properties": {
+    "displayName": "FinOps: Restrict Dev/Test environments to Burstable & General Purpose SKUs",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Prevents deploying expensive E-series, M-series, or high-core VMs in non-production environments.",
+    "metadata": {
+      "category": "Cost Optimization",
+      "version": "1.0.0"
+    },
+    "parameters": {
+      "allowedSkus": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed SKUs",
+          "description": "List of allowed VM SKUs in Dev/Test"
+        },
+        "defaultValue": [
+          "Standard_B2s",
+          "Standard_B2ms",
+          "Standard_B4ms",
+          "Standard_D2s_v5",
+          "Standard_D4s_v5"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/virtualMachines"
+          },
+          {
+            "field": "tags['Environment']",
+            "in": [
+              "Dev",
+              "Development",
+              "Test",
+              "QA"
+            ]
+          },
+          {
+            "field": "Microsoft.Compute/virtualMachines/sku.name",
+            "notIn": "[parameters('allowedSkus')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}

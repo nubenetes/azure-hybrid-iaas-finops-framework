@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-09-01/policyDefinition.json#",
+  "properties": {
+    "displayName": "FinOps: Enforce mandatory financial and operational tags",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Denies resource deployment if required FinOps tags (CostCenter, Environment, Owner) are missing.",
+    "metadata": {
+      "category": "Cost Optimization",
+      "version": "1.0.0"
+    },
+    "parameters": {
+      "mandatoryTags": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Mandatory Tags",
+          "description": "The list of required tag keys."
+        },
+        "defaultValue": [
+          "CostCenter",
+          "Environment",
+          "Owner"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "tags['CostCenter']",
+            "exists": "false"
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}

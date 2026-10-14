@@ -1,0 +1,12 @@
+stages:
+  - test
+
+validate_finops:
+  stage: test
+  image: mcr.microsoft.com/azure-cli:latest
+  before_script:
+    - tdnf install -y python3 python3-pip
+  script:
+    - python3 -m unittest discover -s automation/python -p "test_*.py" -v
+    - az bicep build --file bicep/main.bicep --stdout > /dev/null
+    - for f in policies/*.json; do python3 -m json.tool "$f" > /dev/null; done
