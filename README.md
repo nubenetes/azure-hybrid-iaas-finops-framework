@@ -12,16 +12,11 @@
 
 An enterprise-grade **FinOps architectural framework, decision engine, and Infrastructure-as-Code (IaC) blueprint** for optimizing hybrid Microsoft Azure IaaS environments (Windows Server, SQL Server on VMs, Hub-and-Spoke networking, ExpressRoute, and Azure Monitor).
 
-This framework formalizes, expands, and implements the principles outlined in the technical monograph *"Informe Exhaustivo de Prácticas FinOps y Optimización de Costes para Arquitecturas Azure IaaS Híbridas"*, providing mathematical break-even models, dual-engine IaC (Terraform AzureRM v4 and native Bicep), automated Azure Policy guardrails, Azure Resource Graph (ARG) audit queries, Day-2 PowerShell runbooks, and an interactive FinOps calculator CLI.
+It implements, validates, and deepens the research from the technical monograph *"Informe Exhaustivo de Prácticas FinOps y Optimización de Costes para Arquitecturas Azure IaaS Híbridas"*, providing mathematical break-even models, dual-engine IaC (Terraform AzureRM v4 and native Bicep), automated Azure Policy guardrails, Azure Resource Graph (ARG) audit queries, Day-2 PowerShell runbooks, and an interactive FinOps calculator CLI.
 
----
-
-## 📖 Complete Technical Report (Unabridged Markdown Transcriptions)
-
-The complete text of the original technical monograph is available in full fidelity within this repository:
-
-- 🇪🇸 **[Informe Exhaustivo de Prácticas FinOps y Optimización de Costes para Arquitecturas Azure IaaS Híbridas (Texto Íntegro en Español)](docs/informe-exhaustivo-finops-azure-iaas-es.md)**
-- 🇬🇧 **[Comprehensive Report on FinOps Practices and Cost Optimization for Hybrid Azure IaaS Architectures (Full Unabridged English Translation)](docs/comprehensive-finops-azure-iaas-report-en.md)**
+> 📖 **Full Unabridged Monograph in Markdown**:
+> - 🇪🇸 **[Texto Íntegro en Español](docs/informe-exhaustivo-finops-azure-iaas-es.md)**
+> - 🇬🇧 **[Full English Translation](docs/comprehensive-finops-azure-iaas-report-en.md)**
 
 ---
 
