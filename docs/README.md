@@ -15,12 +15,14 @@ flowchart TD
 ---
 ---
 
-## 🎥 Multimedia Video Sessions, Guides & Technical Shorts (22 Episodes)
+## 🎥 Multimedia Video Sessions, Guides & Technical Shorts (24 Episodes)
 
 All foundational pillars, mathematical models, and automation engines are accompanied by technical video episodes on YouTube ([**@nubenetes**](https://youtube.com/@nubenetes)), pairing English 🇬🇧 and Spanish 🇪🇸 deep dives for each core domain:
 
 | Engineering Pillar / Focus | Format | Video / Episode | Language | Duration | Direct Link |
 | :--- | :---: | :--- | :---: | :---: | :--- |
+| **Comprehensive Architecture** | 🎙️ Podcast | [Podcast: Azure FinOps Hacks to Save Millions](https://www.youtube.com/watch?v=abjOMDIbWhQ) | 🇬🇧 English *(CC 20+)* | `49:20` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=abjOMDIbWhQ) |
+| **Comprehensive Architecture** | 🎙️ Podcast | [Podcast: Recorta un 77% tu factura de Azure](https://www.youtube.com/watch?v=gZmDtGMLoRA) | 🇪🇸 Spanish *(CC 20+)* | `17:20` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=gZmDtGMLoRA) |
 | **Comprehensive Architecture** | 🎙️ Podcast | [Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas](https://www.youtube.com/watch?v=Kt2MyQlUXew) | 🇪🇸 Spanish *(CC 20+)* | `21:24` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=Kt2MyQlUXew) |
 | **Global Architecture Blueprint** | 📽️ Video Guide | [Azure FinOps Framework: Enterprise Hybrid IaaS Architecture Blueprint](https://www.youtube.com/watch?v=7xUIjosp28w) | 🇬🇧 English *(CC 20+)* | `8:37` | [▶️ Watch Video](https://www.youtube.com/watch?v=7xUIjosp28w) |
 | **Global Architecture Blueprint** | 📽️ Video Guide | [Azure FinOps Hub-and-Spoke: Blueprint de Arquitectura y Reducción del 77% en IaaS](https://www.youtube.com/watch?v=RIiM9thkq2U) | 🇪🇸 Spanish *(CC 20+)* | `7:40` | [▶️ Watch Video](https://www.youtube.com/watch?v=RIiM9thkq2U) |

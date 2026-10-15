@@ -636,11 +636,13 @@ All episodes and technical shorts are hosted on the official YouTube channel [**
 > **Multilingual Technical Content 🌐**:
 > The architectural masterclasses and podcast feature native **Spanish** narration, while the rapid technical shorts feature native **English** voiceover with automatic subtitles (CC) in over **20 languages** for international engineering teams.
 
-### 📊 Technical Multimedia Catalog (22 Sessions)
+### 📊 Technical Multimedia Catalog (24 Sessions)
 
-#### 🎙️ Architectural Podcast & Long-Form Sessions
+#### 🎙️ Architectural Podcast & Long-Form Sessions (3 Episodes)
 | Format | Title / Episode | Focus / Core Engineering Domain | Language | Duration | Direct YouTube Link |
 | :---: | :--- | :--- | :---: | :---: | :--- |
+| 🎙️ **Podcast** | [**Podcast: Azure FinOps Hacks to Save Millions**](https://www.youtube.com/watch?v=abjOMDIbWhQ) | **Enterprise Masterclass (50 min)**: End-to-end FinOps blueprint, $173k to $39k transformation, core masking, storage decoupling, and break-even math | 🇬🇧 English *(CC 20+)* | `49:20` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=abjOMDIbWhQ) |
+| 🎙️ **Podcast** | [**Podcast: Recorta un 77% tu factura de Azure**](https://www.youtube.com/watch?v=gZmDtGMLoRA) | **Caso Práctico FinOps**: Desglose paso a paso del caso de estudio, trampas de configuración por defecto, mitigación Stopped vs Deallocated y reducción del 77.4% | 🇪🇸 Spanish *(CC 20+)* | `17:20` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=gZmDtGMLoRA) |
 | 🎙️ **Podcast** | [**Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas**](https://www.youtube.com/watch?v=Kt2MyQlUXew) | **Comprehensive Masterclass**: Full architecture overview, AHUB, SQL Server CCC, ExpressRoute break-even, and AMA DCR | 🇪🇸 Spanish *(CC 20+)* | `21:24` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=Kt2MyQlUXew) |
 
 #### 📽️ Deep-Dive Video Guides & Masterclasses (The Explainer Series)
@@ -779,11 +781,25 @@ All episodes and technical shorts are hosted on the official YouTube channel [**
 
 ---
 
-### Section B: Architectural Masterclass Podcast
+### Section B: Architectural Masterclass Podcasts (3 Episodes)
 
-#### 8. Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas (21:24)
+#### 1. Podcast: Azure FinOps Hacks to Save Millions (49:20)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=abjOMDIbWhQ](https://www.youtube.com/watch?v=abjOMDIbWhQ)
+- ⏱️ **Duration**: 49:20 | 🌐 **Language**: 🇬🇧 English *(CC 20+)*
+- 🏷️ **Domain**: End-to-End Enterprise Architecture, SQL Core Masking, Decoupled Storage, Network Break-Even
+- 📝 **Technical Overview**:
+> Comprehensive 50-minute architectural masterclass podcast unpacking the mathematical models, engineering levers, and Infrastructure-as-Code blueprints that slashed recurring enterprise Azure bills from $173,000 to $39,000 per month (over $1.6M net annual savings). Analyzes the 4 core pillars across Windows Server IaaS and SQL Server workloads: empirical P95/P99 rightsizing vs deceptive averages, resolving the OS-shutdown billing trap, masking 24 cores on Standard_E32-8s_v5 to save 75% on licensing while preserving 256 GB RAM, eliminating RAID 0 striping via decoupled Premium SSD v2, navigating ExpressRoute break-even thresholds (240 TB/mo), and dropping 90%+ routine logs via AMA DCR XPath filtering.
+
+#### 2. Podcast: Recorta un 77% tu factura de Azure: Caso Práctico FinOps (17:20)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=gZmDtGMLoRA](https://www.youtube.com/watch?v=gZmDtGMLoRA)
+- ⏱️ **Duration**: 17:20 | 🌐 **Language**: 🇪🇸 Spanish *(CC 20+)*
+- 🏷️ **Domain**: Caso Práctico FinOps, Trampas por Defecto, Reducción del 77.4% de Costes, Gobernanza Continua
+- 📝 **Technical Overview**:
+> Caso de estudio técnico centrado en los mecanismos prácticos para reducir en un 77.4% la factura de Azure en arquitecturas Windows IaaS y SQL Server conectadas a centros de datos locales. Analiza cómo las configuraciones por defecto de los proveedores cloud provocan sobrecostes sistemáticos, cómo desarmar la trampa del apagado en el SO forzando desasignaciones a nivel de hipervisor ($0.00/h), el ahorro de 7 cifras mediante enmascaramiento de núcleos (Core Masking), la erradicación del RAID 0 mediante Premium SSD v2 y la contención de telemetría en Log Analytics con AMA y reglas DCR.
+
+#### 3. Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas (21:24)
 - 🔗 **Direct URL**: [https://www.youtube.com/watch?v=Kt2MyQlUXew](https://www.youtube.com/watch?v=Kt2MyQlUXew)
-- ⏱️ **Duration**: 21:24
+- ⏱️ **Duration**: 21:24 | 🌐 **Language**: 🇪🇸 Spanish *(CC 20+)*
 - 🏷️ **Domain**: Full Hybrid IaaS Architecture, Governance, Compute, SQL Licensing, Networking, Observability
 - 📝 **Technical Overview**:
 > Deep-dive architectural podcast covering the end-to-end framework. Analyzes how hybrid Windows Server and SQL Server enterprise architectures can reduce operating expenses by over 77% ($1.6M+ annually). Explores the 4 core pillars: Compute rightsizing and deallocation, SQL Server licensing optimization via Constrained vCPUs and AHUB, network transit modeling for ExpressRoute and Azure Firewall, and kernel-level log filtering via Azure Monitor Agent.

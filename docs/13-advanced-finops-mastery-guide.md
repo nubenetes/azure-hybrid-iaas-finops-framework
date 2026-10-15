@@ -2,7 +2,10 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 12. Legacy Results](12-legacy-architecture-governance-results.md) | [➡️ Next: Architecture Decision Records](adr/README.md)
 
-> 📽️ **Video Sessions**:
+> 📽️ **Video & Podcast Sessions**:
+> - 🎙️ [**Podcast: Azure FinOps Hacks to Save Millions**](https://www.youtube.com/watch?v=abjOMDIbWhQ) (`49:20`, 🇬🇧 English CC 20+) — *Comprehensive 50-minute architectural masterclass on 7-figure savings, CCC licensing, and network economics.*
+> - 🎙️ [**Podcast: Recorta un 77% tu factura de Azure**](https://www.youtube.com/watch?v=gZmDtGMLoRA) (`17:20`, 🇪🇸 Spanish CC 20+) — *Caso práctico paso a paso sobre reducción radical de costes del 77.4% y trampas de configuración cloud.*
+> - 🎙️ [**Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas**](https://www.youtube.com/watch?v=Kt2MyQlUXew) (`21:24`, 🇪🇸 Spanish CC 20+) — *Masterclass arquitectónica sobre los 4 pilares de optimización IaaS híbrida.*
 > - 📽️ [**Azure FinOps Framework: Enterprise Hybrid IaaS Architecture Blueprint**](https://www.youtube.com/watch?v=7xUIjosp28w) (`8:37`, 🇬🇧 English CC 20+) — *Comprehensive architectural walkthrough of the enterprise hybrid IaaS blueprint, Hub-Spoke topology, and 7-figure savings.*
 > - 📽️ [**Azure FinOps Hub-and-Spoke: Blueprint de Arquitectura y Reducción del 77% en IaaS**](https://www.youtube.com/watch?v=RIiM9thkq2U) (`7:40`, 🇪🇸 Spanish CC 20+) — *Masterclass sobre la topología Hub-and-Spoke de referencia, desacoplamiento de cómputo y ahorro de 7 cifras.*
 > - ⚡ [**How the Azure FinOps Framework Slashes Cloud Bills**](https://www.youtube.com/shorts/ohhFQPy97U8) (`1:16`, 🇬🇧 English CC 20+) — *Píldora rápida sobre el desacoplamiento físico y de licenciamiento que reduce el gasto de $173k a $39k/mes.*

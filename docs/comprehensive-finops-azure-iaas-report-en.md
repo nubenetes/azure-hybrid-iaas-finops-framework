@@ -3,7 +3,11 @@
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | 🇪🇸 **[Versión Original en Español](informe-exhaustivo-finops-azure-iaas-es.md)** | [➡️ Guide 01: Governance & Tagging](01-governance-tagging-cost-allocation.md)
 
 > 🎙️ **Multimedia Companion on YouTube**:
-> Listen to the comprehensive masterclass [**Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas**](https://www.youtube.com/watch?v=Kt2MyQlUXew) (`21:24`) and explore the technical shorts series on [**@nubenetes**](https://youtube.com/@nubenetes).
+> Listen to the comprehensive masterclasses:
+> - 🎙️ [**Podcast: Azure FinOps Hacks to Save Millions**](https://www.youtube.com/watch?v=abjOMDIbWhQ) (`49:20`, 🇬🇧 English CC 20+)
+> - 🎙️ [**Podcast: Recorta un 77% tu factura de Azure**](https://www.youtube.com/watch?v=gZmDtGMLoRA) (`17:20`, 🇪🇸 Spanish CC 20+)
+> - 🎙️ [**Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas**](https://www.youtube.com/watch?v=Kt2MyQlUXew) (`21:24`, 🇪🇸 Spanish CC 20+)
+> Explore the complete technical video guides and shorts catalog on [**@nubenetes**](https://youtube.com/@nubenetes).
 
 ## Introduction and FinOps Paradigm in Structural IaaS Environments
 
