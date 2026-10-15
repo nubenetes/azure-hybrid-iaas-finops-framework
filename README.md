@@ -23,6 +23,8 @@ It implements, validates, and deepens the research from the technical monograph 
 ## 📑 Table of Contents
 
 - [1. 🏛️ Global Hybrid Architecture](#1-️-global-hybrid-architecture)
+  - [1.1. 🗺️ Enterprise FinOps Strategy & Architectural Domain Map](#11--enterprise-finops-strategy--architectural-domain-map)
+  - [1.2. 🏗️ Reference Hub-and-Spoke Infrastructure Topology](#12-️-reference-hub-and-spoke-infrastructure-topology)
 - [2. 💡 Financial Impact: Baseline vs. FinOps Optimized (USD $ & EUR €)](#2--financial-impact-baseline-vs-finops-optimized-usd---eur-)
   - [2.1. 📊 Executive Infographic: Architecture & Cost Reduction Blueprint](#21--executive-infographic-architecture--cost-reduction-blueprint)
   - [2.2. 🔍 Comprehensive Teardown of the Framework Infographic](#22--comprehensive-teardown-of-the-framework-infographic)
@@ -58,6 +60,62 @@ It implements, validates, and deepens the research from the technical monograph 
 ---
 
 ## 1. 🏛️ Global Hybrid Architecture
+
+### 1.1. 🗺️ Enterprise FinOps Strategy & Architectural Domain Map
+
+The visual blueprint below establishes the holistic FinOps optimization architecture across hybrid Windows and SQL Server enterprise workloads, linking on-premises corporate infrastructure with Microsoft Azure across 4 foundational engineering domains:
+
+<div align="center">
+  <img src="docs/images/Estrategia_FinOps_en_la_nube.png" alt="Estrategia FinOps en Azure: Optimización para Arquitectura Windows IaaS e Híbrida" width="100%" />
+</div>
+
+> [!NOTE]
+> **Architectural Blueprint Overview**: This strategic framework connects on-premises Active Directory and legacy data centers with the **Azure IaaS & Hybrid Environment**. By establishing precise guardrails across compute, database, network routing, and governance, the architecture eliminates unconstrained spending while preserving enterprise-grade resilience and performance.
+
+#### 🔍 Strategic Domain Breakdown & Engineering Levers
+
+##### 🖥️ 1. Compute & Application Layer (.NET / IIS on Virtual Machines)
+- **Azure Hybrid Benefit (AHUB) for Windows Server**:
+  - Automatically maps and converts existing on-premises Windows Server core licenses with active Software Assurance (SA) directly to cloud VMs.
+  - **Direct Impact**: 100% elimination of the guest OS licensing runtime fee (~36% compute surcharge reduction over standard PAYG).
+- **Empirical Rightsizing & Automated Lifecycle Schedules**:
+  - Analyzes continuous 30-day P95 and P99 metric telemetry (CPU utilization, memory commit charge) rather than misleading monthly averages.
+  - Implements scheduled runbooks to deallocate non-production and staging VMs outside business hours, strictly enforcing `Stopped (Deallocated)` states ($0.00/hour compute).
+- **Commitment Engineering: Reserved Instances & Savings Plans**:
+  - Locks in predictable, continuous 24/7 production workloads with 1-year or 3-year commitments (Azure Reserved VM Instances or Azure Savings Plans for Compute), generating up to **72% savings** over on-demand rates.
+- **Burstable VM Families**:
+  - Utilizes B-series burstable SKUs (e.g., `Standard_B2s` minimum for Windows Server) for low-utilization development, QA, and jump-box environments.
+
+##### 💾 2. Database Layer (SQL Server on Azure IaaS VMs)
+- **Azure Hybrid Benefit for SQL Server via SQL IaaS Agent Extension**:
+  - Registers all virtual machines with the automated `Microsoft.SqlVirtualMachine` resource provider and SQL IaaS Agent Extension.
+  - Enables seamless per-core license translation from on-premises Enterprise or Standard editions into Azure, slashing per-core runtime licensing fees while preserving 180-day dual-use migration rights.
+- **Disk & Premium Storage Optimization (Decoupled Performance)**:
+  - Replaces bloated, over-provisioned legacy RAID 0 disk arrays with decoupled **Premium SSD v2** managed disks.
+  - Separates Disk Capacity (GB) from IOPS and Throughput (MB/s), ensuring database workloads only pay for actual consumed gigabytes while leveraging the included baseline of **3,000 IOPS and 125 MB/s at $0 additional cost**.
+- **PaaS Modernization Roadmap (Azure SQL Managed Instance)**:
+  - Provides a continuous Total Cost of Ownership (TCO) evaluation framework comparing self-managed IaaS maintenance overhead (patching, backups, high availability) against Azure SQL Managed Instance (SQL MI) for long-term operational efficiency.
+
+##### 🌐 3. Hybrid Network & Connectivity (Hub-and-Spoke Topology)
+- **Egress & Peering Traffic Control (VNet Peering)**:
+  - Architected to minimize cross-VNet data transfer costs across Hub-and-Spoke peerings and avoid costly inter-region data egress.
+  - Implements localized egress routing to contain traffic within the primary Azure region (**Spain Central / Madrid** or **West Europe / Netherlands**).
+- **Centralized Shared Network Services in Hub**:
+  - Consolidates perimeter security (Azure Firewall / NVAs), VPN Gateways, and ExpressRoute circuits inside the central Hub VNet.
+  - Distributes infrastructure fixed costs proportionally to consuming Spoke workloads via automated Cost Management allocation rules.
+
+##### 🛡️ 4. Identity, Governance & FinOps Observability (Entra ID + Active Directory)
+- **Structured Tagging Taxonomy (`CostCenter`, `Environment`, `Owner`, `App`)**:
+  - Enforces mandatory financial dimensions on all deployed resources, binding every VM, disk, and NIC to its corporate cost center and Entra ID application identity.
+- **Coercive Azure Policy Guardrails & Cost Management**:
+  - Replaces passive post-mortem audits with active ARM compilation gates: blocks unapproved expensive VM families (e.g., G-series or GPU SKUs) via `Deny` effects.
+  - Configures automated multi-tier budget alerts triggered at 50%, 75%, 90%, and 100% of forecasted monthly burn rates.
+- **Integrated Hybrid Directory (Entra ID + On-Premises AD DS)**:
+  - Synchronizes identity across corporate domain controllers and Microsoft Entra ID, ensuring consistent role-based access control (RBAC) and automated resource attribution.
+
+---
+
+### 1.2. 🏗️ Reference Hub-and-Spoke Infrastructure Topology
 
 ```mermaid
 flowchart TD
