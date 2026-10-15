@@ -1,6 +1,10 @@
 # 04. Long-Term Financial Engineering: The Hybrid Commitment Portfolio
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 03. Advanced Licensing](03-licensing-ahb-constrained-vcpu.md) | [➡️ Next: 05. Decoupled Storage](05-storage-optimization-premium-ssdv2.md)
+>
+> 📽️ **Video Sessions**:
+> - ⚡ [**How the Floor & Ceiling Model Slashes Cloud Costs**](https://www.youtube.com/shorts/o2N8vKup1Bs) (`1:16`, 🇬🇧 English CC 20+) — *Píldora rápida sobre la estrategia Floor (RIs a 3 años) y Ceiling (Compute Savings Plans).*
+> - ⚡ [**How Azure Savings Plans Work**](https://www.youtube.com/shorts/sAkB02IQMdA) (`1:01`, 🇬🇧 English CC 20+) — *Píldora rápida sobre el funcionamiento y flexibilidad horaria de los Savings Plans en Azure.*
 
 ## 1. Beyond Architectural Rightsizing
 

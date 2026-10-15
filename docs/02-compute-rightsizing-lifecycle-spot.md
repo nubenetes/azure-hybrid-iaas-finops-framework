@@ -6,6 +6,7 @@
 > - 📽️ [**Azure FinOps: 3D Compute Engineering, Rightsizing & VM Lifecycle Automation**](https://www.youtube.com/watch?v=jt7t1BPNBsY) (`7:22`, 🇬🇧 English CC 20+) — *Technical masterclass on empirical P95/P99 rightsizing, specialized VM families, and automated hypervisor deallocation.*
 > - 📽️ [**Rightsizing en Azure: Optimización Empírica P95/P99 y Trampa del Apagado en Cómputo**](https://www.youtube.com/watch?v=b4QUPOKc_ng) (`7:09`, 🇪🇸 Spanish CC 20+) — *Masterclass técnica sobre rightsizing empírico P95/P99, selección de SKUs y automatización del ciclo de vida.*
 > - ⚡ [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) (`1:13`, 🇬🇧 English CC 20+) — *Píldora rápida sobre la trampa del apagado en SO vs desasignación por API.*
+> - ⚡ [**The Biggest Hidden Cost Traps in Azure**](https://www.youtube.com/shorts/D8Xeyl1Z5rI) (`1:30`, 🇬🇧 English CC 20+) — *Píldora rápida sobre las trampas de configuración cloud y costes ocultos en IaaS.*
 
 ## 1. The Lift-and-Shift Fallacy
 

@@ -636,7 +636,7 @@ All episodes and technical shorts are hosted on the official YouTube channel [**
 > **Multilingual Technical Content 🌐**:
 > The architectural masterclasses and podcast feature native **Spanish** narration, while the rapid technical shorts feature native **English** voiceover with automatic subtitles (CC) in over **20 languages** for international engineering teams.
 
-### 📊 Technical Multimedia Catalog (24 Sessions)
+### 📊 Technical Multimedia Catalog (33 Sessions)
 
 #### 🎙️ Architectural Podcast & Long-Form Sessions (3 Episodes)
 | Format | Title / Episode | Focus / Core Engineering Domain | Language | Duration | Direct YouTube Link |
@@ -663,9 +663,18 @@ All episodes and technical shorts are hosted on the official YouTube channel [**
 | 📽️ **Video Guide** | [**Azure Governance & Policy FinOps: Coercive Guardrails, Tagging & Cost Allocation**](https://www.youtube.com/watch?v=ewLnUSh-fJU) | **Coercive Governance & Automation**: Azure Policy guardrails, ARM deny effects, tag inheritance, and hub cost allocation | 🇬🇧 English *(CC 20+)* | `8:13` | [▶️ Watch Video](https://www.youtube.com/watch?v=ewLnUSh-fJU) |
 | 📽️ **Video Guide** | [**FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización**](https://www.youtube.com/watch?v=yAm1-z2ZpfA) | **Coercive Governance & Automation**: Azure Policy guardrails, hub cost allocation, ARG KQL audits, and shift-left gates | 🇪🇸 Spanish *(CC 20+)* | `6:42` | [▶️ Watch Video](https://www.youtube.com/watch?v=yAm1-z2ZpfA) |
 
-#### ⚡ Technical Shorts & Quick Takeaways
+#### ⚡ Technical Shorts & Quick Takeaways (16 Episodes)
 | Format | Title / Episode | Focus / Core Engineering Domain | Language | Duration | Direct YouTube Link |
 | :---: | :--- | :--- | :---: | :---: | :--- |
+| ⚡ **Short** | [**The Ultimate 2026 FinOps Automation Toolbelt**](https://www.youtube.com/shorts/kAghOfRqo2U) | **Modern Automation Stack**: Dual-engine Terraform & Bicep IaC, ARG KQL audits, Day-2 runbooks, and CLI tools | 🇬🇧 English *(CC 20+)* | `1:30` | [▶️ Watch Short](https://www.youtube.com/shorts/kAghOfRqo2U) |
+| ⚡ **Short** | [**The Biggest Hidden Cost Traps in Azure**](https://www.youtube.com/shorts/D8Xeyl1Z5rI) | **Operational Pitfalls**: Guest OS shutdown trap, ExpressRoute downgrade lock, RAID 0 dead capacity, and log bloat | 🇬🇧 English *(CC 20+)* | `1:30` | [▶️ Watch Short](https://www.youtube.com/shorts/D8Xeyl1Z5rI) |
+| ⚡ **Short** | [**How the FinOps CLI Automates Break Even Math**](https://www.youtube.com/shorts/-iJ65ex08dA) | **Decision Automation**: Mathematical break-even CLI engine, ExpressRoute 240 TB/mo, and dual-currency models | 🇬🇧 English *(CC 20+)* | `1:27` | [▶️ Watch Short](https://www.youtube.com/shorts/-iJ65ex08dA) |
+| ⚡ **Short** | [**How Coercive Governance Stops Cloud Waste**](https://www.youtube.com/shorts/m80jwCT7630) | **Shift-Left Guardrails**: Azure Policy Deny effects at ARM compile time, tag inheritance, and cost allocation | 🇬🇧 English *(CC 20+)* | `1:21` | [▶️ Watch Short](https://www.youtube.com/shorts/m80jwCT7630) |
+| ⚡ **Short** | [**How the Floor & Ceiling Model Slashes Cloud Costs**](https://www.youtube.com/shorts/o2N8vKup1Bs) | **Commitment Portfolio**: Structuring 3-year Reserved Instances (Floor) with Compute Savings Plans (Ceiling) | 🇬🇧 English *(CC 20+)* | `1:16` | [▶️ Watch Short](https://www.youtube.com/shorts/o2N8vKup1Bs) |
+| ⚡ **Short** | [**How Azure VNet Peering Multiplies Costs**](https://www.youtube.com/shorts/No4955alRaI) | **Network Interconnects**: Hub-and-Spoke data transfer dynamics, avoiding cross-region transit, and local routing | 🇬🇧 English *(CC 20+)* | `1:14` | [▶️ Watch Short](https://www.youtube.com/shorts/No4955alRaI) |
+| ⚡ **Short** | [**How Local Directories Cut Azure Egress Costs**](https://www.youtube.com/shorts/TzWkx2oSKGM) | **Hybrid Identity**: Hosting replica AD DS Domain Controllers in Hub VNet to eliminate hybrid WAN egress | 🇬🇧 English *(CC 20+)* | `1:13` | [▶️ Watch Short](https://www.youtube.com/shorts/TzWkx2oSKGM) |
+| ⚡ **Short** | [**How Azure Savings Plans Work**](https://www.youtube.com/shorts/sAkB02IQMdA) | **Commitment Flexibility**: Hourly spend commitments, cross-SKU mobility, and pairing with Reserved VM Instances | 🇬🇧 English *(CC 20+)* | `1:01` | [▶️ Watch Short](https://www.youtube.com/shorts/sAkB02IQMdA) |
+| ⚡ **Short** | [**Why Azure SQL VMs Cost You More**](https://www.youtube.com/shorts/zuqDTzW7WE0) | **Database IP Premiums**: Per-core licensing costs, Constrained vCPUs (CCC), and SQL IaaS Agent Extension | 🇬🇧 English *(CC 20+)* | `1:22` | [▶️ Watch Short](https://www.youtube.com/shorts/zuqDTzW7WE0) |
 | ⚡ **Short** | [**How the Azure FinOps Framework Slashes Cloud Bills**](https://www.youtube.com/shorts/ohhFQPy97U8) | **TCO Reduction ($173k to $39k/mo)**: Decoupling physical resources from licensing, storage, and networking | 🇬🇧 English *(CC 20+)* | `1:16` | [▶️ Watch Short](https://www.youtube.com/shorts/ohhFQPy97U8) |
 | ⚡ **Short** | [**Turning Azure FinOps Theory into Automated Action**](https://www.youtube.com/shorts/09oqxYUeHd8) | **Continuous Automation Pipeline**: IaC modules, ARG KQL audits, Day-2 PowerShell runbooks, and CLI calculators | 🇬🇧 English *(CC 20+)* | `1:19` | [▶️ Watch Short](https://www.youtube.com/shorts/09oqxYUeHd8) |
 | ⚡ **Short** | [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) | **Lifecycle Management**: Guest OS shutdown trap vs. Azure control-plane deallocation to zero compute fees | 🇬🇧 English *(CC 20+)* | `1:13` | [▶️ Watch Short](https://www.youtube.com/shorts/G49JolO2L2I) |
@@ -842,6 +851,51 @@ All episodes and technical shorts are hosted on the official YouTube channel [**
 - 🔗 **Direct URL**: [https://www.youtube.com/shorts/Xd2adpKN6VM](https://www.youtube.com/shorts/Xd2adpKN6VM)
 - ⏱️ **Duration**: 1:24
 - 🏷️ **Domain**: Hybrid Network Economics, ExpressRoute Metered vs. Unlimited, Break-Even Formula
+
+#### 16. The Ultimate 2026 FinOps Automation Toolbelt (1:30)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/kAghOfRqo2U](https://www.youtube.com/shorts/kAghOfRqo2U)
+- ⏱️ **Duration**: 1:30
+- 🏷️ **Domain**: Continuous Automation Engine, IaC Modules, ARG KQL Audits, CLI Tooling
+
+#### 17. The Biggest Hidden Cost Traps in Azure (1:30)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/D8Xeyl1Z5rI](https://www.youtube.com/shorts/D8Xeyl1Z5rI)
+- ⏱️ **Duration**: 1:30
+- 🏷️ **Domain**: Cloud Antipatterns, OS Shutdown Traps, Storage Spaces Overprovisioning, Network Downgrades
+
+#### 18. How the FinOps CLI Automates Break Even Math (1:27)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/-iJ65ex08dA](https://www.youtube.com/shorts/-iJ65ex08dA)
+- ⏱️ **Duration**: 1:27
+- 🏷️ **Domain**: Mathematical Modeling, Interactive Python CLI, Dual-Currency USD/EUR, Break-Even Analysis
+
+#### 19. How Coercive Governance Stops Cloud Waste (1:21)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/m80jwCT7630](https://www.youtube.com/shorts/m80jwCT7630)
+- ⏱️ **Duration**: 1:21
+- 🏷️ **Domain**: Coercive Governance, Azure Policy Deny Effects, Tag Inheritance, Cost Center Allocation
+
+#### 20. How the Floor & Ceiling Model Slashes Cloud Costs (1:16)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/o2N8vKup1Bs](https://www.youtube.com/shorts/o2N8vKup1Bs)
+- ⏱️ **Duration**: 1:16
+- 🏷️ **Domain**: Financial Engineering, Floor & Ceiling Commitments, 3-Year RIs, Compute Savings Plans
+
+#### 21. How Azure VNet Peering Multiplies Costs (1:14)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/No4955alRaI](https://www.youtube.com/shorts/No4955alRaI)
+- ⏱️ **Duration**: 1:14
+- 🏷️ **Domain**: Network Architecture, VNet Peering Ingress/Egress, Regional Traffic Containment
+
+#### 22. How Local Directories Cut Azure Egress Costs (1:13)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/TzWkx2oSKGM](https://www.youtube.com/shorts/TzWkx2oSKGM)
+- ⏱️ **Duration**: 1:13
+- 🏷️ **Domain**: Hybrid Identity, Active Directory Domain Services in Hub VNet, WAN Egress Reduction
+
+#### 23. How Azure Savings Plans Work (1:01)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/sAkB02IQMdA](https://www.youtube.com/shorts/sAkB02IQMdA)
+- ⏱️ **Duration**: 1:01
+- 🏷️ **Domain**: Financial Engineering, Azure Savings Plans for Compute, Hourly Flexibility
+
+#### 24. Why Azure SQL VMs Cost You More (1:22)
+- 🔗 **Direct URL**: [https://www.youtube.com/shorts/zuqDTzW7WE0](https://www.youtube.com/shorts/zuqDTzW7WE0)
+- ⏱️ **Duration**: 1:22
+- 🏷️ **Domain**: Database Licensing, Core Customization, SQL IaaS Agent Extension Registration
 
 </details>
 

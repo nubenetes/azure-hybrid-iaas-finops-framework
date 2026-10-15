@@ -15,7 +15,7 @@ flowchart TD
 ---
 ---
 
-## 🎥 Multimedia Video Sessions, Guides & Technical Shorts (24 Episodes)
+## 🎥 Multimedia Video Sessions, Guides & Technical Shorts (33 Episodes)
 
 All foundational pillars, mathematical models, and automation engines are accompanied by technical video episodes on YouTube ([**@nubenetes**](https://youtube.com/@nubenetes)), pairing English 🇬🇧 and Spanish 🇪🇸 deep dives for each core domain:
 
@@ -45,6 +45,15 @@ All foundational pillars, mathematical models, and automation engines are accomp
 | **Governance & Automation** | 📽️ Video Guide | [Azure Governance & Policy FinOps: Coercive Guardrails, Tagging & Cost Allocation](https://www.youtube.com/watch?v=ewLnUSh-fJU) | 🇬🇧 English *(CC 20+)* | `8:13` | [▶️ Watch Video](https://www.youtube.com/watch?v=ewLnUSh-fJU) |
 | **Governance & Automation** | 📽️ Video Guide | [FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización](https://www.youtube.com/watch?v=yAm1-z2ZpfA) | 🇪🇸 Spanish *(CC 20+)* | `6:42` | [▶️ Watch Video](https://www.youtube.com/watch?v=yAm1-z2ZpfA) |
 | **Continuous Automation Engine** | ⚡ Short | [Turning Azure FinOps Theory into Automated Action](https://www.youtube.com/shorts/09oqxYUeHd8) | 🇬🇧 English *(CC 20+)* | `1:19` | [▶️ Watch Short](https://www.youtube.com/shorts/09oqxYUeHd8) |
+| **Automation Toolbelt 2026** | ⚡ Short | [The Ultimate 2026 FinOps Automation Toolbelt](https://www.youtube.com/shorts/kAghOfRqo2U) | 🇬🇧 English *(CC 20+)* | `1:30` | [▶️ Watch Short](https://www.youtube.com/shorts/kAghOfRqo2U) |
+| **Hidden Cost Antipatterns** | ⚡ Short | [The Biggest Hidden Cost Traps in Azure](https://www.youtube.com/shorts/D8Xeyl1Z5rI) | 🇬🇧 English *(CC 20+)* | `1:30` | [▶️ Watch Short](https://www.youtube.com/shorts/D8Xeyl1Z5rI) |
+| **Interactive CLI Break-Even** | ⚡ Short | [How the FinOps CLI Automates Break Even Math](https://www.youtube.com/shorts/-iJ65ex08dA) | 🇬🇧 English *(CC 20+)* | `1:27` | [▶️ Watch Short](https://www.youtube.com/shorts/-iJ65ex08dA) |
+| **Shift-Left Governance** | ⚡ Short | [How Coercive Governance Stops Cloud Waste](https://www.youtube.com/shorts/m80jwCT7630) | 🇬🇧 English *(CC 20+)* | `1:21` | [▶️ Watch Short](https://www.youtube.com/shorts/m80jwCT7630) |
+| **Commitment Portfolio Model** | ⚡ Short | [How the Floor & Ceiling Model Slashes Cloud Costs](https://www.youtube.com/shorts/o2N8vKup1Bs) | 🇬🇧 English *(CC 20+)* | `1:16` | [▶️ Watch Short](https://www.youtube.com/shorts/o2N8vKup1Bs) |
+| **VNet Peering Economics** | ⚡ Short | [How Azure VNet Peering Multiplies Costs](https://www.youtube.com/shorts/No4955alRaI) | 🇬🇧 English *(CC 20+)* | `1:14` | [▶️ Watch Short](https://www.youtube.com/shorts/No4955alRaI) |
+| **Identity Egress Containment** | ⚡ Short | [How Local Directories Cut Azure Egress Costs](https://www.youtube.com/shorts/TzWkx2oSKGM) | 🇬🇧 English *(CC 20+)* | `1:13` | [▶️ Watch Short](https://www.youtube.com/shorts/TzWkx2oSKGM) |
+| **Savings Plan Mechanics** | ⚡ Short | [How Azure Savings Plans Work](https://www.youtube.com/shorts/sAkB02IQMdA) | 🇬🇧 English *(CC 20+)* | `1:01` | [▶️ Watch Short](https://www.youtube.com/shorts/sAkB02IQMdA) |
+| **SQL Server VM Licensing** | ⚡ Short | [Why Azure SQL VMs Cost You More](https://www.youtube.com/shorts/zuqDTzW7WE0) | 🇬🇧 English *(CC 20+)* | `1:22` | [▶️ Watch Short](https://www.youtube.com/shorts/zuqDTzW7WE0) |
 
 
 ---

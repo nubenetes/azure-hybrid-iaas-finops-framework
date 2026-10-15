@@ -9,6 +9,8 @@
 > - 📽️ [**Azure FinOps Framework: Enterprise Hybrid IaaS Architecture Blueprint**](https://www.youtube.com/watch?v=7xUIjosp28w) (`8:37`, 🇬🇧 English CC 20+) — *Comprehensive architectural walkthrough of the enterprise hybrid IaaS blueprint, Hub-Spoke topology, and 7-figure savings.*
 > - 📽️ [**Azure FinOps Hub-and-Spoke: Blueprint de Arquitectura y Reducción del 77% en IaaS**](https://www.youtube.com/watch?v=RIiM9thkq2U) (`7:40`, 🇪🇸 Spanish CC 20+) — *Masterclass sobre la topología Hub-and-Spoke de referencia, desacoplamiento de cómputo y ahorro de 7 cifras.*
 > - ⚡ [**How the Azure FinOps Framework Slashes Cloud Bills**](https://www.youtube.com/shorts/ohhFQPy97U8) (`1:16`, 🇬🇧 English CC 20+) — *Píldora rápida sobre el desacoplamiento físico y de licenciamiento que reduce el gasto de $173k a $39k/mes.*
+> - ⚡ [**The Ultimate 2026 FinOps Automation Toolbelt**](https://www.youtube.com/shorts/kAghOfRqo2U) (`1:30`, 🇬🇧 English CC 20+) — *Píldora rápida sobre el ecosistema de automatización: Bicep, Terraform, ARG KQL y CLI.*
+> - ⚡ [**How the FinOps CLI Automates Break Even Math**](https://www.youtube.com/shorts/-iJ65ex08dA) (`1:27`, 🇬🇧 English CC 20+) — *Píldora rápida sobre el modelado matemático y la calculadora interactiva CLI.*
 
 ## 1. Executive Framework: The FinOps Iron Triangle
 

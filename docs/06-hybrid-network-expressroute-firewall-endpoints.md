@@ -6,6 +6,8 @@
 > - 📽️ [**Azure Hybrid Network FinOps: ExpressRoute Economics, Firewall Tiers & Endpoints**](https://www.youtube.com/watch?v=p5HPpm3CI0A) (`8:42`, 🇬🇧 English CC 20+) — *Mathematical break-even models for 1 Gbps ExpressRoute (240 TB/mo), asymmetric downgrade trap, and Azure Firewall crossover.*
 > - 📽️ [**Economía de Redes Híbridas en Azure: ExpressRoute, Firewall y Endpoints**](https://www.youtube.com/watch?v=j9HNF-73zDQ) (`7:14`, 🇪🇸 Spanish CC 20+) — *Análisis matemático de break-even en ExpressRoute (240 TB/mes), la trampa del cambio irreversible y crossover en Azure Firewall.*
 > - ⚡ [**How Cloud Unlimited Plans Trap You**](https://www.youtube.com/shorts/Xd2adpKN6VM) (`1:24`, 🇬🇧 English CC 20+) — *Píldora rápida sobre la trampa de los planes ilimitados de telecomunicaciones.*
+> - ⚡ [**How Azure VNet Peering Multiplies Costs**](https://www.youtube.com/shorts/No4955alRaI) (`1:14`, 🇬🇧 English CC 20+) — *Píldora rápida sobre costes de transferencia en VNet Peering y contención intra-región.*
+> - ⚡ [**How Local Directories Cut Azure Egress Costs**](https://www.youtube.com/shorts/TzWkx2oSKGM) (`1:13`, 🇬🇧 English CC 20+) — *Píldora rápida sobre la réplica local de controladores de dominio AD DS en el Hub VNet.*
 
 ## 1. Network Asymmetry in Cloud Architecture
 
