@@ -428,10 +428,10 @@ All episodes and technical shorts are hosted on the official YouTube channel [**
 #### 📽️ Deep-Dive Video Guides & Masterclasses (The Explainer Series)
 | Format | Title / Episode | Focus / Core Engineering Domain | Language | Duration | Direct YouTube Link |
 | :---: | :--- | :--- | :---: | :---: | :--- |
-| 📽️ **Video Guide** | [**Azure FinOps Framework: Arquitectura y Blueprint de Optimización IaaS**](https://www.youtube.com/watch?v=7xUIjosp28w) | **Global Architecture Blueprint**: Hub-Spoke topology, lift-and-shift traps vs. FinOps optimization, and 7-figure savings | 🇪🇸 Spanish *(CC 20+)* | `8:37` | [▶️ Watch Video](https://www.youtube.com/watch?v=7xUIjosp28w) |
-| 📽️ **Video Guide** | [**FinOps en Azure: Optimización 3D de Cómputo, Rightsizing y Lifecycle**](https://www.youtube.com/watch?v=jt7t1BPNBsY) | **3D Compute Engineering**: Empirical P95/P99 rightsizing, guest OS shutdown trap, API deallocation, and VMSS Spot | 🇪🇸 Spanish *(CC 20+)* | `7:22` | [▶️ Watch Video](https://www.youtube.com/watch?v=jt7t1BPNBsY) |
-| 📽️ **Video Guide** | [**Azure Core Masking: Ahorro del 75% en Licencias SQL Server con FinOps**](https://www.youtube.com/watch?v=vl6LKMgcKnw) | **Database Licensing**: Masking 24 cores on E32-8s_v5 to save $96k/mo (€88k/mo) on SQL Server while retaining 256 GB RAM | 🇪🇸 Spanish *(CC 20+)* | `8:35` | [▶️ Watch Video](https://www.youtube.com/watch?v=vl6LKMgcKnw) |
-| 📽️ **Video Guide** | [**Azure Storage: Desacopla Capacidad e IOPS con Premium SSD v2 en FinOps**](https://www.youtube.com/watch?v=BZsmqa_FUGk) | **Storage Paradigm Shift**: Decoupled Capacity/IOPS/MBps, eliminating RAID 0 striping, and NVMe on Ebdsv5 series | 🇪🇸 Spanish *(CC 20+)* | `8:43` | [▶️ Watch Video](https://www.youtube.com/watch?v=BZsmqa_FUGk) |
+| 📽️ **Video Guide** | [**Azure FinOps Framework: Enterprise Hybrid IaaS Architecture Blueprint**](https://www.youtube.com/watch?v=7xUIjosp28w) | **Global Architecture Blueprint**: Hub-Spoke topology, lift-and-shift traps vs. FinOps optimization, and 7-figure savings | 🇬🇧 English *(CC 20+)* | `8:37` | [▶️ Watch Video](https://www.youtube.com/watch?v=7xUIjosp28w) |
+| 📽️ **Video Guide** | [**Azure FinOps: 3D Compute Engineering, Rightsizing & VM Lifecycle Automation**](https://www.youtube.com/watch?v=jt7t1BPNBsY) | **3D Compute Engineering**: Empirical P95/P99 rightsizing, guest OS shutdown trap, API deallocation, and VMSS Spot | 🇬🇧 English *(CC 20+)* | `7:22` | [▶️ Watch Video](https://www.youtube.com/watch?v=jt7t1BPNBsY) |
+| 📽️ **Video Guide** | [**Azure Core Masking: Slash SQL Server Licensing Costs by 75% with FinOps**](https://www.youtube.com/watch?v=vl6LKMgcKnw) | **Database Licensing**: Masking 24 cores on E32-8s_v5 to save $96k/mo (€88k/mo) on SQL Server while retaining 256 GB RAM | 🇬🇧 English *(CC 20+)* | `8:35` | [▶️ Watch Video](https://www.youtube.com/watch?v=vl6LKMgcKnw) |
+| 📽️ **Video Guide** | [**Azure Storage: Decouple Capacity & IOPS with Premium SSD v2 in FinOps**](https://www.youtube.com/watch?v=BZsmqa_FUGk) | **Storage Paradigm Shift**: Decoupled Capacity/IOPS/MBps, eliminating RAID 0 striping, and NVMe on Ebdsv5 series | 🇬🇧 English *(CC 20+)* | `8:43` | [▶️ Watch Video](https://www.youtube.com/watch?v=BZsmqa_FUGk) |
 | 📽️ **Video Guide** | [**Economía de Redes Híbridas en Azure: ExpressRoute, Firewall y Endpoints**](https://www.youtube.com/watch?v=j9HNF-73zDQ) | **Hybrid Network Economics**: ExpressRoute break-even (240 TB/mo), asymmetric downgrade trap, and Firewall crossover | 🇪🇸 Spanish *(CC 20+)* | `7:14` | [▶️ Watch Video](https://www.youtube.com/watch?v=j9HNF-73zDQ) |
 | 📽️ **Video Guide** | [**FinOps en Azure: Control de Costes en Telemetría, Logs y Monitorización**](https://www.youtube.com/watch?v=jXgyXSNmXwM) | **Observability Containment**: Eliminating runaway telemetry, kernel XPath filtering with AMA, and Basic Table Plans | 🇪🇸 Spanish *(CC 20+)* | `5:33` | [▶️ Watch Video](https://www.youtube.com/watch?v=jXgyXSNmXwM) |
 | 📽️ **Video Guide** | [**FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización**](https://www.youtube.com/watch?v=yAm1-z2ZpfA) | **Coercive Governance & Automation**: Azure Policy guardrails, hub cost allocation, ARG KQL audits, and shift-left gates | 🇪🇸 Spanish *(CC 20+)* | `6:42` | [▶️ Watch Video](https://www.youtube.com/watch?v=yAm1-z2ZpfA) |
@@ -454,28 +454,28 @@ All episodes and technical shorts are hosted on the official YouTube channel [**
 
 ### Section A: Deep-Dive Video Guides & Masterclasses
 
-#### 1. Azure FinOps Framework: Arquitectura y Blueprint de Optimización IaaS (8:37)
+#### 1. Azure FinOps Framework: Enterprise Hybrid IaaS Architecture Blueprint (8:37)
 - 🔗 **Direct URL**: [https://www.youtube.com/watch?v=7xUIjosp28w](https://www.youtube.com/watch?v=7xUIjosp28w)
 - ⏱️ **Duration**: 8:37
 - 🏷️ **Domain**: Global Hybrid IaaS Architecture Blueprint, Hub-and-Spoke, SQL Licensing, TCO Impact
 - 📝 **Technical Overview**:
 > Deep dive into the reference architecture blueprint for enterprise Azure hybrid IaaS environments. Explores how standard unoptimized migrations spending $173,000/month are transformed into high-efficiency architectures operating at $39,000/month (over 77% sustained reduction). Demonstrates the strategic value of centralizing shared services, decoupling physical compute from software licensing, implementing metered network circuits, and enforcing automated policy guardrails.
 
-#### 2. FinOps en Azure: Optimización 3D de Cómputo, Rightsizing y Lifecycle (7:22)
+#### 2. Azure FinOps: 3D Compute Engineering, Rightsizing & VM Lifecycle Automation (7:22)
 - 🔗 **Direct URL**: [https://www.youtube.com/watch?v=jt7t1BPNBsY](https://www.youtube.com/watch?v=jt7t1BPNBsY)
 - ⏱️ **Duration**: 7:22
 - 🏷️ **Domain**: 3D Compute Engineering, P95/P99 Telemetry Rightsizing, Lifecycle Automation, Spot VMSS
 - 📝 **Technical Overview**:
 > Analyzes empirical compute optimization across three dimensions: metric telemetry, specialized VM families, and automated lifecycle management. Explains why average-based sizing fails and details the mechanics of the hypervisor reservation trap where shutting down from inside the guest OS continues 100% compute billing. Covers automated API-based deallocation runbooks and priority mix scaling in Virtual Machine Scale Sets (VMSS) combining on-demand baselines with up to 90% discounted Spot instances.
 
-#### 3. Azure Core Masking: Ahorro del 75% en Licencias SQL Server con FinOps (8:35)
+#### 3. Azure Core Masking: Slash SQL Server Licensing Costs by 75% with FinOps (8:35)
 - 🔗 **Direct URL**: [https://www.youtube.com/watch?v=vl6LKMgcKnw](https://www.youtube.com/watch?v=vl6LKMgcKnw)
 - ⏱️ **Duration**: 8:35
 - 🏷️ **Domain**: Database Licensing, Constrained vCPUs (Standard_E32-8s_v5), Azure Hybrid Benefit
 - 📝 **Technical Overview**:
 > Detailed technical breakdown on how to eliminate over $96,000/month (€88,393/month, $1.15M+ annually) in enterprise database licensing fees. Explains how Constrained vCPU sizes (such as Standard_E32-8s_v5) mask 24 physical cores from the operating system while guaranteeing full access to 256 GB RAM and 80,000 IOPS. Details the core licensing formula, stacking Azure Hybrid Benefit with existing Software Assurance, and leveraging 180-day dual-use migration rights.
 
-#### 4. Azure Storage: Desacopla Capacidad e IOPS con Premium SSD v2 en FinOps (8:43)
+#### 4. Azure Storage: Decouple Capacity & IOPS with Premium SSD v2 in FinOps (8:43)
 - 🔗 **Direct URL**: [https://www.youtube.com/watch?v=BZsmqa_FUGk](https://www.youtube.com/watch?v=BZsmqa_FUGk)
 - ⏱️ **Duration**: 8:43
 - 🏷️ **Domain**: Decoupled Storage Subsystem, Premium SSD v2, NVMe Architecture (Ebdsv5)
