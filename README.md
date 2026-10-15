@@ -24,6 +24,9 @@ It implements, validates, and deepens the research from the technical monograph 
 
 - [1. 🏛️ Global Hybrid Architecture](#1-️-global-hybrid-architecture)
 - [2. 💡 Financial Impact: Baseline vs. FinOps Optimized (USD $ & EUR €)](#2--financial-impact-baseline-vs-finops-optimized-usd---eur-)
+  - [2.1. 📊 Executive Infographic: Architecture & Cost Reduction Blueprint](#21--executive-infographic-architecture--cost-reduction-blueprint)
+  - [2.2. 🔍 Comprehensive Teardown of the Framework Infographic](#22--comprehensive-teardown-of-the-framework-infographic)
+  - [2.3. 📈 Financial Impact Breakdown: TCO Comparison Table (USD $ & EUR €)](#23--financial-impact-breakdown-tco-comparison-table-usd---eur-)
 - [3. 📚 Documentation Suite & Technical Guides (docs/)](#3--documentation-suite--technical-guides-docs)
 - [4. 🧱 Core Architectural Pillars](#4--core-architectural-pillars)
   - [4.1. Visibility, Tagging & Coercive Governance](#41-visibility-tagging--coercive-governance)
@@ -105,17 +108,112 @@ flowchart TD
 
 ## 2. 💡 Financial Impact: Baseline vs. FinOps Optimized (USD $ & EUR €)
 
-The table below illustrates a representative enterprise deployment (Hub-Spoke, 10 SQL Server database nodes, 30 IIS web server instances, ExpressRoute 1 Gbps, and centralized telemetry) modeled for European and US Zone 1 regions (**Spain Central / Madrid** and **West Europe / Netherlands** alongside **East US**):
+### 2.1. 📊 Executive Infographic: Architecture & Cost Reduction Blueprint
+
+The following high-level architectural infographic captures the entire transformation journey from an unoptimized legacy cloud footprint to a mathematically optimized Azure FinOps architecture:
+
+<div align="center">
+  <img src="docs/images/Hybrid_Cloud_Cost_Optimization_Framework.png" alt="Azure Hybrid IaaS FinOps Framework Infographic" width="100%" />
+</div>
+
+> [!IMPORTANT]
+> **Executive Summary**: The infographic above illustrates the end-to-end transformation from an **Unoptimized Lift-and-Shift** deployment to the **FinOps Optimized Lean Architecture**. By systematically decoupling physical compute resources from database software licensing, modernizing disk subsystems with Premium SSD v2, enforcing break-even network routing, and implementing edge kernel log filtering, the framework delivers a **77.4% total monthly TCO reduction**, cutting recurring cloud bills from **$173,065 (€159,220)** down to **$39,077 (€35,951)** per month and unlocking **$1,607,856 / €1,479,228** in net annual recurring savings.
+
+---
+
+### 2.2. 🔍 Comprehensive Teardown of the Framework Infographic
+
+#### ⚠️ 1. The Baseline: Unoptimized Lift-and-Shift (High Waste & Overspend)
+Traditional "lift-and-shift" enterprise migrations replicate on-premises assumptions directly in the cloud without re-architecting for cloud unit economics, resulting in severe financial hemorrhage across 7 major operational vectors:
+
+- **SQL Server Licensing (Unconstrained PAYG)**:
+  - Running mission-critical databases on standard memory-optimized VMs (e.g., 32-core `Standard_E32s_v5`) to meet a 256 GB RAM memory requirement.
+  - Generates an astronomical **$128,105/month** in Pay-As-You-Go per-core licensing surcharges for unutilized CPU capacity.
+
+- **Windows Server OS Surcharge**:
+  - Paying default on-demand runtime rates with built-in OS licensing surcharges (~36% premium over raw compute), incurring an unnecessary **$14,280/month**.
+
+- **Monolithic Storage Over-Provisioning (RAID 0)**:
+  - Deploying legacy Premium SSD v1 disks configured in Windows Storage Spaces RAID 0 arrays (e.g., 8x P40 disks totaling 40 TB) solely to aggregate the required 13,500 IOPS and 250 MB/s throughput.
+  - Incurs **$6,530/month** ($5,530 disk capacity + provisioned overhead) where over 85% of purchased disk capacity remains dead, unutilized space.
+
+- **ExpressRoute 1 Gbps Unlimited Plan Saturation Trap**:
+  - Contracting a 1 Gbps ExpressRoute circuit on a flat-rate Unlimited Data plan (**$6,450/month** port fee) for hybrid interconnects characterized by low utilization patterns (<50 TB/month).
+
+- **Web Tier Compute & Guest-OS Shutdown Traps**:
+  - Provisioning static 24/7 D-series virtual machines without auto-scaling (**$9,850/month**).
+  - Teams routinely shut down servers from within Windows or Linux (`shutdown /s` or `systemctl poweroff`), leaving VMs in a `Stopped` hypervisor state where Microsoft reserves hardware and continues billing CPU and RAM at 100%.
+
+- **Unfiltered Telemetry & Log Ingestion Bill Shock**:
+  - Legacy agents (MMA) stream unfiltered telemetry (routine IIS W3C HTTP 200/300 success codes and verbose security event logs) into Log Analytics at full analytics ingestion rates (€2.12/GB), costing **$7,600/month**.
+
+- **PaaS Endpoint Traffic Inefficiencies**:
+  - Deploying hourly-billed Private Endpoints across internal subnets with continuous data processing fees (**$1,250/month**) where standard zero-cost Service Endpoints would suffice.
+
+- **Baseline Total Cost of Ownership (TCO)**:
+  - **$173,065 / €159,220 per month** ($2,076,780 / €1,910,640 annually).
+
+---
+
+#### 🚀 2. The Solution: FinOps Optimized Architecture & Decision Engines
+
+The right-hand side of the infographic outlines the target state: an automated, lean architecture driven by mathematical decision models:
+
+##### 🧩 A. Compute & Licensing Optimization Levers
+- **Constrained vCPUs (Core-Count-Constrained - CCC)**:
+  - Deploys specialized SKUs like `Standard_E32-8s_v5`, which **mask 24 physical cores** from the operating system while guaranteeing full access to 256 GB RAM, 32 vCPU memory bandwidth, and 80,000 IOPS.
+  - SQL Server licenses strictly the 8 active vCPUs instead of 32, slashing database software costs by **75%** (**$96,080/month savings**, over **$1.15M annually**).
+
+- **Azure Hybrid Benefit (AHB) & Software Assurance**:
+  - Stacks existing on-premises Windows Server and SQL Server Software Assurance licenses into Azure, achieving a **100% elimination of the OS licensing surcharge ($14,280/mo reduction)**.
+  - Leverages 180-day dual-use migration rights for risk-free parallel testing and migration.
+
+- **3D Compute Rightsizing & VMSS Priority Mix**:
+  - Replaces static VMs with Virtual Machine Scale Sets (VMSS) leveraging a priority mix: a reliable 2-node on-demand baseline paired with elastic Spot instances discounted by up to **90%** for burstable workloads, reducing web compute spend to **$3,430/month**.
+  - Enforces API-level deallocation runbooks (`Stopped (Deallocated)` state) to achieve **$0.00/hour** compute billing during off-peak hours.
+
+- **Floor & Ceiling Commitment Portfolio**:
+  - Combines rigid 3-year Reserved Instances (up to 72% discount) for predictable database baselines with flexible Compute Savings Plans for variable application tiers.
+
+##### 💾 B. Storage & Hybrid Network Economics
+- **Premium SSD v2 Decoupled Architecture**:
+  - Replaces bloated RAID 0 arrays with Premium SSD v2, utilizing independent sliders for **Disk Capacity (GB)**, **IOPS**, and **Throughput (MB/s)**.
+  - Takes full advantage of the included baseline of **3,000 IOPS and 125 MB/s at $0 additional charge**, provisioning only the exact 5 TB needed and reducing storage spend to **$1,365/month**.
+
+- **Zero-Downtime Dynamic Storage Scaling**:
+  - Scripts dynamic throughput and IOPS scaling (up to 4 times per 24-hour cycle) to dial up performance during nightly database maintenance and backup windows, and dial back down before morning user traffic without VM reboots.
+
+- **VNet Service Endpoints vs. Private Endpoints**:
+  - Standardizes on 100% free VNet Service Endpoints for high-throughput PaaS traffic (Storage accounts, Key Vault), completely eliminating hourly and per-gigabyte data processing fees (**$1,250/month saved**).
+
+##### 📐 C. Mathematical Break-Even Decision Models
+- **ExpressRoute Break-Even Threshold (240.6 TB/month)**:
+  - Rigorous mathematical modeling proves that a 1 Gbps ExpressRoute Unlimited plan requires continuous **more than 73.2% saturation 24/7 (240.6 TB/month)** to become cost-effective.
+  - Under realistic enterprise traffic (~8 TB/month egress), switching to a Metered Data plan ($436/mo port + egress) slashes circuit costs from $6,450 to **$636/month** (saving **$5,814/month**).
+  - Flags the **asymmetric transition trap**: Microsoft architectural constraints allow upgrading from Metered to Unlimited seamlessly, but downgrading from Unlimited to Metered is blocked and requires complete circuit recreation.
+
+- **Azure Firewall SKU Crossover Point (12.74 TB/month)**:
+  - Formulates the exact economic crossover between Azure Firewall Basic and Azure Firewall Standard. Workloads processing under 12.74 TB/month maximize ROI on the Basic tier, while higher throughput justifies the Standard tier to avoid punitive data processing surcharges.
+
+- **AMA Edge Filtering & Log Cost Control (>80% Reduction)**:
+  - Replaces legacy MMA with modern Azure Monitor Agent (AMA). Data Collection Rules (DCR) with kernel-level XPath filters discard routine HTTP 200/300 noise inside the guest OS before network transmission.
+  - High-volume diagnostic logs are routed to Log Analytics **Basic Table Plans (€0.46/GB vs €2.12/GB)**, slashing monthly telemetry ingestion bills from $7,600 to **$1,520/month**.
+
+---
+
+### 2.3. 📈 Financial Impact Breakdown: TCO Comparison Table (USD $ & EUR €)
+
+The table below details the financial model for an enterprise hybrid environment (Hub-Spoke, 10 SQL Server database nodes, 30 IIS web server instances, ExpressRoute 1 Gbps, and centralized telemetry) modeled across European and US Zone 1 regions (**Spain Central / Madrid** and **West Europe / Netherlands** alongside **East US**):
 
 > 💶 **Dual Currency Modeling**: All financial estimates are presented in both **USD ($)** and **EUR (€)** using the reference conversion rate ($1.00 \text{ USD} \approx €0.92 \text{ EUR} / €1.00 \text{ EUR} \approx $1.087 \text{ USD}$).
 
 | Architecture Layer | Unoptimized Lift-and-Shift | FinOps Framework Optimized | Monthly Savings | Annual Savings |
 | :--- | :--- | :--- | :--- | :--- |
-| **SQL Server Licensing** | Unconstrained `E32s_v5` (32 cores) PAYG = **$128,105 / €117,857 / mo** | Constrained `E32-8s_v5` (8 cores) + AHB = **$0 (SA) or $32,026 / €29,464 / mo** | **-$96,079 / -€88,393 / mo** | **$1,152,948 / €1,060,712 / yr** |
+| **SQL Server Licensing** | Unconstrained `E32s_v5` (32 cores) PAYG = **$128,105 / €117,857 / mo** | Constrained `E32-8s_v5` (8 cores) + AHB = **$0 (SA) or $32,025 / €29,463 / mo** | **-$96,080 / -€88,394 / mo** | **$1,152,960 / €1,060,723 / yr** |
 | **Windows Server OS** | Default PAYG licensing (~36% surcharge) = **$14,280 / €13,138 / mo** | Azure Hybrid Benefit (AHB) enabled across all VMs = **$0 / €0 / mo** | **-$14,280 / -€13,138 / mo** | **$171,360 / €157,651 / yr** |
-| **Database Storage** | Striped P40 disks on Premium v1 (40 TB) = **$5,530 / €5,088 / mo** | Decoupled Premium SSD v2 (5 TB + 13.5k IOPS) = **$1,365 / €1,256 / mo** | **-$4,165 / -€3,832 / mo** | **$49,980 / €45,982 / yr** |
+| **Database Storage** | Striped P40 disks on Premium v1 (40 TB) = **$6,530 / €6,008 / mo** | Decoupled Premium SSD v2 (5 TB + 13.5k IOPS) = **$1,365 / €1,256 / mo** | **-$5,165 / -€4,752 / mo** | **$61,980 / €57,022 / yr** |
 | **ExpressRoute Circuit** | 1 Gbps Unlimited Plan ($6,450 port flat) = **$6,450 / €5,934 / mo** | 1 Gbps Metered Plan ($436 port + 8 TB egress) = **$636 / €585 / mo** | **-$5,814 / -€5,349 / mo** | **$69,768 / €64,187 / yr** |
-| **Web Tier Compute** | Static 24/7 D-series PAYG VMs = **$9,850 / €9,062 / mo** | VMSS Priority Mix (2 On-Demand Base + Spot Burst) = **$3,450 / €3,174 / mo** | **-$6,400 / -€5,888 / mo** | **$76,800 / €70,656 / yr** |
+| **Web Tier Compute** | Static 24/7 D-series PAYG VMs = **$9,850 / €9,062 / mo** | VMSS Priority Mix (2 On-Demand Base + Spot Burst) = **$3,430 / €3,156 / mo** | **-$6,420 / -€5,906 / mo** | **$77,040 / €70,877 / yr** |
 | **Telemetry & Logs** | Full unfiltered IIS W3C & Security logs = **$7,600 / €6,992 / mo** | AMA + DCR XPath Edge filter + Basic Table Plan = **$1,520 / €1,398 / mo** | **-$6,080 / -€5,594 / mo** | **$72,960 / €67,123 / yr** |
 | **PaaS Endpoint Traffic** | Private Endpoints on all internal subnets = **$1,250 / €1,150 / mo** | VNet Service Endpoints (100% Free) = **$0 / €0 / mo** | **-$1,250 / -€1,150 / mo** | **$15,000 / €13,800 / yr** |
 | **TOTAL TCO** | **$173,065 / €159,220 / month** | **$39,077 / €35,951 / month** | **-$133,988 / -€123,269 / mo** | **$1,607,856 / €1,479,228 / yr** |
