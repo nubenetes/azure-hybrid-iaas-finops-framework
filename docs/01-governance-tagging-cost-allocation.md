@@ -2,7 +2,10 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [➡️ Next: 02. Compute Rightsizing](02-compute-rightsizing-lifecycle-spot.md)
 
-> 📽️ **Video Guide**: Watch the technical video guide [**FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización**](https://www.youtube.com/watch?v=yAm1-z2ZpfA) (`6:42`) explaining coercive tagging with Azure Policy, automated Hub-to-Spoke cost allocation, and continuous governance.
+> 📽️ **Video Sessions**:
+> - 📽️ [**Azure Governance & Policy FinOps: Coercive Guardrails, Tagging & Cost Allocation**](https://www.youtube.com/watch?v=ewLnUSh-fJU) (`8:13`, 🇬🇧 English CC 20+) — *Technical deep dive into continuous policy enforcement, ARM deny effects, tag inheritance, and shared cost allocation.*
+> - 📽️ [**FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización**](https://www.youtube.com/watch?v=yAm1-z2ZpfA) (`6:42`, 🇪🇸 Spanish CC 20+) — *Sesión técnica sobre gobernanza continua, políticas Azure Policy, reparto de costes y auditoría con KQL.*
+> - ⚡ [**Turning Azure FinOps Theory into Automated Action**](https://www.youtube.com/shorts/09oqxYUeHd8) (`1:19`, 🇬🇧 English CC 20+) — *Píldora rápida sobre la cadena de automatización continua: Bicep, ARG y runbooks Day-2.*
 
 ## 1. The FinOps Axiom: You Cannot Optimize What You Cannot See
 

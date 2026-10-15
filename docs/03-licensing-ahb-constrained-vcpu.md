@@ -3,8 +3,9 @@
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 02. Compute Rightsizing](02-compute-rightsizing-lifecycle-spot.md) | [➡️ Next: 04. Commitment Engineering](04-commitment-portfolio-ri-savings-plans.md)
 
 > 📽️ **Video Sessions**:
-> - 📽️ [**Azure Core Masking: Slash SQL Server Licensing Costs by 75% with FinOps**](https://www.youtube.com/watch?v=vl6LKMgcKnw) (`8:35`) — *Technical guide on masking 24 cores on Standard_E32-8s_v5 to save $96k/mo (€88k/mo) on SQL Server while retaining 256 GB RAM.*
-> - ⚡ [**How Core Masking Slashes Cloud Database Costs**](https://www.youtube.com/shorts/EZQ6GnAEtpE) (`1:27`) — *Resumen en 1 minuto de la técnica de núcleos restringidos y Beneficio Híbrido.*
+> - 📽️ [**Azure Core Masking: Slash SQL Server Licensing Costs by 75% with FinOps**](https://www.youtube.com/watch?v=vl6LKMgcKnw) (`8:35`, 🇬🇧 English CC 20+) — *Technical guide on masking 24 cores on Standard_E32-8s_v5 to save $96k/mo (€88k/mo) on SQL Server while retaining 256 GB RAM.*
+> - 📽️ [**Enmascaramiento de Núcleos en Azure: Ahorra un 75% en Licencias de SQL Server**](https://www.youtube.com/watch?v=JSudzAtZr9g) (`6:11`, 🇪🇸 Spanish CC 20+) — *Guía técnica completa sobre cómo enmascarar 24 núcleos en Standard_E32-8s_v5 para ahorrar $96.000/mes manteniendo 256 GB RAM.*
+> - ⚡ [**How Core Masking Slashes Cloud Database Costs**](https://www.youtube.com/shorts/EZQ6GnAEtpE) (`1:27`, 🇬🇧 English CC 20+) — *Resumen en 1 minuto de la técnica de núcleos restringidos y Beneficio Híbrido.*
 
 ## 1. The Cost Weight of Software Intellectual Property
 

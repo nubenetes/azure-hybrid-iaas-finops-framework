@@ -3,8 +3,9 @@
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 01. Governance & Tagging](01-governance-tagging-cost-allocation.md) | [➡️ Next: 03. Advanced Licensing](03-licensing-ahb-constrained-vcpu.md)
 
 > 📽️ **Video Sessions**:
-> - 📽️ [**Azure FinOps: 3D Compute Engineering, Rightsizing & VM Lifecycle Automation**](https://www.youtube.com/watch?v=jt7t1BPNBsY) (`7:22`) — *Technical masterclass on empirical P95/P99 rightsizing, specialized VM families, and automated hypervisor deallocation.*
-> - ⚡ [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) (`1:13`) — *Píldora rápida sobre la trampa del apagado en SO vs desasignación por API.*
+> - 📽️ [**Azure FinOps: 3D Compute Engineering, Rightsizing & VM Lifecycle Automation**](https://www.youtube.com/watch?v=jt7t1BPNBsY) (`7:22`, 🇬🇧 English CC 20+) — *Technical masterclass on empirical P95/P99 rightsizing, specialized VM families, and automated hypervisor deallocation.*
+> - 📽️ [**Rightsizing en Azure: Optimización Empírica P95/P99 y Trampa del Apagado en Cómputo**](https://www.youtube.com/watch?v=b4QUPOKc_ng) (`7:09`, 🇪🇸 Spanish CC 20+) — *Masterclass técnica sobre rightsizing empírico P95/P99, selección de SKUs y automatización del ciclo de vida.*
+> - ⚡ [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) (`1:13`, 🇬🇧 English CC 20+) — *Píldora rápida sobre la trampa del apagado en SO vs desasignación por API.*
 
 ## 1. The Lift-and-Shift Fallacy
 
