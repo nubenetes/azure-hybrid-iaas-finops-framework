@@ -24,7 +24,8 @@ It implements, validates, and deepens the research from the technical monograph 
 
 - [1. 🏛️ Global Hybrid Architecture](#1-️-global-hybrid-architecture)
   - [1.1. 🗺️ Enterprise FinOps Strategy & Architectural Domain Map](#11--enterprise-finops-strategy--architectural-domain-map)
-  - [1.2. 🏗️ Reference Hub-and-Spoke Infrastructure Topology](#12-️-reference-hub-and-spoke-infrastructure-topology)
+  - [1.2. 🎯 Technical Workload Optimization Scope: Azure Windows & Hybrid Infrastructure](#12--technical-workload-optimization-scope-azure-windows--hybrid-infrastructure)
+  - [1.3. 🏗️ Reference Hub-and-Spoke Infrastructure Topology](#13-️-reference-hub-and-spoke-infrastructure-topology)
 - [2. 💡 Financial Impact: Baseline vs. FinOps Optimized (USD $ & EUR €)](#2--financial-impact-baseline-vs-finops-optimized-usd---eur-)
   - [2.1. 📊 Executive Infographic: Architecture & Cost Reduction Blueprint](#21--executive-infographic-architecture--cost-reduction-blueprint)
   - [2.2. 🔍 Comprehensive Teardown of the Framework Infographic](#22--comprehensive-teardown-of-the-framework-infographic)
@@ -115,7 +116,67 @@ The visual blueprint below establishes the holistic FinOps optimization architec
 
 ---
 
-### 1.2. 🏗️ Reference Hub-and-Spoke Infrastructure Topology
+### 1.2. 🎯 Technical Workload Optimization Scope: Azure Windows & Hybrid Infrastructure
+
+The 3D isometric architectural blueprint below illustrates the physical and logical boundaries of the **FinOps Cost Optimization Scope for Azure Windows Infrastructure**. It provides an operational lens into how core compute clusters, application tiers, self-managed relational databases, hybrid identity, and secure network routing interconnect to establish a cost-efficient hybrid cloud platform:
+
+<div align="center">
+  <img src="docs/images/Cloud_Infrastructure_Cost_Optimization_Scope.png" alt="FinOps Cost Optimization Scope for Azure Windows Infrastructure" width="100%" />
+</div>
+
+> [!NOTE]
+> **Workload Optimization Scope Overview**: Enterprise environments running Windows Server and SQL Server IaaS have fundamentally different cost profiles than greenfield, cloud-native deployments. Without purposeful design, software licensing and unconstrained storage or networking surcharges quickly overwhelm core compute expenses. This blueprint delineates the 4 operational domains where FinOps engineering levers deliver the highest ROI.
+
+#### 🔍 Technical Tier Breakdown & Engineering Levers
+
+##### 🌐 1. Network & Hybrid Identity Infrastructure
+- **Hub-Spoke Network Architecture**:
+  - **Centralized Security & Gateway Aggregation**: Structures all ingress, egress, and cross-premises communication through a central Hub VNet. Perimeter defenses (Azure Firewall) and connectivity gateways (ExpressRoute / Site-to-Site VPN) are consolidated, terminating connections from the on-premises private network without duplicating expensive network appliances.
+  - **Egress & Peering Traffic Containment**: Intra-region VNet Peering between Hub and Spoke subnets routes traffic locally within the primary Azure region (Spain Central or West Europe), eliminating inter-region egress fees and maintaining sub-millisecond application latency.
+  - **PaaS Connectivity Cost Elimination**: Standardizes on 100% free VNet Service Endpoints for foundational Azure services (Azure Storage and Key Vault), bypassing firewall data inspection fees and avoiding the recurring hourly costs of Private Endpoints ($0.01/hour per endpoint + $0.01/GB data processed).
+
+- **Hybrid Identity Integration (Entra ID & AD DS)**:
+  - **Localized Authentication Footprint**: Deploys replica Active Directory Domain Services (AD DS) virtual machines directly in the Hub VNet on 3-year Reserved Instances (72% discount). This ensures sub-millisecond Kerberos/NTLM authentication for Windows Server and SQL Server instances without traversing WAN links.
+  - **Unified Cloud Directory Synchronization**: Synchronizes on-premises Active Directory forests with Microsoft Entra ID via Entra Connect, enforcing consistent role-based access control (RBAC), multi-factor authentication, and privileged identity governance.
+  - **Granular Tagging & Cost Attribution**: Maps Entra ID service principals and user identities directly to mandatory resource tagging policies (`CostCenter`, `Environment`, `Owner`, `Application`), establishing automated chargeback and showback reporting across all departments.
+
+##### 🖥️ 2. Core Compute & OS Infrastructure
+- **Windows Server Virtual Machine Fleet**:
+  - **Primary Enterprise Compute Backbone**: Forms the operational core powered entirely by Windows Server IaaS VMs supporting both the .NET web application tier and self-hosted SQL Server database instances.
+  - **Azure Hybrid Benefit (AHUB) Enforcement**: Systematically applies existing on-premises Windows Server core licenses with active Software Assurance (SA) directly to cloud VMs, eliminating 100% of the guest OS licensing runtime fee (~36% compute surcharge over Linux equivalent rates).
+  - **Standardized VM Family Alignment**: Standardizes fleet deployments across modern general-purpose (`Dsv5`), compute-optimized (`Fsv2`), and memory-optimized (`Esv5`) instance series, prohibiting the deployment of costly legacy or unoptimized GPU/oversized SKUs via Azure Policy guardrails.
+
+- **OS & Virtual Machine Cost Management**:
+  - **Empirical Rightsizing (P95/P99 Metrics)**: Analyzes 30-day peak telemetry (CPU percentiles, memory commit charge) instead of misleading monthly averages, systematically downsizing over-provisioned VMs to match actual application load.
+  - **Hypervisor-Level Deallocation Runbooks**: Enforces scheduled PowerShell/Azure Automation runbooks that power off non-production, development, and QA machines outside business hours into the `Stopped (Deallocated)` state, ensuring true **$0.00/hour** compute charges and eliminating the guest-OS shutdown billing trap.
+  - **Commitment Portfolio Engineering**: Synthesizes 3-year Reserved VM Instances for steady-state 24/7 baseline servers, Compute Savings Plans for variable workloads, and Burstable B-series VMs (`Standard_B2s` minimum) for non-critical administrative jump boxes.
+
+##### 🌐 3. Application Tier (.NET & IIS)
+- **.NET Applications Hosted on IIS**:
+  - **High-Density Web Hosting**: Executes enterprise .NET Framework (ASP.NET) and .NET Core web applications hosted on Internet Information Services (IIS) across Windows Server virtual machine pools.
+  - **Application Pool Memory Hygiene**: Optimizes IIS application pool recycling thresholds, private memory limits, and idle time-outs to eradicate synthetic memory bloat that prematurely triggers horizontal or vertical VM scale-outs.
+  - **Stateless Web Tier Architecture**: Offloads session state to distributed caching (Azure Cache for Redis) and static assets to Azure Blob Storage, allowing web server nodes to remain completely stateless and horizontally scalable.
+
+- **Application Compute Efficiency**:
+  - **VMSS Priority Mix & Spot Elasticity**: Deploys web server clusters using Virtual Machine Scale Sets (VMSS) configured with a priority mix: a resilient 2-instance on-demand baseline paired with elastic Spot VMs (at up to **90% discount**) for handling high-traffic spikes.
+  - **Predictive Dynamic Auto-Scaling**: Configures auto-scaling rules based on real-time HTTP queue length, incoming requests per second, and CPU telemetry, eliminating idle compute over-provisioning during off-peak periods.
+  - **Zero-Downtime Rolling Deployments**: Leverages VMSS rolling upgrades and health probes to deploy software patches and OS updates seamlessly without paying for duplicated parallel staging environments.
+
+##### 💾 4. Database Layer (IaaS SQL Server)
+- **Unmanaged SQL Server on Azure VMs**:
+  - **Self-Managed Enterprise Relational Tier**: Delivers high-availability enterprise database operations using self-managed SQL Server Enterprise or Standard editions on Windows Server VMs configured with AlwaysOn Availability Groups across Availability Zones.
+  - **SQL IaaS Agent Extension Registration**: Enrolls all database VMs in the `Microsoft.SqlVirtualMachine` resource provider to unlock automated patching, automated backups, and granular per-core license management directly within the Azure portal.
+  - **PaaS Modernization TCO Evaluation**: Conducts continuous financial benchmarking comparing self-managed IaaS administration overhead (patching, clustering, OS management) against Azure SQL Managed Instance (SQL MI) for long-term modernization.
+
+- **IaaS Database Optimization Focus**:
+  - **Core-Count-Constrained (CCC) VM SKUs**: Utilizes constrained vCPU virtual machine SKUs (e.g., `Standard_E32-8s_v5`), which restrict the active CPU count exposed to the OS to 8 cores while maintaining the full 256 GiB RAM and 80,000 IOPS memory bus. This reduces SQL Server licensing expenses by **75% ($96,080/month savings)**.
+  - **SQL Server Azure Hybrid Benefit (AHUB)**: Applies existing on-premises SQL Server core licenses with Software Assurance, utilizing 180-day dual-use rights for zero-cost parallel testing and migration.
+  - **Decoupled Premium SSD v2 Managed Disks**: Replaces legacy, over-provisioned RAID 0 disk arrays with decoupled Premium SSD v2 disks. Eliminates Storage Spaces complexity while capitalizing on the included baseline of **3,000 IOPS and 125 MB/s at $0 additional cost**, paying exclusively for actual consumed capacity.
+  - **Dynamic IOPS & Throughput Bursting**: Programmatically adjusts provisioned storage IOPS and bandwidth up during scheduled maintenance, ETL, and backup windows, reverting to baseline performance during business hours without downtime or VM restarts.
+
+---
+
+### 1.3. 🏗️ Reference Hub-and-Spoke Infrastructure Topology
 
 ```mermaid
 flowchart TD
