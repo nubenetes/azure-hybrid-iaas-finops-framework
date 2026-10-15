@@ -67,11 +67,12 @@ It implements, validates, and deepens the research from the technical monograph 
 The visual blueprint below establishes the holistic FinOps optimization architecture across hybrid Windows and SQL Server enterprise workloads, linking on-premises corporate infrastructure with Microsoft Azure across 4 foundational engineering domains:
 
 <div align="center">
-  <img src="docs/images/Estrategia_FinOps_en_la_nube.png" alt="Estrategia FinOps en Azure: Optimización para Arquitectura Windows IaaS e Híbrida" width="100%" />
+  <img src="docs/images/Azure_FinOps_Strategy_Enterprise_Architecture.png" alt="Azure FinOps Strategy: Optimization for Windows IaaS & Hybrid Architecture" width="100%" />
 </div>
 
 > [!NOTE]
 > **Architectural Blueprint Overview**: This strategic framework connects on-premises Active Directory and legacy data centers with the **Azure IaaS & Hybrid Environment**. By establishing precise guardrails across compute, database, network routing, and governance, the architecture eliminates unconstrained spending while preserving enterprise-grade resilience and performance.
+> *(🇪🇸 Original Spanish infographic available at [`docs/images/Estrategia_FinOps_en_la_nube.png`](docs/images/Estrategia_FinOps_en_la_nube.png))*.
 
 #### 🔍 Strategic Domain Breakdown & Engineering Levers
 
