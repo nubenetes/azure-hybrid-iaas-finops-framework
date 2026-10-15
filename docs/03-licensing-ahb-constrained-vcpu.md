@@ -2,7 +2,9 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 02. Compute Rightsizing](02-compute-rightsizing-lifecycle-spot.md) | [➡️ Next: 04. Commitment Engineering](04-commitment-portfolio-ri-savings-plans.md)
 
-> 📽️ **Video Guide**: Watch the technical short [**How Core Masking Slashes Cloud Database Costs**](https://www.youtube.com/shorts/EZQ6GnAEtpE) (`1:27`) to learn how Constrained vCPUs (e.g., `Standard_E32-8s_v5`) mask 24 physical cores to slash SQL Server licensing costs by 75% while preserving 256 GB RAM.
+> 📽️ **Video Sessions**:
+> - 📽️ [**Azure Core Masking: Ahorro del 75% en Licencias SQL Server con FinOps**](https://www.youtube.com/watch?v=vl6LKMgcKnw) (`8:35`) — *Guía técnica completa sobre cómo enmascarar 24 núcleos en Standard_E32-8s_v5 para ahorrar $96.000/mes manteniendo 256 GB RAM.*
+> - ⚡ [**How Core Masking Slashes Cloud Database Costs**](https://www.youtube.com/shorts/EZQ6GnAEtpE) (`1:27`) — *Resumen en 1 minuto de la técnica de núcleos restringidos y Beneficio Híbrido.*
 
 ## 1. The Cost Weight of Software Intellectual Property
 

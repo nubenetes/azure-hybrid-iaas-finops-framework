@@ -2,7 +2,9 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 06. Hybrid Networking](06-hybrid-network-expressroute-firewall-endpoints.md) | [➡️ Next: 08. Anti-Patterns & Gotchas](08-anti-patterns-and-gotchas.md)
 
-> 📽️ **Video Guide**: Watch the technical short [**How Edge Filtering Slashes Azure Log Costs**](https://www.youtube.com/shorts/qzkXGfuQmT4) (`1:30`) showing how kernel-level XPath filtering in AMA drops 90%+ routine logs before network transit, cutting telemetry bills by over 78%.
+> 📽️ **Video Sessions**:
+> - 📽️ [**FinOps en Azure: Control de Costes en Telemetría, Logs y Monitorización**](https://www.youtube.com/watch?v=jXgyXSNmXwM) (`5:33`) — *Guía técnica completa sobre contención de telemetría desbocada, filtrado XPath con el agente AMA y ahorro con planes de tablas básicas.*
+> - ⚡ [**How Edge Filtering Slashes Azure Log Costs**](https://www.youtube.com/shorts/qzkXGfuQmT4) (`1:30`) — *Píldora rápida de 1 minuto sobre filtrado en el kernel y reducción de $7.600 a $1.500/mes.*
 
 ## 1. The "Runaway Telemetry" Syndrome
 

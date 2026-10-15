@@ -2,6 +2,8 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [➡️ Next: 02. Compute Rightsizing](02-compute-rightsizing-lifecycle-spot.md)
 
+> 📽️ **Video Guide**: Watch the technical video guide [**FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización**](https://www.youtube.com/watch?v=yAm1-z2ZpfA) (`6:42`) explaining coercive tagging with Azure Policy, automated Hub-to-Spoke cost allocation, and continuous governance.
+
 ## 1. The FinOps Axiom: You Cannot Optimize What You Cannot See
 
 In structural Infrastructure-as-a-Service (IaaS) deployments, cloud sprawl is accelerated by self-service provisioning. Without proactive controls, resources accumulate across subscriptions with ambiguous ownership and zero financial attribution.

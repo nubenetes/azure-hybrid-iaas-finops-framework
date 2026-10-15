@@ -2,7 +2,9 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 04. Commitment Engineering](04-commitment-portfolio-ri-savings-plans.md) | [➡️ Next: 06. Hybrid Networking](06-hybrid-network-expressroute-firewall-endpoints.md)
 
-> 📽️ **Video Guide**: Watch the technical short [**How Azure Premium SSD v2 Decouples Storage**](https://www.youtube.com/shorts/FseN2K1O9PU) (`1:08`) explaining how independent sliders for Capacity, IOPS, and MB/s eliminate software RAID 0 striping and unneeded gigabytes.
+> 📽️ **Video Sessions**:
+> - 📽️ [**Azure Storage: Desacopla Capacidad e IOPS con Premium SSD v2 en FinOps**](https://www.youtube.com/watch?v=BZsmqa_FUGk) (`8:43`) — *Masterclass sobre desacoplamiento de discos, erradicación de RAID 0 en Storage Spaces y emparejamiento con instancias NVMe Ebdsv5.*
+> - ⚡ [**How Azure Premium SSD v2 Decouples Storage**](https://www.youtube.com/shorts/FseN2K1O9PU) (`1:08`) — *Píldora rápida de 1 minuto resumiendo los controles independientes de Capacidad, IOPS y MB/s.*
 
 ## 1. Storage as the Primary SQL Server Bottleneck
 

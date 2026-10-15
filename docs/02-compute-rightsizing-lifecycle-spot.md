@@ -2,7 +2,9 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 01. Governance & Tagging](01-governance-tagging-cost-allocation.md) | [➡️ Next: 03. Advanced Licensing](03-licensing-ahb-constrained-vcpu.md)
 
-> 📽️ **Video Guide**: Watch the technical short [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) (`1:13`) to see why shutting down from inside the guest OS continues 100% compute billing, and how Azure control-plane deallocation releases hardware back to the pool.
+> 📽️ **Video Sessions**:
+> - 📽️ [**FinOps en Azure: Optimización 3D de Cómputo, Rightsizing y Lifecycle**](https://www.youtube.com/watch?v=jt7t1BPNBsY) (`7:22`) — *Masterclass técnica sobre rightsizing empírico P95/P99, selección de SKUs y automatización del ciclo de vida.*
+> - ⚡ [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) (`1:13`) — *Píldora rápida sobre la trampa del apagado en SO vs desasignación por API.*
 
 ## 1. The Lift-and-Shift Fallacy
 

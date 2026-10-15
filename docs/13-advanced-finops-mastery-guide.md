@@ -2,7 +2,9 @@
 
 > 🧭 **Navigation**: [🏠 Framework Root](../README.md) | [📚 Documentation Index](README.md) | [⬅️ Previous: 12. Legacy Results](12-legacy-architecture-governance-results.md) | [➡️ Next: Architecture Decision Records](adr/README.md)
 
-> 📽️ **Video Guide**: Watch the technical short [**How the Azure FinOps Framework Slashes Cloud Bills**](https://www.youtube.com/shorts/ohhFQPy97U8) (`1:16`) explaining the multi-tiered decoupling strategy that cuts $173k monthly bills to $39k.
+> 📽️ **Video Sessions**:
+> - 📽️ [**Azure FinOps Framework: Arquitectura y Blueprint de Optimización IaaS**](https://www.youtube.com/watch?v=7xUIjosp28w) (`8:37`) — *Visión técnica integral del blueprint de arquitectura, topología Hub-and-Spoke y ahorro de siete cifras.*
+> - ⚡ [**How the Azure FinOps Framework Slashes Cloud Bills**](https://www.youtube.com/shorts/ohhFQPy97U8) (`1:16`) — *Píldora rápida sobre el desacoplamiento físico y de licenciamiento que reduce el gasto de $173k a $39k/mes.*
 
 ## 1. Executive Framework: The FinOps Iron Triangle
 

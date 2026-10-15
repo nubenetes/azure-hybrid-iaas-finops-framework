@@ -15,21 +15,30 @@ flowchart TD
 ---
 ---
 
-## 🎥 Multimedia Video Sessions & Technical Shorts
+## 🎥 Multimedia Video Sessions, Guides & Technical Shorts (15 Episodes)
 
-All foundational pillars and mathematical models are accompanied by technical video episodes on YouTube ([**@nubenetes**](https://youtube.com/@nubenetes)):
+All foundational pillars, mathematical models, and automation engines are accompanied by technical video episodes on YouTube ([**@nubenetes**](https://youtube.com/@nubenetes)):
 
-| Topic | Video / Short | Duration | Direct Link |
-| :--- | :--- | :---: | :--- |
-| **Comprehensive Architecture** | 🎙️ [Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas](https://www.youtube.com/watch?v=Kt2MyQlUXew) | `21:24` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=Kt2MyQlUXew) |
-| **Framework Overview** | ⚡ [How the Azure FinOps Framework Slashes Cloud Bills](https://www.youtube.com/shorts/ohhFQPy97U8) | `1:16` | [▶️ Watch Short](https://www.youtube.com/shorts/ohhFQPy97U8) |
-| **Automation Pipeline** | ⚡ [Turning Azure FinOps Theory into Automated Action](https://www.youtube.com/shorts/09oqxYUeHd8) | `1:19` | [▶️ Watch Short](https://www.youtube.com/shorts/09oqxYUeHd8) |
-| **Compute Lifecycle** | ⚡ [The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated](https://www.youtube.com/shorts/G49JolO2L2I) | `1:13` | [▶️ Watch Short](https://www.youtube.com/shorts/G49JolO2L2I) |
-| **Database Licensing** | ⚡ [How Core Masking Slashes Cloud Database Costs](https://www.youtube.com/shorts/EZQ6GnAEtpE) | `1:27` | [▶️ Watch Short](https://www.youtube.com/shorts/EZQ6GnAEtpE) |
-| **Decoupled Storage** | ⚡ [How Azure Premium SSD v2 Decouples Storage](https://www.youtube.com/shorts/FseN2K1O9PU) | `1:08` | [▶️ Watch Short](https://www.youtube.com/shorts/FseN2K1O9PU) |
-| **Log Containment** | ⚡ [How Edge Filtering Slashes Azure Log Costs](https://www.youtube.com/shorts/qzkXGfuQmT4) | `1:30` | [▶️ Watch Short](https://www.youtube.com/shorts/qzkXGfuQmT4) |
-| **Network Economics** | ⚡ [How Cloud Unlimited Plans Trap You](https://www.youtube.com/shorts/Xd2adpKN6VM) | `1:24` | [▶️ Watch Short](https://www.youtube.com/shorts/Xd2adpKN6VM) |
+| Engineering Pillar / Focus | Format | Video / Episode | Duration | Direct Link |
+| :--- | :---: | :--- | :---: | :--- |
+| **Comprehensive Architecture** | 🎙️ Podcast | [Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas](https://www.youtube.com/watch?v=Kt2MyQlUXew) | `21:24` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=Kt2MyQlUXew) |
+| **Global Architecture Blueprint** | 📽️ Video Guide | [Azure FinOps Framework: Arquitectura y Blueprint de Optimización IaaS](https://www.youtube.com/watch?v=7xUIjosp28w) | `8:37` | [▶️ Watch Video](https://www.youtube.com/watch?v=7xUIjosp28w) |
+| **Global TCO Decoupling** | ⚡ Short | [How the Azure FinOps Framework Slashes Cloud Bills](https://www.youtube.com/shorts/ohhFQPy97U8) | `1:16` | [▶️ Watch Short](https://www.youtube.com/shorts/ohhFQPy97U8) |
+| **Compute Rightsizing & Lifecycle** | 📽️ Video Guide | [FinOps en Azure: Optimización 3D de Cómputo, Rightsizing y Lifecycle](https://www.youtube.com/watch?v=jt7t1BPNBsY) | `7:22` | [▶️ Watch Video](https://www.youtube.com/watch?v=jt7t1BPNBsY) |
+| **The Deallocation Trap** | ⚡ Short | [The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated](https://www.youtube.com/shorts/G49JolO2L2I) | `1:13` | [▶️ Watch Short](https://www.youtube.com/shorts/G49JolO2L2I) |
+| **Database Licensing & CCC** | 📽️ Video Guide | [Azure Core Masking: Ahorro del 75% en Licencias SQL Server con FinOps](https://www.youtube.com/watch?v=vl6LKMgcKnw) | `8:35` | [▶️ Watch Video](https://www.youtube.com/watch?v=vl6LKMgcKnw) |
+| **Constrained vCPU Strategy** | ⚡ Short | [How Core Masking Slashes Cloud Database Costs](https://www.youtube.com/shorts/EZQ6GnAEtpE) | `1:27` | [▶️ Watch Short](https://www.youtube.com/shorts/EZQ6GnAEtpE) |
+| **Decoupled Storage Subsystem** | 📽️ Video Guide | [Azure Storage: Desacopla Capacidad e IOPS con Premium SSD v2 en FinOps](https://www.youtube.com/watch?v=BZsmqa_FUGk) | `8:43` | [▶️ Watch Video](https://www.youtube.com/watch?v=BZsmqa_FUGk) |
+| **Storage Sliders & RAID 0** | ⚡ Short | [How Azure Premium SSD v2 Decouples Storage](https://www.youtube.com/shorts/FseN2K1O9PU) | `1:08` | [▶️ Watch Short](https://www.youtube.com/shorts/FseN2K1O9PU) |
+| **Hybrid Network Economics** | 📽️ Video Guide | [Economía de Redes Híbridas en Azure: ExpressRoute, Firewall y Endpoints](https://www.youtube.com/watch?v=j9HNF-73zDQ) | `7:14` | [▶️ Watch Video](https://www.youtube.com/watch?v=j9HNF-73zDQ) |
+| **ExpressRoute Break-Even** | ⚡ Short | [How Cloud Unlimited Plans Trap You](https://www.youtube.com/shorts/Xd2adpKN6VM) | `1:24` | [▶️ Watch Short](https://www.youtube.com/shorts/Xd2adpKN6VM) |
+| **Observability Containment** | 📽️ Video Guide | [FinOps en Azure: Control de Costes en Telemetría, Logs y Monitorización](https://www.youtube.com/watch?v=jXgyXSNmXwM) | `5:33` | [▶️ Watch Video](https://www.youtube.com/watch?v=jXgyXSNmXwM) |
+| **Edge XPath Filtering** | ⚡ Short | [How Edge Filtering Slashes Azure Log Costs](https://www.youtube.com/shorts/qzkXGfuQmT4) | `1:30` | [▶️ Watch Short](https://www.youtube.com/shorts/qzkXGfuQmT4) |
+| **Governance & Automation** | 📽️ Video Guide | [FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización](https://www.youtube.com/watch?v=yAm1-z2ZpfA) | `6:42` | [▶️ Watch Video](https://www.youtube.com/watch?v=yAm1-z2ZpfA) |
+| **Continuous Automation Engine** | ⚡ Short | [Turning Azure FinOps Theory into Automated Action](https://www.youtube.com/shorts/09oqxYUeHd8) | `1:19` | [▶️ Watch Short](https://www.youtube.com/shorts/09oqxYUeHd8) |
 
+
+---
 
 ## 🗺️ Curated Reading Paths
 

@@ -410,19 +410,35 @@ az deployment group create \
 
 ## 12. 🎥 Video Guides, Technical Shorts & Multimedia Sessions (YouTube)
 
-The mathematical models, architectural patterns, and automation engines of this framework are accompanied by a dedicated series of technical video guides and shorts synthesized with **Gemini NotebookLM**.
+The mathematical models, architectural patterns, and automation engines of this framework are accompanied by a dedicated series of technical video guides, podcasts, and shorts synthesized with **Gemini NotebookLM**.
 
 All episodes and technical shorts are hosted on the official YouTube channel [**@nubenetes**](https://youtube.com/@nubenetes).
 
 > [!NOTE]
 > **Multilingual Technical Content 🌐**:
-> The architectural podcast features native **Spanish** narration, while the rapid technical shorts feature native **English** voiceover with automatic subtitles (CC) in over **20 languages** for international engineering teams.
+> The architectural masterclasses and podcast feature native **Spanish** narration, while the rapid technical shorts feature native **English** voiceover with automatic subtitles (CC) in over **20 languages** for international engineering teams.
 
-### 📊 Technical Multimedia Catalog (8 Sessions)
+### 📊 Technical Multimedia Catalog (15 Sessions)
 
+#### 🎙️ Architectural Podcast & Long-Form Sessions
 | Format | Title / Episode | Focus / Core Engineering Domain | Language | Duration | Direct YouTube Link |
 | :---: | :--- | :--- | :---: | :---: | :--- |
 | 🎙️ **Podcast** | [**Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas**](https://www.youtube.com/watch?v=Kt2MyQlUXew) | **Comprehensive Masterclass**: Full architecture overview, AHUB, SQL Server CCC, ExpressRoute break-even, and AMA DCR | 🇪🇸 Spanish *(CC 20+)* | `21:24` | [▶️ Watch Podcast](https://www.youtube.com/watch?v=Kt2MyQlUXew) |
+
+#### 📽️ Deep-Dive Video Guides & Masterclasses (The Explainer Series)
+| Format | Title / Episode | Focus / Core Engineering Domain | Language | Duration | Direct YouTube Link |
+| :---: | :--- | :--- | :---: | :---: | :--- |
+| 📽️ **Video Guide** | [**Azure FinOps Framework: Arquitectura y Blueprint de Optimización IaaS**](https://www.youtube.com/watch?v=7xUIjosp28w) | **Global Architecture Blueprint**: Hub-Spoke topology, lift-and-shift traps vs. FinOps optimization, and 7-figure savings | 🇪🇸 Spanish *(CC 20+)* | `8:37` | [▶️ Watch Video](https://www.youtube.com/watch?v=7xUIjosp28w) |
+| 📽️ **Video Guide** | [**FinOps en Azure: Optimización 3D de Cómputo, Rightsizing y Lifecycle**](https://www.youtube.com/watch?v=jt7t1BPNBsY) | **3D Compute Engineering**: Empirical P95/P99 rightsizing, guest OS shutdown trap, API deallocation, and VMSS Spot | 🇪🇸 Spanish *(CC 20+)* | `7:22` | [▶️ Watch Video](https://www.youtube.com/watch?v=jt7t1BPNBsY) |
+| 📽️ **Video Guide** | [**Azure Core Masking: Ahorro del 75% en Licencias SQL Server con FinOps**](https://www.youtube.com/watch?v=vl6LKMgcKnw) | **Database Licensing**: Masking 24 cores on E32-8s_v5 to save $96k/mo (€88k/mo) on SQL Server while retaining 256 GB RAM | 🇪🇸 Spanish *(CC 20+)* | `8:35` | [▶️ Watch Video](https://www.youtube.com/watch?v=vl6LKMgcKnw) |
+| 📽️ **Video Guide** | [**Azure Storage: Desacopla Capacidad e IOPS con Premium SSD v2 en FinOps**](https://www.youtube.com/watch?v=BZsmqa_FUGk) | **Storage Paradigm Shift**: Decoupled Capacity/IOPS/MBps, eliminating RAID 0 striping, and NVMe on Ebdsv5 series | 🇪🇸 Spanish *(CC 20+)* | `8:43` | [▶️ Watch Video](https://www.youtube.com/watch?v=BZsmqa_FUGk) |
+| 📽️ **Video Guide** | [**Economía de Redes Híbridas en Azure: ExpressRoute, Firewall y Endpoints**](https://www.youtube.com/watch?v=j9HNF-73zDQ) | **Hybrid Network Economics**: ExpressRoute break-even (240 TB/mo), asymmetric downgrade trap, and Firewall crossover | 🇪🇸 Spanish *(CC 20+)* | `7:14` | [▶️ Watch Video](https://www.youtube.com/watch?v=j9HNF-73zDQ) |
+| 📽️ **Video Guide** | [**FinOps en Azure: Control de Costes en Telemetría, Logs y Monitorización**](https://www.youtube.com/watch?v=jXgyXSNmXwM) | **Observability Containment**: Eliminating runaway telemetry, kernel XPath filtering with AMA, and Basic Table Plans | 🇪🇸 Spanish *(CC 20+)* | `5:33` | [▶️ Watch Video](https://www.youtube.com/watch?v=jXgyXSNmXwM) |
+| 📽️ **Video Guide** | [**FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización**](https://www.youtube.com/watch?v=yAm1-z2ZpfA) | **Coercive Governance & Automation**: Azure Policy guardrails, hub cost allocation, ARG KQL audits, and shift-left gates | 🇪🇸 Spanish *(CC 20+)* | `6:42` | [▶️ Watch Video](https://www.youtube.com/watch?v=yAm1-z2ZpfA) |
+
+#### ⚡ Technical Shorts & Quick Takeaways
+| Format | Title / Episode | Focus / Core Engineering Domain | Language | Duration | Direct YouTube Link |
+| :---: | :--- | :--- | :---: | :---: | :--- |
 | ⚡ **Short** | [**How the Azure FinOps Framework Slashes Cloud Bills**](https://www.youtube.com/shorts/ohhFQPy97U8) | **TCO Reduction ($173k to $39k/mo)**: Decoupling physical resources from licensing, storage, and networking | 🇬🇧 English *(CC 20+)* | `1:16` | [▶️ Watch Short](https://www.youtube.com/shorts/ohhFQPy97U8) |
 | ⚡ **Short** | [**Turning Azure FinOps Theory into Automated Action**](https://www.youtube.com/shorts/09oqxYUeHd8) | **Continuous Automation Pipeline**: IaC modules, ARG KQL audits, Day-2 PowerShell runbooks, and CLI calculators | 🇬🇧 English *(CC 20+)* | `1:19` | [▶️ Watch Short](https://www.youtube.com/shorts/09oqxYUeHd8) |
 | ⚡ **Short** | [**The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated**](https://www.youtube.com/shorts/G49JolO2L2I) | **Lifecycle Management**: Guest OS shutdown trap vs. Azure control-plane deallocation to zero compute fees | 🇬🇧 English *(CC 20+)* | `1:13` | [▶️ Watch Short](https://www.youtube.com/shorts/G49JolO2L2I) |
@@ -436,61 +452,106 @@ All episodes and technical shorts are hosted on the official YouTube channel [**
 
 <br/>
 
-#### 1. Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas (21:24)
+### Section A: Deep-Dive Video Guides & Masterclasses
+
+#### 1. Azure FinOps Framework: Arquitectura y Blueprint de Optimización IaaS (8:37)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=7xUIjosp28w](https://www.youtube.com/watch?v=7xUIjosp28w)
+- ⏱️ **Duration**: 8:37
+- 🏷️ **Domain**: Global Hybrid IaaS Architecture Blueprint, Hub-and-Spoke, SQL Licensing, TCO Impact
+- 📝 **Technical Overview**:
+> Deep dive into the reference architecture blueprint for enterprise Azure hybrid IaaS environments. Explores how standard unoptimized migrations spending $173,000/month are transformed into high-efficiency architectures operating at $39,000/month (over 77% sustained reduction). Demonstrates the strategic value of centralizing shared services, decoupling physical compute from software licensing, implementing metered network circuits, and enforcing automated policy guardrails.
+
+#### 2. FinOps en Azure: Optimización 3D de Cómputo, Rightsizing y Lifecycle (7:22)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=jt7t1BPNBsY](https://www.youtube.com/watch?v=jt7t1BPNBsY)
+- ⏱️ **Duration**: 7:22
+- 🏷️ **Domain**: 3D Compute Engineering, P95/P99 Telemetry Rightsizing, Lifecycle Automation, Spot VMSS
+- 📝 **Technical Overview**:
+> Analyzes empirical compute optimization across three dimensions: metric telemetry, specialized VM families, and automated lifecycle management. Explains why average-based sizing fails and details the mechanics of the hypervisor reservation trap where shutting down from inside the guest OS continues 100% compute billing. Covers automated API-based deallocation runbooks and priority mix scaling in Virtual Machine Scale Sets (VMSS) combining on-demand baselines with up to 90% discounted Spot instances.
+
+#### 3. Azure Core Masking: Ahorro del 75% en Licencias SQL Server con FinOps (8:35)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=vl6LKMgcKnw](https://www.youtube.com/watch?v=vl6LKMgcKnw)
+- ⏱️ **Duration**: 8:35
+- 🏷️ **Domain**: Database Licensing, Constrained vCPUs (Standard_E32-8s_v5), Azure Hybrid Benefit
+- 📝 **Technical Overview**:
+> Detailed technical breakdown on how to eliminate over $96,000/month (€88,393/month, $1.15M+ annually) in enterprise database licensing fees. Explains how Constrained vCPU sizes (such as Standard_E32-8s_v5) mask 24 physical cores from the operating system while guaranteeing full access to 256 GB RAM and 80,000 IOPS. Details the core licensing formula, stacking Azure Hybrid Benefit with existing Software Assurance, and leveraging 180-day dual-use migration rights.
+
+#### 4. Azure Storage: Desacopla Capacidad e IOPS con Premium SSD v2 en FinOps (8:43)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=BZsmqa_FUGk](https://www.youtube.com/watch?v=BZsmqa_FUGk)
+- ⏱️ **Duration**: 8:43
+- 🏷️ **Domain**: Decoupled Storage Subsystem, Premium SSD v2, NVMe Architecture (Ebdsv5)
+- 📝 **Technical Overview**:
+> Explores the storage paradigm shift in Azure. Contrasts legacy Premium SSD v1 and Windows Storage Spaces RAID 0 striping arrays (which forced provisioning terabytes of dead disk space purely to aggregate IOPS) with modern Premium SSD v2 architecture. Covers independent sliders for Capacity, IOPS, and Throughput, the free included baseline (3,000 IOPS and 125 MB/s), dynamic zero-downtime scaling for nightly database backups, and pairing with NVMe interfaces on Ebdsv5 series VMs.
+
+#### 5. Economía de Redes Híbridas en Azure: ExpressRoute, Firewall y Endpoints (7:14)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=j9HNF-73zDQ](https://www.youtube.com/watch?v=j9HNF-73zDQ)
+- ⏱️ **Duration**: 7:14
+- 🏷️ **Domain**: Hybrid Network Economics, ExpressRoute Break-Even, Azure Firewall, PaaS Endpoints
+- 📝 **Technical Overview**:
+> Applies mathematical rigor to hybrid enterprise networking costs. Proves the 240 TB/month break-even threshold for 1 Gbps ExpressRoute circuits, demonstrating that Unlimited plans require continuous >73% saturation 24/7. Exposes the dangerous asymmetric transition trap (downgrading from Unlimited to Metered is blocked by Microsoft and requires circuit destruction). Evaluates the 12.74 TB/month crossover between Azure Firewall Basic and Standard, and contrasts 100% free Service Endpoints with Private Endpoints.
+
+#### 6. FinOps en Azure: Control de Costes en Telemetría, Logs y Monitorización (5:33)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=jXgyXSNmXwM](https://www.youtube.com/watch?v=jXgyXSNmXwM)
+- ⏱️ **Duration**: 5:33
+- 🏷️ **Domain**: Observability Cost Containment, Azure Monitor Agent (AMA), XPath Edge Filtering, Basic Table Plan
+- 📝 **Technical Overview**:
+> Practical guide to eradicating runaway telemetry where log ingestion bills exceed virtual machine hosting costs. Demonstrates how the modern Azure Monitor Agent (AMA) uses kernel-level XPath filtering to discard over 90% of routine informational logs (such as HTTP 200/300 success codes) directly inside the guest OS before network transmission. Explains routing high-volume diagnostic logs to Log Analytics Basic Table Plans (€0.46/GB vs €2.12/GB), slashing telemetry spend from $7,600 to $1,500/month.
+
+#### 7. FinOps Azure Híbrido: Gobernanza Coercitiva, Políticas y Automatización (6:42)
+- 🔗 **Direct URL**: [https://www.youtube.com/watch?v=yAm1-z2ZpfA](https://www.youtube.com/watch?v=yAm1-z2ZpfA)
+- ⏱️ **Duration**: 6:42
+- 🏷️ **Domain**: Coercive Governance, Azure Policy, Hub Cost Allocation, ARG KQL Audits
+- 📝 **Technical Overview**:
+> Comprehensive engineering session on continuous governance mechanisms. Details how coercive Azure Policy definitions reject non-compliant deployments at ARM compilation time, enforce tag inheritance from resource groups, and implement cost allocation rules to distribute central firewall and gateway costs to consuming spokes. Shows how automated KQL queries on Azure Resource Graph detect orphaned assets, and how shift-left CI/CD gates prevent cost regressions before deployment.
+
+---
+
+### Section B: Architectural Masterclass Podcast
+
+#### 8. Podcast: Estrategias FinOps en Azure: Ahorro en Cómputo, SQL Server y Redes Híbridas (21:24)
 - 🔗 **Direct URL**: [https://www.youtube.com/watch?v=Kt2MyQlUXew](https://www.youtube.com/watch?v=Kt2MyQlUXew)
 - ⏱️ **Duration**: 21:24
 - 🏷️ **Domain**: Full Hybrid IaaS Architecture, Governance, Compute, SQL Licensing, Networking, Observability
 - 📝 **Technical Overview**:
 > Deep-dive architectural podcast covering the end-to-end framework. Analyzes how hybrid Windows Server and SQL Server enterprise architectures can reduce operating expenses by over 77% ($1.6M+ annually). Explores the 4 core pillars: Compute rightsizing and deallocation, SQL Server licensing optimization via Constrained vCPUs and AHUB, network transit modeling for ExpressRoute and Azure Firewall, and kernel-level log filtering via Azure Monitor Agent.
 
-#### 2. How the Azure FinOps Framework Slashes Cloud Bills (1:16)
+---
+
+### Section C: Technical Shorts & Rapid Takeaways
+
+#### 9. How the Azure FinOps Framework Slashes Cloud Bills (1:16)
 - 🔗 **Direct URL**: [https://www.youtube.com/shorts/ohhFQPy97U8](https://www.youtube.com/shorts/ohhFQPy97U8)
 - ⏱️ **Duration**: 1:16
 - 🏷️ **Domain**: Global TCO, Mathematical Decoupling, Enterprise Framework Overview
-- 📝 **Technical Overview**:
-> Analyzes how a real-world enterprise architecture reduced monthly expenditure from $173,000 down to $39,000 without sacrificing capacity or SLAs. Explains the principle of decoupling physical requirements from software billing meters, including SQL licensing core masking, decoupled storage performance, metered hybrid circuits, and automated policy guardrails.
 
-#### 3. Turning Azure FinOps Theory into Automated Action (1:19)
+#### 10. Turning Azure FinOps Theory into Automated Action (1:19)
 - 🔗 **Direct URL**: [https://www.youtube.com/shorts/09oqxYUeHd8](https://www.youtube.com/shorts/09oqxYUeHd8)
 - ⏱️ **Duration**: 1:19
 - 🏷️ **Domain**: Continuous Automation Engine, IaC, Azure Resource Graph, PowerShell Runbooks, CLI Calculators
-- 📝 **Technical Overview**:
-> Demonstrates why passive cost dashboards fail and how to build a continuous, self-cleaning FinOps automation pipeline. Covers Day-1 IaC deployment with Terraform and Bicep, real-time tenant scanning for waste using KQL queries on Azure Resource Graph, automated off-hours deallocation runbooks in PowerShell, and predictive break-even modeling with the Python CLI calculator.
 
-#### 4. The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated (1:13)
+#### 11. The Azure Cloud VM Shutdown Trap: Stopped vs Deallocated (1:13)
 - 🔗 **Direct URL**: [https://www.youtube.com/shorts/G49JolO2L2I](https://www.youtube.com/shorts/G49JolO2L2I)
 - ⏱️ **Duration**: 1:13
 - 🏷️ **Domain**: Compute Lifecycle, Hypervisor Reservation, Stopped vs. Stopped (Deallocated)
-- 📝 **Technical Overview**:
-> Explains the expensive trap of guest OS shutdown. Shutting down from the Windows Start menu leaves the hypervisor holding CPU and RAM capacity, continuing 100% of compute billing. Only stopping the VM via Azure control plane APIs releases hardware back to the Azure pool, dropping compute fees to $0.00/hour.
 
-#### 5. How Core Masking Slashes Cloud Database Costs (1:27)
+#### 12. How Core Masking Slashes Cloud Database Costs (1:27)
 - 🔗 **Direct URL**: [https://www.youtube.com/shorts/EZQ6GnAEtpE](https://www.youtube.com/shorts/EZQ6GnAEtpE)
 - ⏱️ **Duration**: 1:27
 - 🏷️ **Domain**: Database Licensing, Constrained vCPUs (Standard_E32-8s_v5), Azure Hybrid Benefit
-- 📝 **Technical Overview**:
-> Highlights how enterprise databases are licensed per core rather than by memory. By provisioning constrained vCPUs (such as Standard_E32-8s_v5), 24 physical cores are masked from the OS while maintaining full access to 256 GB RAM and max IOPS. This reduces SQL Server licensing by 75%, saving nearly $100,000 per month on enterprise database nodes.
 
-#### 6. How Azure Premium SSD v2 Decouples Storage (1:08)
+#### 13. How Azure Premium SSD v2 Decouples Storage (1:08)
 - 🔗 **Direct URL**: [https://www.youtube.com/shorts/FseN2K1O9PU](https://www.youtube.com/shorts/FseN2K1O9PU)
 - ⏱️ **Duration**: 1:08
 - 🏷️ **Domain**: Storage Economics, Premium SSD v2, Decoupled Capacity/IOPS/Throughput
-- 📝 **Technical Overview**:
-> Explores how Premium SSD v2 eliminates the traditional trap of buying massive, unneeded disk capacity just to unlock performance. Decouples size (GiB), IOPS, and throughput (MB/s). Includes 3,000 IOPS and 125 MB/s baseline free of charge, with dynamic zero-downtime performance scaling for nightly database backup windows.
 
-#### 7. How Edge Filtering Slashes Azure Log Costs (1:30)
+#### 14. How Edge Filtering Slashes Azure Log Costs (1:30)
 - 🔗 **Direct URL**: [https://www.youtube.com/shorts/qzkXGfuQmT4](https://www.youtube.com/shorts/qzkXGfuQmT4)
 - ⏱️ **Duration**: 1:30
 - 🏷️ **Domain**: Observability Cost Containment, Azure Monitor Agent, DCR XPath Filtering, Basic Table Plan
-- 📝 **Technical Overview**:
-> Addresses runaway telemetry costs where log ingestion bills exceed VM hosting costs. Shows how the Azure Monitor Agent (AMA) uses kernel-level XPath filtering to drop over 90% of routine HTTP 200/300 logs inside the VM before network transit, routing remaining security events to low-cost Basic Table Plans to cut monitoring costs from $7,600 to $1,500/month.
 
-#### 8. How Cloud Unlimited Plans Trap You (1:24)
+#### 15. How Cloud Unlimited Plans Trap You (1:24)
 - 🔗 **Direct URL**: [https://www.youtube.com/shorts/Xd2adpKN6VM](https://www.youtube.com/shorts/Xd2adpKN6VM)
 - ⏱️ **Duration**: 1:24
 - 🏷️ **Domain**: Hybrid Network Economics, ExpressRoute Metered vs. Unlimited, Break-Even Formula
-- 📝 **Technical Overview**:
-> Details the financial math of Azure ExpressRoute telecom pricing. Demonstrates that a 1 Gbps circuit requires sustained transfer of more than 240 TB per month (>73% saturation 24/7) to justify the $6,400/month Unlimited plan. Highlights the asymmetric downgrade restriction, proving why enterprises must always default to Metered circuits.
 
 </details>
 
